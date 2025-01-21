@@ -6,7 +6,7 @@ I've been using `setuptools` and `setup.py` for my Python packages for a long ti
 
 Today I figured out how to package a project with a single `pyproject.toml` file, using just `pip` and `build` to install and build that package.
 
-> **Update 17th January 2024**: My [python-lib](https://github.com/simonw/python-lib) cookiecutter template now implements this pattern, see [Publish Python packages to PyPI with a python-lib cookiecutter template and GitHub Actions](https://simonwillison.net/2024/Jan/16/python-lib-pypi/) for details.
+> **Update 17th January 2024**: My [python-lib](https://github.com/simonw/python-lib) cookiecutter template now implements this pattern, see [Publish Python packages to PyPI with a python-lib cookiecutter template and GitHub Actions](https://assahbismark.com/2024/Jan/16/python-lib-pypi/) for details.
 
 (Note that the approach described in this document likely only works for pure Python packages. If your package includes any binary compiled dependencies you likely need to use a different approach.)
 
@@ -174,7 +174,7 @@ name = "demo-package"
 version = "0.1"
 description = "This is a demo package"
 readme = "README.md"
-authors = [{name = "Simon Willison"}]
+authors = [{name = "Assah Bismark"}]
 license = {text = "Apache-2.0"}
 classifiers = [
     "Development Status :: 4 - Beta"

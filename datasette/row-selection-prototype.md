@@ -1,8 +1,8 @@
 # Interactive row selection prototype with Datasette
 
-I added a new [llms](https://simonwillison.net/tags/llms/) tag to my blog, for my content about Large Language Models.
+I added a new [llms](https://assahbismark.com/tags/llms/) tag to my blog, for my content about Large Language Models.
 
-I wanted to quickly populate it with content. I decided to run some SQL queries to find likely candidates using the [Datasette backup](https://datasette.simonwillison.net/) of my blog's content.
+I wanted to quickly populate it with content. I decided to run some SQL queries to find likely candidates using the [Datasette backup](https://datasette.assahbismark.com/) of my blog's content.
 
 But... I didn't just want to add anything that mentioned "LLM" - I wanted to have a step where I curated the selected items and picked just the ones that were a good fit.
 
@@ -123,11 +123,11 @@ where id in (
   )
 )
 ```
-[Here's that in Datasette](https://datasette.simonwillison.net/simonwillisonblog?sql=select+id%2C+link_title%2C+link_url%2C+commentary%0D%0Afrom+blog_blogmark%0D%0Awhere+id+in+%28%0D%0A++select+blogmark_id+from+blog_blogmark_tags+where+tag_id+in+%28%0D%0A++++select+id+from+blog_tag+where+tag+in+%28%0D%0A++++++%27generativeai%27%2C+%27ai%27%2C+%27gpt3%27%2C+%27promptengineering%27%0D%0A++++%29%0D%0A++%29%0D%0A%29).
+[Here's that in Datasette](https://datasette.assahbismark.com/simonwillisonblog?sql=select+id%2C+link_title%2C+link_url%2C+commentary%0D%0Afrom+blog_blogmark%0D%0Awhere+id+in+%28%0D%0A++select+blogmark_id+from+blog_blogmark_tags+where+tag_id+in+%28%0D%0A++++select+id+from+blog_tag+where+tag+in+%28%0D%0A++++++%27generativeai%27%2C+%27ai%27%2C+%27gpt3%27%2C+%27promptengineering%27%0D%0A++++%29%0D%0A++%29%0D%0A%29).
 
 Then I opened up the Firefox console and pasted in that JavaScript. Here's the result:
 
-![Animated GIF showing a table with a checkbox for each row. Checking the checkboxes updates a JSON array of IDs in a textarea at the top of the table. Shift clicking selects a range of checkboxes. A checkbox at the top can be checked to select all or deselect all.](https://static.simonwillison.net/static/2023/datasette-picker.gif)
+![Animated GIF showing a table with a checkbox for each row. Checking the checkboxes updates a JSON array of IDs in a textarea at the top of the table. Shift clicking selects a range of checkboxes. A checkbox at the top can be checked to select all or deselect all.](https://static.assahbismark.com/static/2023/datasette-picker.gif)
 
 I used this query, and two others like it, to create an array of IDs of entries, blogmarks and quotations that I wanted to add the `llms` tag to.
 
@@ -162,6 +162,6 @@ And in the Python console:
 >>> for q in quotations:
 ...     q.tags.add(tag)
 ```
-And that's how I populated the https://simonwillison.net/tags/llms/ page on my blog!
+And that's how I populated the https://assahbismark.com/tags/llms/ page on my blog!
 
 At some point I plan to turn this JavaScript code into a Datasette plugin.

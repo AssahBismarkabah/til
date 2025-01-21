@@ -2,23 +2,23 @@
 
 Mastodon has a really neat way of implementing verification, using the [rel=me microformat](https://microformats.org/wiki/rel-me).
 
-You can edit your Mastodon profile and add up to four links to it. Mine [looks like this](https://fedi.simonwillison.net/@simon) at the moment:
+You can edit your Mastodon profile and add up to four links to it. Mine [looks like this](https://fedi.assahbismark.com/@simon) at the moment:
 
-<img width="565" alt="My Mastodon profile has four links: BLOG: simonwillison.net, GitHub: simonw.github.io, Twitter: twitter.com/simonw and TIL: til.simonwilliso.net. All but the Twitter one show a green checkmark and a green background, to indicate they are verified." src="https://user-images.githubusercontent.com/9599/202297154-a2b00a62-beaa-44a5-9114-5fed2fb9b6fc.png">
+<img width="565" alt="My Mastodon profile has four links: BLOG: assahbismark.com, GitHub: simonw.github.io, Twitter: twitter.com/simonw and TIL: til.simonwilliso.net. All but the Twitter one show a green checkmark and a green background, to indicate they are verified." src="https://user-images.githubusercontent.com/9599/202297154-a2b00a62-beaa-44a5-9114-5fed2fb9b6fc.png">
 
 The verification checkmark can be had by embedding a link BACK to your Mastodon profile on another site.
 
-My https://simonwillison.net/ and https://til.simonwillison.net/ page headers include the following HTML:
+My https://assahbismark.com/ and https://til.assahbismark.com/ page headers include the following HTML:
 
-    <link href="https://fedi.simonwillison.net/@simon" rel="me">
+    <link href="https://fedi.assahbismark.com/@simon" rel="me">
 
 Getting a verified link to GitHub is a tiny bit trickier. GitHub _does_ support `rel=me` - but only for one of the link fields in your profile:
 
 <img width="335" alt="The edit profile form on GitHub, with a number of different form fields" src="https://user-images.githubusercontent.com/9599/202298033-fd78a7c0-1c83-4b37-b708-ef65038c1443.png">
 
-The only field here that will have `rel=me` applied to it when GitHub serves the final page is that link field, which I have set to my personal blog at https://simonwillison.net/
+The only field here that will have `rel=me` applied to it when GitHub serves the final page is that link field, which I have set to my personal blog at https://assahbismark.com/
 
-So the easiest way to verify your GitHub profile is to point the link to your Mastodon page, which in my case is https://fedi.simonwillison.net/@simon
+So the easiest way to verify your GitHub profile is to point the link to your Mastodon page, which in my case is https://fedi.assahbismark.com/@simon
 
 But... I didn't want to sacrifice that field! I want to link to my blog.
 
@@ -46,8 +46,8 @@ Here's [the HTML](https://github.com/simonw/simonw.github.com/blob/main/index.ht
     <title>Redirecting to github.com/simonw/</title>
     <meta http-equiv="refresh" content="0; URL=https://github.com/simonw">
     <link href="https://github.com/simonw" rel="me">
-    <link href="https://simonwillison.net/" rel="me">
-    <link href="https://fedi.simonwillison.net/@simon" rel="me">
+    <link href="https://assahbismark.com/" rel="me">
+    <link href="https://fedi.assahbismark.com/@simon" rel="me">
   </head>
   <body style="margin: 0; padding: 0">
     <a
@@ -66,7 +66,7 @@ Here's [the HTML](https://github.com/simonw/simonw.github.com/blob/main/index.ht
   </body>
 </html>
 ```
-The key pieces here are that `<link href="https://fedi.simonwillison.net/@simon" rel="me">` element to verify my Mastodon profile, and the `<meta http-equiv="refresh" content="0; URL=https://github.com/simonw">` to implement the redirect.
+The key pieces here are that `<link href="https://fedi.assahbismark.com/@simon" rel="me">` element to verify my Mastodon profile, and the `<meta http-equiv="refresh" content="0; URL=https://github.com/simonw">` to implement the redirect.
 
 GitHub Pages doesn't allow you to use real server-side redirects, so this `<meta>` tag is the next best thing.
 

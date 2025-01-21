@@ -6,7 +6,7 @@ This broke when I upgraded the [OpenAI Python library](https://github.com/openai
 
 I [figured out](https://github.com/simonw/llm/issues/404) how to do this against HTTPX, using the [event hooks](https://www.python-httpx.org/advanced/#event-hooks) mechanism in that library.
 
-> **Update:** See [the bottom of this post](https://til.simonwillison.net/httpx/openai-log-requests-responses#user-content-a-better-solution) for a better solution.
+> **Update:** See [the bottom of this post](https://til.assahbismark.com/httpx/openai-log-requests-responses#user-content-a-better-solution) for a better solution.
 
 ## Passing a custom HTTPX client to OpenAI
 

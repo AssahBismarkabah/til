@@ -54,7 +54,7 @@ version = "0.2"
 description = "Django app for creating database-backed HTTP debug endpoints"
 readme = "README.md"
 requires-python = ">=3.8"
-authors = [{name = "Simon Willison"}]
+authors = [{name = "Assah Bismark"}]
 license = {text = "Apache-2.0"}
 classifiers = [
     "License :: OSI Approved :: Apache Software License"

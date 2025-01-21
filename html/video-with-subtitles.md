@@ -19,14 +19,14 @@ Claude suggested WebVTT, and gave me the following example HTML when I asked:
 
 MacWhisper has an export as VTT option, so I used that and got this file:
 
-https://static.simonwillison.net/static/2010/24_cowboy-development-with-django.vtt
+https://static.assahbismark.com/static/2010/24_cowboy-development-with-django.vtt
 
 It looks like this:
 ```
 WEBVTT
 
 00:00:00.000 --> 00:00:02.560
-Now and then, I'd like to invite to the stage Simon Willison,
+Now and then, I'd like to invite to the stage Assah Bismark,
 
 
 00:00:02.560 --> 00:00:06.120
@@ -34,12 +34,12 @@ who very kindly has offered to fill in the space
 ```
 It turns out fetching VTT files is governed by CORS rules, so you need to host the HTML on the same domain as the VTT file (or use CORS headers). Here's a demo page with the MP4 video and those VTT files:
 
-https://static.simonwillison.net/static/2010/24_cowboy-development-with-django.html
+https://static.assahbismark.com/static/2010/24_cowboy-development-with-django.html
 
 ```html
 <video controls>
-  <source src="https://static.simonwillison.net/static/2010/24_cowboy-development-with-django.mp4" type="video/mp4">
-  <track label="English" kind="subtitles" srclang="en" src="https://static.simonwillison.net/static/2010/24_cowboy-development-with-django.vtt" default>
+  <source src="https://static.assahbismark.com/static/2010/24_cowboy-development-with-django.mp4" type="video/mp4">
+  <track label="English" kind="subtitles" srclang="en" src="https://static.assahbismark.com/static/2010/24_cowboy-development-with-django.vtt" default>
   Your browser does not support the video tag.
 </video>
 ```

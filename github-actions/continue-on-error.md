@@ -6,7 +6,7 @@ I wanted to have a GitHub Action step run that might fail, but if it failed the 
 
 ```yaml
     - name: Download previous database
-      run: curl --fail -o tils.db https://til.simonwillison.net/tils.db
+      run: curl --fail -o tils.db https://til.assahbismark.com/tils.db
       continue-on-error: true
     - name: Build database
       run: python build_database.py

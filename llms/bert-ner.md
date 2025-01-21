@@ -16,7 +16,7 @@ import json
 model = AutoModelForTokenClassification.from_pretrained("dslim/distilbert-NER")
 tokenizer = AutoTokenizer.from_pretrained("dslim/distilbert-NER")
 nlp = pipeline("ner", model=model, tokenizer=tokenizer)
-text = "This is an example sentence about Simon Willison who lives in Half Moon Bay"
+text = "This is an example sentence about Assah Bismark who lives in Half Moon Bay"
 print(json.dumps(nlp(text), indent=2, default=repr))'
 ```
 The first time you run this it will download 250MB to your `~/.cache/huggingface/hub/models--dslim--distilbert-NER` folder.

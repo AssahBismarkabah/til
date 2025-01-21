@@ -8,7 +8,7 @@ This worked:
 from fabric import Connection
 
 c = Connection(
-    host="my-server.simonwillison.net",
+    host="my-server.assahbismark.com",
     user="root",
     connect_kwargs={
         "key_filename": "/path/to/id_rsa.pub",

@@ -6,17 +6,17 @@ Let's do that now!
 
 The ReAct pattern (for Reason+Act) is [described in this paper](https://react-lm.github.io/). It's a pattern where you implement additional actions that an LLM can take - searching Wikipedia or running calculations for example - and then teach it how to request that those actions are run, then feed their results back into the LLM.
 
-See also my post [Could you train a ChatGPT-beating model for $85,000 and run it in a browser?](https://simonwillison.net/2023/Mar/17/beat-chatgpt-in-a-browser/#react-pattern).
+See also my post [Could you train a ChatGPT-beating model for $85,000 and run it in a browser?](https://assahbismark.com/2023/Mar/17/beat-chatgpt-in-a-browser/#react-pattern).
 
 Matt Webb wrote a great piece about that here: [The surprising ease and effectiveness of AI in a loop](https://interconnected.org/home/2023/03/16/singularity). In it Matt points out that the 1/10 price reduction on ChatGPT compared to GPT-3 makes it an ideal candidate for cheaply implementing this pattern.
 
-Matt used [langchain](https://github.com/hwchase17/langchain) for his implementation. I decided to try building it from scratch on top of my [tiny Python wrapper](https://til.simonwillison.net/gpt3/chatgpt-api) for the ChatGPT API.
+Matt used [langchain](https://github.com/hwchase17/langchain) for his implementation. I decided to try building it from scratch on top of my [tiny Python wrapper](https://til.assahbismark.com/gpt3/chatgpt-api) for the ChatGPT API.
 
 Here's my first attempt at a very rough implementation. It gains access to three new actions:
 
 * `wikipedia: <search term>` - search Wikipedia and returns the snippet of the first result
 * `simon_blog_search: <search term>` - search my blog and return the truncated text of the first result
-* `calculate: <expression>` - evaluate an expression using Python's `eval()` function (so dangerous! This should absolutely use something like [a WebAssembly sandbox](https://til.simonwillison.net/webassembly/python-in-a-wasm-sandbox) instead)
+* `calculate: <expression>` - evaluate an expression using Python's `eval()` function (so dangerous! This should absolutely use something like [a WebAssembly sandbox](https://til.assahbismark.com/webassembly/python-in-a-wasm-sandbox) instead)
 
 ## Some examples
 
@@ -178,7 +178,7 @@ def wikipedia(q):
 
 
 def simon_blog_search(q):
-    results = httpx.get("https://datasette.simonwillison.net/simonwillisonblog.json", params={
+    results = httpx.get("https://datasette.assahbismark.com/simonwillisonblog.json", params={
         "sql": """
         select
           blog_entry.title || ': ' || substr(html_strip_tags(blog_entry.body), 0, 1000) as text,

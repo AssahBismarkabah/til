@@ -7,7 +7,7 @@ I'm still working towards adding multi-modal support to my [LLM](https://llm.dat
 > ```bash
 > llm -m gemini-1.5-flash "describe this image" -a image.jpg
 > ```
-> See [You can now run prompts against images, audio and video in your terminal using LLM](https://simonwillison.net/2024/Oct/29/llm-multi-modal/#atom-everything) for details.
+> See [You can now run prompts against images, audio and video in your terminal using LLM](https://assahbismark.com/2024/Oct/29/llm-multi-modal/#atom-everything) for details.
 
 ## Using curl
 
@@ -87,7 +87,7 @@ Model values you can use are:
 
 It's hard to overestimate how _cheap_ these models are. An input image is charged at 258 tokens. That means the price per image processed is measured in fraction of a cent - those numbers above really are correct, an image even through Gemini Pro will cost less than 1/30th of a cent, and the other two models are even cheaper.
 
-You get charged for output tokens too, which vary depending on the length of the response. Use [my LLM pricing calculator](https://tools.simonwillison.net/llm-prices) to explore those.
+You get charged for output tokens too, which vary depending on the length of the response. Use [my LLM pricing calculator](https://tools.assahbismark.com/llm-prices) to explore those.
 
 The output of a prompt includes a usage section that shows you exactly how many tokens you spent. Here's example output for the prompt "extract text from this image" against this image:
 

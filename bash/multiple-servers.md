@@ -54,7 +54,7 @@ So now I have a pattern for any time I want to write a Bash script that starts m
 
 ## Even better: use EXIT
 
-I posted this [on Mastodon](https://fedi.simonwillison.net/@simon/110902899674170019) and got some useful tips.
+I posted this [on Mastodon](https://fedi.assahbismark.com/@simon/110902899674170019) and got some useful tips.
 
 You can use `EXIT` instead of `SIGINT` to catch other reasons that the script may execute, such as from an error.
 

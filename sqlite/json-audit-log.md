@@ -1,6 +1,6 @@
 # Tracking SQLite table history using a JSON audit log
 
-I continue to collect ways of tracking the history of a table of data stored in SQLite - see [sqlite-history](https://simonwillison.net/2023/Apr/15/sqlite-history/) for previous experiments.
+I continue to collect ways of tracking the history of a table of data stored in SQLite - see [sqlite-history](https://assahbismark.com/2023/Apr/15/sqlite-history/) for previous experiments.
 
 Today I decided to try a slightly different approach, using JSON to store changes to a table in an audit log.
 

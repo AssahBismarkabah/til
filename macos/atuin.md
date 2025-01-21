@@ -12,7 +12,7 @@ Then ran this to add it to my `.zshrc` config:
 
 I restarted my terminal... and now I have a SQLite database full of commands I have run!
 
-The database lives at `~/.local/share/atuin/history.db` (I figured that out with [this TIL](https://til.simonwillison.net/macos/open-files-with-opensnoop)), and can be opened in Datasette.
+The database lives at `~/.local/share/atuin/history.db` (I figured that out with [this TIL](https://til.assahbismark.com/macos/open-files-with-opensnoop)), and can be opened in Datasette.
 
 ![Screenshot of Datasette showing the history table from the atuin database](https://user-images.githubusercontent.com/9599/165356208-4546e23a-47e6-47f1-a759-f1d849131aa0.png)
 
@@ -30,7 +30,7 @@ I edited my `~/.zshrc` file and replaced the `atuin` bit at the bottom with this
 
 ```zsh
 eval "$(atuin init zsh)"
-# Restore original up binding: https://til.simonwillison.net/macos/atuin
+# Restore original up binding: https://til.assahbismark.com/macos/atuin
 autoload -U history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 bindkey "^[[A" history-beginning-search-backward-end

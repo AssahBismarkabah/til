@@ -15,7 +15,7 @@ select strftime('%s','now') || substr(strftime('%f','now'),4)
 union all
 select strftime('%s','now') || substr(strftime('%f','now'),4)
 ```
-That `strftime()` pattern is [described here](https://stackoverflow.com/questions/17574784/sqlite-current-timestamp-with-milliseconds/56895050#56895050) and [in this TIL](https://til.simonwillison.net/sqlite/track-timestamped-changes-to-a-table), it returns the current Unix timestamp in milliseconds.
+That `strftime()` pattern is [described here](https://stackoverflow.com/questions/17574784/sqlite-current-timestamp-with-milliseconds/56895050#56895050) and [in this TIL](https://til.assahbismark.com/sqlite/track-timestamped-changes-to-a-table), it returns the current Unix timestamp in milliseconds.
 
 The [result of the above query](https://latest.datasette.io/_memory?sql=select+strftime%28%27%25s%27%2C%27now%27%29+%7C%7C+substr%28strftime%28%27%25f%27%2C%27now%27%29%2C4%29+as+t1%0D%0Aunion+all%0D%0Aselect+strftime%28%27%25s%27%2C%27now%27%29+%7C%7C+substr%28strftime%28%27%25f%27%2C%27now%27%29%2C4%29%0D%0Aunion+all%0D%0Aselect+strftime%28%27%25s%27%2C%27now%27%29+%7C%7C+substr%28strftime%28%27%25f%27%2C%27now%27%29%2C4%29%0D%0Aunion+all%0D%0Aselect+strftime%28%27%25s%27%2C%27now%27%29+%7C%7C+substr%28strftime%28%27%25f%27%2C%27now%27%29%2C4%29%0D%0Aunion+all%0D%0Aselect+strftime%28%27%25s%27%2C%27now%27%29+%7C%7C+substr%28strftime%28%27%25f%27%2C%27now%27%29%2C4%29%0D%0Aunion+all%0D%0Aselect+strftime%28%27%25s%27%2C%27now%27%29+%7C%7C+substr%28strftime%28%27%25f%27%2C%27now%27%29%2C4%29) is:
 

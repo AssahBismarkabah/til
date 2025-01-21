@@ -6,7 +6,7 @@ No matter what I tried, I got the following error:
 
 > The specified key does not exist. (Service: Amazon S3; Status Code: 404; Error Code: NoSuchKey; Request ID: 4GHB3YX6DQHYTCPF; S3 Extended Request ID: 0LSAhwbo21RaZ+8/FOgKf1oh+dIkV0WO8DvtYmwQdBzddfILchiSyamFLenD8IOmrN+lDPxKTFP/7my0DKbVvw==; Proxy: null), S3 Extended Request ID: 0LSAhwbo21RaZ+8/FOgKf1oh+dIkV0WO8DvtYmwQdBzddfILchiSyamFLenD8IOmrN+lDPxKTFP/7my0DKbVvw== (Path: s3://my-logs-bucket/my-fly-app/2022-05-27/1653693921-a96e5844-02db-4e3e-9e9a-3eef00910271.log.gz)
 
-This is using the Fly log shipping recipe [described here previously](https://til.simonwillison.net/fly/fly-logs-to-s3).
+This is using the Fly log shipping recipe [described here previously](https://til.assahbismark.com/fly/fly-logs-to-s3).
 
 I couldn't find any search results online for this error in the context of Athena.
 

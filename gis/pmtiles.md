@@ -4,7 +4,7 @@
 
 I figured out how to use it to create a custom map of just my local area, then serve that map using [MapLibre GL](https://maplibre.org/) from static hosting on GitHub Pages.
 
-See [Serving a JavaScript project built using Vite from GitHub Pages](https://til.simonwillison.net/github-actions/vite-github-pages) for details of the other half of this project, where I figured out how to use Vite and how to serve Vite-built projects using GitHub Pages.
+See [Serving a JavaScript project built using Vite from GitHub Pages](https://til.assahbismark.com/github-actions/vite-github-pages) for details of the other half of this project, where I figured out how to use Vite and how to serve Vite-built projects using GitHub Pages.
 
 ## Creating the pmtiles file
 
@@ -86,7 +86,7 @@ The Metadata tab confirms that the file covers roughly the expected bounding box
 
 I decided to build a web page that would serve an interactive version of the map.
 
-I ended up putting this together with Vite (see [other TIL](https://til.simonwillison.net/github-actions/vite-github-pages)) and `maplibre-gl`.
+I ended up putting this together with Vite (see [other TIL](https://til.assahbismark.com/github-actions/vite-github-pages)) and `maplibre-gl`.
 
 I ran these commands:
 
@@ -233,13 +233,13 @@ Here we read the `bounds` property for our `protomaps` source and then use that 
 
 ## The finished map
 
-I [deployed this with GitHub Pages](https://til.simonwillison.net/github-actions/vite-github-pages) and it can now be seen at https://simonw.github.io/hmb-map/
+I [deployed this with GitHub Pages](https://til.assahbismark.com/github-actions/vite-github-pages) and it can now be seen at https://simonw.github.io/hmb-map/
 
 <img width="1022" alt="Screenshot of a map centered on El Granada" src="https://github.com/simonw/til/assets/9599/a9d090c2-1015-4942-99e2-554599b2f98a">
 
 ## Adding markers
 
-In a previous TIL I [extracted 900 point locations in Half Moon Bay](https://til.simonwillison.net/overture-maps/overture-maps-parquet#user-content-filtering-for-places-in-half-moon-bay) from the Overture Maps places dataset.
+In a previous TIL I [extracted 900 point locations in Half Moon Bay](https://til.assahbismark.com/overture-maps/overture-maps-parquet#user-content-filtering-for-places-in-half-moon-bay) from the Overture Maps places dataset.
 
 I decided to add those to my new map the simplest way possible, by dropping in [a static JSON file](https://github.com/simonw/hmb-map/blob/main/public/places.json) (1.24MB).
 

@@ -85,7 +85,7 @@ The `ds_server` fixture creates a SQLite database in a temporary directory, runs
 
 Note that `ds_server` is marked as `@pytest.fixture(scope="session")`. This means that the fixture will be excuted just once per test session and re-used by each test. Without the `scope="session"` the server will be started and then terminated once per test, which is a lot slower.
 
-See [Session-scoped temporary directories in pytest](https://til.simonwillison.net/pytest/session-scoped-tmp) for an explanation of the `tmp_path_factory` fixture.
+See [Session-scoped temporary directories in pytest](https://til.assahbismark.com/pytest/session-scoped-tmp) for an explanation of the `tmp_path_factory` fixture.
 
 Here's what a basic test then looks like (in `tests/test_playwright.py`):
 ```python

@@ -1,6 +1,6 @@
 # Logging users out of Auth0
 
-If you [implement Auth0](https://til.simonwillison.net/auth0/oauth-with-auth0) for login, you may be tempted to skip implementing logout. I started out just with a `/logout/` page that cleared my own site's cookies, ignoring the Auth0 side of it.
+If you [implement Auth0](https://til.assahbismark.com/auth0/oauth-with-auth0) for login, you may be tempted to skip implementing logout. I started out just with a `/logout/` page that cleared my own site's cookies, ignoring the Auth0 side of it.
 
 Since users were still signed in to Auth0 (still had cookies there), this meant that if they clicked "login" again after clicking "logout" they would be logged straight in without needing to authenticate at all.
 

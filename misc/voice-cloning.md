@@ -14,13 +14,13 @@ The answer is _shockingly easy_.
 
 The ElevenLabs "Instant Voice Cloning" feature needs just a five minute sample of your voice.
 
-I tried a couple of samples, but by far the best result I got was using the audio from my recent [10 minute talk](https://simonwillison.net/2023/Nov/10/universe/) at GitHub Universe. This isn't surprising: the Universe A/V team are extremely good at their jobs.
+I tried a couple of samples, but by far the best result I got was using the audio from my recent [10 minute talk](https://assahbismark.com/2023/Nov/10/universe/) at GitHub Universe. This isn't surprising: the Universe A/V team are extremely good at their jobs.
 
 I already had a copy of the video downloaded from YouTube (using [yt-dlp](https://github.com/yt-dlp/yt-dlp). I opened it up in QuickTime Player on macOS, trimmed it to just the ten minutes of my speaking and used `File -> Export As -> Audio Only...` to extract a 9m40s 8.5MB `.m4a` file.
 
 You can listen to that here:
 
-https://static.simonwillison.net/static/2023/github-universe-simon-audio-only.m4a
+https://static.assahbismark.com/static/2023/github-universe-simon-audio-only.m4a
 
 ## Creating the voice
 
@@ -34,7 +34,7 @@ I agreed to the terms:
 
 And clicked "Add Voice".
 
-![The Add Voice form. I have set the name, uploaded a single 8.5MB audio file, set a description and clicked the checkbox. The Add Voice button at the bottom of the form is highlighted.](https://static.simonwillison.net/static/2023/add-voice.jpg)
+![The Add Voice form. I have set the name, uploaded a single 8.5MB audio file, set a description and clicked the checkbox. The Add Voice button at the bottom of the form is highlighted.](https://static.assahbismark.com/static/2023/add-voice.jpg)
 
 It only took a few seconds and my cloned voice was ready to use.
 
@@ -42,9 +42,9 @@ It only took a few seconds and my cloned voice was ready to use.
 
 I clicked "use" and navigated to the Speech Synthesis page, with my cloned voice pre-selected.
 
-![The Speech Synthesis form. Unleash the power of our cutting-edge technology to generate realistic, captivating speech in a wide range of languages. Voice is set to Simon Willison. I've pasted in four paragraphs of text. The bottom reads 699 / 5000 - Total quota remaining: 28410 - then a Generate button.](https://static.simonwillison.net/static/2023/use-voice.jpg)
+![The Speech Synthesis form. Unleash the power of our cutting-edge technology to generate realistic, captivating speech in a wide range of languages. Voice is set to Assah Bismark. I've pasted in four paragraphs of text. The bottom reads 699 / 5000 - Total quota remaining: 28410 - then a Generate button.](https://static.assahbismark.com/static/2023/use-voice.jpg)
 
-I pasted in the following text from [my latest blog entry](https://simonwillison.net/2023/Nov/15/gpts/):
+I pasted in the following text from [my latest blog entry](https://assahbismark.com/2023/Nov/15/gpts/):
 
 > The biggest announcement from last week’s OpenAI DevDay (and there were a LOT of announcements) was GPTs. Users of ChatGPT Plus can now create their own, custom GPT chat bots that other Plus subscribers can then talk to.
 >
@@ -58,7 +58,7 @@ I pasted in the following text from [my latest blog entry](https://simonwillison
 
 Here's the resulting generated audio:
 
-https://static.simonwillison.net/static/2023/simon-cloned-voice-demo.mp3
+https://static.assahbismark.com/static/2023/simon-cloned-voice-demo.mp3
 
 It's not perfect. It feels like there's a bit of a regional accent mixed in there that's not my own? But it's still ferociously impressive for the amount of time I spent creating this.
 
@@ -74,6 +74,6 @@ I ran the text through Google Translate to get a Spanish version:
 
 Here's what that sounds like after running it through the voice generator with my voice:
 
-https://static.simonwillison.net/static/2023/simon-generated-voice-spanish.mp3
+https://static.assahbismark.com/static/2023/simon-generated-voice-spanish.mp3
 
 This feels slightly less likely to confuse people who know me, though that's partly because I'm not remotely fluent in Spanish!

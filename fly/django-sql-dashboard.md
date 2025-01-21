@@ -78,4 +78,4 @@ postgres://dashboardrole:RANDOM_PASSWORD@my-app-postgresql.internal/appdatabase
 ```
 The rest of the configuration is described [in the Django SQL Dashboard documentation](https://django-sql-dashboard.datasette.io/en/stable/setup.html#configuring-the-dashboard-database-alias).
 
-[More on Django SQL Dashboard](https://simonwillison.net/2021/Jul/6/django-sql-dashboard/).
+[More on Django SQL Dashboard](https://assahbismark.com/2021/Jul/6/django-sql-dashboard/).

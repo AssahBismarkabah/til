@@ -1,6 +1,6 @@
 # GitHub OAuth for a static site using Cloudflare Workers
 
-My [tools.simonwillison.net](https://tools.simonwillison.net/) site is a growing collection of small HTML and JavaScript applications hosted as static files on GitHub Pages.
+My [tools.assahbismark.com](https://tools.assahbismark.com/) site is a growing collection of small HTML and JavaScript applications hosted as static files on GitHub Pages.
 
 Many of those tools take advantage of external APIs such as those provided by OpenAI and Anthropic and Google Gemini, thanks to the increasingly common `access-control-allow-origin: *` [CORS header](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
 
@@ -10,7 +10,7 @@ To do that, I needed to implement [OAuth](https://docs.github.com/en/apps/oauth-
 
 There is just one catch: it currently isn't possible to implement GitHub OAuth entirely from the client, because that API depends on a secret that must be held server-side and cannot be exposed.
 
-This morning, I had an idea: my tools site is [hosted by GitHub Pages](https://github.com/simonw/tools), but it's served via my [Cloudflare](https://www.cloudflare.com/) account for the `simonwillison.net` domain.
+This morning, I had an idea: my tools site is [hosted by GitHub Pages](https://github.com/simonw/tools), but it's served via my [Cloudflare](https://www.cloudflare.com/) account for the `assahbismark.com` domain.
 
 Could I spin up a tiny [Cloudflare Workers](https://workers.cloudflare.com/) server-side script implementing GitHub OAuth and add it to a path on that `tools` subdomain?
 
@@ -207,7 +207,7 @@ There are four steps to deploying this:
 
 I created the GitHub OAuth app here: https://github.com/settings/applications/new
 
-The most important thing to get right here is the "Authorization callback URL": I set that to `https://tools.simonwillison.net/github-auth` - a URL that didn't exist yet but would after I deployed the Worker.
+The most important thing to get right here is the "Authorization callback URL": I set that to `https://tools.assahbismark.com/github-auth` - a URL that didn't exist yet but would after I deployed the Worker.
 
 Then in my Cloudflare dashboard, I navigated to Workers & Pages and clicked "Create" and then "Create Worker". 
 
@@ -219,15 +219,15 @@ The Cloudflare editing UI was *not* built with mobile phones in mind, but I just
 
 I used the "settings" page to set the `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET` and `GITHUB_REDIRECT_URI` environment variables needed by the Worker.
 
-The last step was to configure that URL. I navigated to my `simonwillison.net` Cloudflare dashboard, hit "Workers Routes" and then added a new route mapping `tools.simonwillison.net/github-auth*` to the Worker I had just created.
+The last step was to configure that URL. I navigated to my `assahbismark.com` Cloudflare dashboard, hit "Workers Routes" and then added a new route mapping `tools.assahbismark.com/github-auth*` to the Worker I had just created.
 
 That final `*` wildcard turned out to be necessary to ensure that `?code=` querystring URLs would also activate the `/github-auth` worker - without that I got a 404 served by GitHub Pages for those URLs instead.
 
-Here's the deployed page - visiting it should redirect you straight to GitHub: https://tools.simonwillison.net/github-auth
+Here's the deployed page - visiting it should redirect you straight to GitHub: https://tools.assahbismark.com/github-auth
 
 ## Using this from an application
 
-The OAuth flow works by setting a `github_token` key in `localStorage()` for the entire `tools.simonwillison.net` domain - which means JavaScript on any page can check for that key and make API calls to the GitHub Gist API if the key is present.
+The OAuth flow works by setting a `github_token` key in `localStorage()` for the entire `tools.assahbismark.com` domain - which means JavaScript on any page can check for that key and make API calls to the GitHub Gist API if the key is present.
 
 Here's some more code [Claude wrote](https://gist.github.com/simonw/29efb202da39775761ab6ab498d942ca) for integrating the new auth mechanism into an existing tool:
 
@@ -253,7 +253,7 @@ function startAuthPoll() {
 }
 
 authLink.addEventListener('click', () => {
-    window.open('https://tools.simonwillison.net/github-auth', 'github-auth', 'width=600,height=800');
+    window.open('https://tools.assahbismark.com/github-auth', 'github-auth', 'width=600,height=800');
     startAuthPoll();
 });
 ```
@@ -262,7 +262,7 @@ authLink.addEventListener('click', () => {
 
 Clicking the link also starts a every-second poll to check if `github_token` has been set in `localStorage` yet. As soon as that becomes available the polling ends, the "Authenticate with GitHub" UI is hidden and a new `saveGistBtn` (a button to save a Gist) is made visible.
 
-Here's the page that uses that: https://tools.simonwillison.net/openai-audio-output - you'll need to provide an OpenAI API key and submit a prompt in order to see the option to Authenticate with GitHub.
+Here's the page that uses that: https://tools.assahbismark.com/openai-audio-output - you'll need to provide an OpenAI API key and submit a prompt in order to see the option to Authenticate with GitHub.
 
 ## Adding error handling
 
@@ -278,7 +278,7 @@ Claude [wrote more code](https://gist.github.com/simonw/85debbdf3d981ff7e54f8cdb
 
 And [got back this](https://gist.github.com/simonw/85debbdf3d981ff7e54f8cdb6be47578#rewrite-untitled), which is much better. 
 
-Here's [an example page](https://tools.simonwillison.net/github-auth?code=bad-code) showing the new error message.
+Here's [an example page](https://tools.assahbismark.com/github-auth?code=bad-code) showing the new error message.
 
 ## Preventing CSRF attacks
 
@@ -307,7 +307,7 @@ If the user saves a Gist containing their private information, you can now acces
 With GitHub OAuth here's how that could happen: as an attacker, I could initiate the OAuth flow against my new dedicated malicious account, and then at the end intercept that final redirect URL with the `?code=` parameter:
 
 ```
-https://tools.simonwillison.net/github-auth?code=auth-code-I-generated
+https://tools.assahbismark.com/github-auth?code=auth-code-I-generated
 ```
 Rather than visit that URL I instead send it to my target and trick them into clicking on it.
 

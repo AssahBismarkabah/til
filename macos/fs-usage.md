@@ -73,5 +73,5 @@ So for most of my purposes it looks like `sudo fs_usage -f pathname PID` is the 
 
 ## See also these TILs
 
-- [Using lsof on macOS](https://til.simonwillison.net/macos/lsof-macos)
-- [Seeing files opened by a process using opensnoop](https://til.simonwillison.net/macos/open-files-with-opensnoop)
+- [Using lsof on macOS](https://til.assahbismark.com/macos/lsof-macos)
+- [Seeing files opened by a process using opensnoop](https://til.assahbismark.com/macos/open-files-with-opensnoop)

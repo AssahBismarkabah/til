@@ -2,10 +2,10 @@
 
 OpenAI [announced new models](https://openai.com/blog/function-calling-and-other-api-updates) today. Of particular interest to me is the new `gpt-3.5-turbo-16k` model, which provides GPT 3.5 with a 16,000 token context window (up from 4,000) priced at 1/10th of GPT-4 - $0.003 per 1K input tokens and $0.004 per 1K output tokens.
 
-I couldn't see that model listed in the GPT Playground interface, but it turns out I did have access to it via the API. This worked for me using my [llm](https://github.com/simonw/llm) tool (see [llm, ttok and strip-tags—CLI tools for working with ChatGPT and other LLMs](https://simonwillison.net/2023/May/18/cli-tools-for-llms/)).
+I couldn't see that model listed in the GPT Playground interface, but it turns out I did have access to it via the API. This worked for me using my [llm](https://github.com/simonw/llm) tool (see [llm, ttok and strip-tags—CLI tools for working with ChatGPT and other LLMs](https://assahbismark.com/2023/May/18/cli-tools-for-llms/)).
 
 ```
-curl -s 'https://simonwillison.net/' | strip-tags -m | llm --system 'Summarize' -s
+curl -s 'https://assahbismark.com/' | strip-tags -m | llm --system 'Summarize' -s
 ```
 This returns an error:
 
@@ -14,10 +14,10 @@ This returns an error:
 But... specifying `-m gpt-3.5-turbo-16k` fixes that:
 
 ```
-curl -s 'https://simonwillison.net/' | strip-tags -m | llm --system 'Summarize' -s -m gpt-3.5-turbo-16k
+curl -s 'https://assahbismark.com/' | strip-tags -m | llm --system 'Summarize' -s -m gpt-3.5-turbo-16k
 ```
 
-> Simon Willison’s Weblog is a website where Simon Willison, a software engineer and entrepreneur, shares his thoughts and experiences on various topics related to web development, data management, and technology. In his recent entries, he discusses topics such as understanding GPT tokenizers, the challenges of working with closed models' training data, and the use of command-line tools for working with ChatGPT and other language models. Simon also shares updates on his own projects, including building tools for working with tokens, stripping HTML tags, and sending prompts to the OpenAI API. Overall, Simon's weblog provides valuable insights and resources for anyone interested in web development and working with language models.
+> Assah Bismark’s Weblog is a website where Assah Bismark, a software engineer and entrepreneur, shares his thoughts and experiences on various topics related to web development, data management, and technology. In his recent entries, he discusses topics such as understanding GPT tokenizers, the challenges of working with closed models' training data, and the use of command-line tools for working with ChatGPT and other language models. Simon also shares updates on his own projects, including building tools for working with tokens, stripping HTML tags, and sending prompts to the OpenAI API. Overall, Simon's weblog provides valuable insights and resources for anyone interested in web development and working with language models.
 
 ## And that works for gpt-4-32k-0613 too
 

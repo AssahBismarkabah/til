@@ -1,9 +1,9 @@
 {% extends "til_base.html" %}
 
-{% block title %}Simon Willison: all TILs{% endblock %}
+{% block title %}Assah Bismark: all TILs{% endblock %}
 
 {% block body %}
-<h1>Simon Willison: all TILs</h1>
+<h1>Assah Bismark: all TILs</h1>
 
 {% for row in sql("select topic from til group by topic order by max(created_utc) desc", database="tils") %}
     <h2>{{ row.topic }}</h2>

@@ -11,7 +11,7 @@ items = [
     },
     {
         "date": "2020-10-31",
-        "body": "[Datasette 0.51](https://docs.datasette.io/en/stable/changelog.html#v0-51) - A new visual design, plugin hooks for adding navigation options, better handling of binary data, URL building utility methods and better support for running Datasette behind a proxy. [Annotated release notes](https://simonwillison.net/2020/Nov/1/datasette-0-51/).",
+        "body": "[Datasette 0.51](https://docs.datasette.io/en/stable/changelog.html#v0-51) - A new visual design, plugin hooks for adding navigation options, better handling of binary data, URL building utility methods and better support for running Datasette behind a proxy. [Annotated release notes](https://assahbismark.com/2020/Nov/1/datasette-0-51/).",
     },
 ]
 ```
@@ -24,7 +24,7 @@ By default, the YAML output by `import yaml; print(yaml.dump(items))` looks like
 - body: '[Datasette 0.51](https://docs.datasette.io/en/stable/changelog.html#v0-51)
     - A new visual design, plugin hooks for adding navigation options, better handling
     of binary data, URL building utility methods and better support for running Datasette
-    behind a proxy. [Annotated release notes](https://simonwillison.net/2020/Nov/1/datasette-0-51/).'
+    behind a proxy. [Annotated release notes](https://assahbismark.com/2020/Nov/1/datasette-0-51/).'
   date: '2020-10-31'
 ```
 I wanted to list the `date` key first, and I wanted the `body` key to use `>-` YAML multi-line syntax rather than a single quoted string.
@@ -75,6 +75,6 @@ The result was:
   body: >-
     [Datasette 0.51](https://docs.datasette.io/en/stable/changelog.html#v0-51) - A new visual design,
     plugin hooks for adding navigation options, better handling of binary data, URL building utility methods
-    and better support for running Datasette behind a proxy. [Annotated release notes](https://simonwillison.net/2020/Nov/1/datasette-0-51/).
+    and better support for running Datasette behind a proxy. [Annotated release notes](https://assahbismark.com/2020/Nov/1/datasette-0-51/).
 ```
 Using `>` as the line style caused the `width=100` argument to be respected. When I tried this with `|` as the line style the indentation was not applied.

@@ -1,6 +1,6 @@
 # Testing things in Fedora using Docker
 
-I got [a report](https://twitter.com/peterjanes/status/1552407491819884544) of a bug with my [s3-ocr tool](https://simonwillison.net/2022/Jun/30/s3-ocr/) running on Fedora.
+I got [a report](https://twitter.com/peterjanes/status/1552407491819884544) of a bug with my [s3-ocr tool](https://assahbismark.com/2022/Jun/30/s3-ocr/) running on Fedora.
 
 I attempted to replicate the bug in a Fedora container using Docker, by running this command:
 

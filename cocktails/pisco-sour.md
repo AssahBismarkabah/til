@@ -2,7 +2,7 @@
 
 This classic Peruvian cocktail recipe is particularly useful if you have both a lemon tree and chickens producing fresh eggs!
 
-![A pisco sour in a fancy crystal glass, with a thin layer of white foam on top](https://static.simonwillison.net/static/2022/pisco-sour.jpg)
+![A pisco sour in a fancy crystal glass, with a thin layer of white foam on top](https://static.assahbismark.com/static/2022/pisco-sour.jpg)
 
 Here's the recipe I've landed on, after some experimentation.
 

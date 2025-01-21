@@ -18,7 +18,7 @@ This outputs a set of questions:
   [3/6] hyphenated (demo-app): 
   [4/6] underscored (demo_app): 
   [5/6] github_username (): simonw
-  [6/6] author_name (): Simon Willison
+  [6/6] author_name (): Assah Bismark
 ```
 Which creates a `demo-app` directory containing the skeleton of a Python project.
 
@@ -37,7 +37,7 @@ name = "demo-app"
 version = "0.1"
 description = "Demo"
 readme = "README.md"
-authors = [{name = "Simon Willison"}]
+authors = [{name = "Assah Bismark"}]
 license = {text = "Apache-2.0"}
 requires-python = ">=3.8"
 classifiers = [

@@ -65,7 +65,7 @@ The `web` container runs the Django development server, built using the custom `
 
 The `migrations` container simply runs the apps migrations and then terminates - with `depends_on` used to ensure that migrations run after the hdatabase server starts and before the web server.
 
-Both `web` and `migrations` include a `platform: linux/amd64` property - this ensures they will work on M1 Macs even if the Python dependencies are not yet easily compiled for that architecture, see [Running Docker on an M1 Mac](https://til.simonwillison.net/macos/running-docker-on-remote-m1).
+Both `web` and `migrations` include a `platform: linux/amd64` property - this ensures they will work on M1 Macs even if the Python dependencies are not yet easily compiled for that architecture, see [Running Docker on an M1 Mac](https://til.assahbismark.com/macos/running-docker-on-remote-m1).
 
 The `container_name: myapp` field on the `web` container is a convenience which means you can later run commands like this:
 

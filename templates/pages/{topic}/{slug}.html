@@ -9,21 +9,21 @@
     {% set raised = raise_404("TIL not found") %}
 {% endif %}
 
-{% block title %}{{ til.title }} | Simon Willison’s TILs{% endblock %}
+{% block title %}{{ til.title }} | Assah Bismark’s TILs{% endblock %}
 
 {% block extra_head %}
-<link rel="stylesheet" href="https://til.simonwillison.net/static/github-light.css">
+<link rel="stylesheet" href="https://til.assahbismark.com/static/github-light.css">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@simonw">
 <meta name="twitter:title" content="{{ til.title }}">
 <meta name="twitter:description" content="{{ til.summary }}">
-<meta name="twitter:image" content="https://s3.amazonaws.com/til.simonwillison.net/{{ til.shot_hash }}.jpg">
+<meta name="twitter:image" content="https://s3.amazonaws.com/til.assahbismark.com/{{ til.shot_hash }}.jpg">
 <meta name="twitter:image:alt" content="Screenshot: {{ til.title  }} - {{ til.summary }}">
-<meta property="og:url" content="https://til.simonwillison.net/{{ til.topic }}/{{ til.slug }}">
+<meta property="og:url" content="https://til.assahbismark.com/{{ til.topic }}/{{ til.slug }}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="{{ til.title }}">
 <meta property="og:description" content="{{ til.summary }}">
-<meta property="og:image" content="https://s3.amazonaws.com/til.simonwillison.net/{{ til.shot_hash }}.jpg">
+<meta property="og:image" content="https://s3.amazonaws.com/til.assahbismark.com/{{ til.shot_hash }}.jpg">
 <meta property="og:image:alt" content="Screenshot: {{ til.title  }} - {{ til.summary }}">
 <meta property="og:image:width" content="800">
 <meta property="og:image:height" content="400">

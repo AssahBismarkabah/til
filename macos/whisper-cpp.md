@@ -29,7 +29,7 @@ This output a whole bunch of information, including the transcript, and saved th
 
 ## How I figured out the 16khz MP3 conversion
 
-When I realized Whisper needed WAV and not MP3 I used my [llm cmd](https://simonwillison.net/2024/Mar/26/llm-cmd/) command to figure out how to run that conversion:
+When I realized Whisper needed WAV and not MP3 I used my [llm cmd](https://assahbismark.com/2024/Mar/26/llm-cmd/) command to figure out how to run that conversion:
 
 ```bash
 llm cmd convert input.mp3 to .wav

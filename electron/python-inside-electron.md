@@ -1,6 +1,6 @@
 # Bundling Python inside an Electron app
 
-For [Datasette Desktop](https://datasette.io/desktop) I chose to bundle a full version of Python 3.9 inside my `Datasette.app` application. I did this in order to support installation of plugins via `pip install` - you can read more about my reasoning in [Datasette Desktop—a macOS desktop application for Datasette](https://simonwillison.net/2021/Sep/8/datasette-desktop/).
+For [Datasette Desktop](https://datasette.io/desktop) I chose to bundle a full version of Python 3.9 inside my `Datasette.app` application. I did this in order to support installation of plugins via `pip install` - you can read more about my reasoning in [Datasette Desktop—a macOS desktop application for Datasette](https://assahbismark.com/2021/Sep/8/datasette-desktop/).
 
 I used [python-build-standalone](https://github.com/indygreg/python-build-standalone) for this, which provides a version of Python that is designed for easy of bundling - it's also used by [PyOxidize](https://github.com/indygreg/PyOxidizer). Both projects are created and maintained by Gregory Szorc.
 
@@ -70,4 +70,4 @@ My `findPython()` function earlier knows to look for it there by creating a path
 
 ## Signing and notarizing
 
-I wrote extensive notes on signing and notarizing in [Signing and notarizing an Electron app for distribution using GitHub Actions](https://til.simonwillison.net/electron/sign-notarize-electron-macos), which includes details on how I signed the Python binaries that ended up included in the package due to this pattern.
+I wrote extensive notes on signing and notarizing in [Signing and notarizing an Electron app for distribution using GitHub Actions](https://til.assahbismark.com/electron/sign-notarize-electron-macos), which includes details on how I signed the Python binaries that ended up included in the package due to this pattern.

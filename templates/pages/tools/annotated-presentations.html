@@ -40,14 +40,14 @@
     <script src=" https://cdn.jsdelivr.net/npm/marked@4.3.0/lib/marked.umd.min.js "></script>
     <script
       defer
-      data-domain="til.simonwillison.net"
+      data-domain="til.assahbismark.com"
       src="https://plausible.io/js/plausible.js"
     ></script>
   </head>
   <body>
     <div id="controls">
       <h1>Annotated presentation creator</h1>
-      <p>See <a href="https://simonwillison.net/2023/Aug/6/annotated-presentations/">How I make annotated presentations</a> for instructions on using this tool.</p>
+      <p>See <a href="https://assahbismark.com/2023/Aug/6/annotated-presentations/">How I make annotated presentations</a> for instructions on using this tool.</p>
       <p>Enter "skip" as alt text to skip a slide.</p>
       <input type="file" id="imageInput" multiple accept="image/*" />
       <button id="loadImagesButton">Load images</button>
@@ -71,8 +71,8 @@
       <p><button id="executeTemplatesButton">Execute templates</button></p>
 <p>I often use a template like this one:</p>
 <pre>&lt;div class=&quot;slide&quot; id=&quot;${filename}&quot;&gt;
-  &lt;img src=&quot;https://static.simonwillison.net/static/2023/universe/${filename}&quot; alt=&quot;${escapeHtml(alt)}&quot;&gt;
-  &lt;a style=&quot;float: right; padding-left: 1em; border: none&quot; href=&quot;https://simonwillison.net/2023/Nov/10/universe/#${filename}&quot;&gt;#&lt;/a&gt;
+  &lt;img src=&quot;https://static.assahbismark.com/static/2023/universe/${filename}&quot; alt=&quot;${escapeHtml(alt)}&quot;&gt;
+  &lt;a style=&quot;float: right; padding-left: 1em; border: none&quot; href=&quot;https://assahbismark.com/2023/Nov/10/universe/#${filename}&quot;&gt;#&lt;/a&gt;
   ${markdownAsHtml}
 &lt;/div&gt;
 </pre>

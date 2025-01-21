@@ -244,7 +244,7 @@ The result it gave me was:
 ```
 That's 162800469938172 bytes - or 148.07 TB of CDN space used by Midjourney images!
 
-(I got ChatGPT to build me a tool for converting bytes to KB/MB/GB/TB: [Byte Size Converter](https://til.simonwillison.net/tools/byte-size-converter).)
+(I got ChatGPT to build me a tool for converting bytes to KB/MB/GB/TB: [Byte Size Converter](https://til.assahbismark.com/tools/byte-size-converter).)
 
 ## CTEs and views work too
 

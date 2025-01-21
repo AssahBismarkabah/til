@@ -1,6 +1,6 @@
 # Running cog automatically against GitHub pull requests
 
-I really like [Cog](https://nedbatchelder.com/code/cog/) ([previously](https://til.simonwillison.net/python/cog-to-update-help-in-readme)) as a tool for automating aspects of my Python project documentation - things like the SQL schemas shown on the [LLM logging page](https://llm.datasette.io/en/latest/logging.html#sql-schema).
+I really like [Cog](https://nedbatchelder.com/code/cog/) ([previously](https://til.assahbismark.com/python/cog-to-update-help-in-readme)) as a tool for automating aspects of my Python project documentation - things like the SQL schemas shown on the [LLM logging page](https://llm.datasette.io/en/latest/logging.html#sql-schema).
 
 When using `cog` in this way it's important to remember to run `cog -r` to update those generated files before pushing a commit.
 

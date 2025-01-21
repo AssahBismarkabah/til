@@ -35,7 +35,7 @@ https://www.googleapis.com/customsearch/v1?key=API-KEY
 
 It seems to support a lot of the same search filters as Google. I tried using this, URL-encoded, and seemed to get the results I wanted:
 
-    "powered by datasette" -site:github.com -site:simonwillison.net -site:datasette.io -site:pypi.org
+    "powered by datasette" -site:github.com -site:assahbismark.com -site:datasette.io -site:pypi.org
 
 The results come back as JSON that looks like this (truncated after the first result):
 
@@ -49,9 +49,9 @@ The results come back as JSON that looks like this (truncated after the first re
   "queries": {
     "request": [
       {
-        "title": "Google Custom Search - \"powered by datasette\" -site:github.com -site:simonwillison.net -site:datasette.io -site:pypi.org",
+        "title": "Google Custom Search - \"powered by datasette\" -site:github.com -site:assahbismark.com -site:datasette.io -site:pypi.org",
         "totalResults": "65200",
-        "searchTerms": "\"powered by datasette\" -site:github.com -site:simonwillison.net -site:datasette.io -site:pypi.org",
+        "searchTerms": "\"powered by datasette\" -site:github.com -site:assahbismark.com -site:datasette.io -site:pypi.org",
         "count": 10,
         "startIndex": 1,
         "inputEncoding": "utf8",
@@ -62,9 +62,9 @@ The results come back as JSON that looks like this (truncated after the first re
     ],
     "nextPage": [
       {
-        "title": "Google Custom Search - \"powered by datasette\" -site:github.com -site:simonwillison.net -site:datasette.io -site:pypi.org",
+        "title": "Google Custom Search - \"powered by datasette\" -site:github.com -site:assahbismark.com -site:datasette.io -site:pypi.org",
         "totalResults": "65200",
-        "searchTerms": "\"powered by datasette\" -site:github.com -site:simonwillison.net -site:datasette.io -site:pypi.org",
+        "searchTerms": "\"powered by datasette\" -site:github.com -site:assahbismark.com -site:datasette.io -site:pypi.org",
         "count": 10,
         "startIndex": 11,
         "inputEncoding": "utf8",

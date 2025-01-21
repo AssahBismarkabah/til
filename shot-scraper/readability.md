@@ -2,13 +2,13 @@
 
 [Readability.js](https://github.com/mozilla/readability) is "A standalone version of the readability library used for Firefox Reader View".
 
-My [shot-scraper](https://datasette.io/tools/shot-scraper) tool has a `shot-scraper javascript` command which can load a web page in a headless browser (via [Playwright](https://playwright.dev/)), execute JavaScript against that page and return the result to the console as JSON - see [Scraping web pages from the command line with shot-scraper](https://simonwillison.net/2022/Mar/14/scraping-web-pages-shot-scraper/).
+My [shot-scraper](https://datasette.io/tools/shot-scraper) tool has a `shot-scraper javascript` command which can load a web page in a headless browser (via [Playwright](https://playwright.dev/)), execute JavaScript against that page and return the result to the console as JSON - see [Scraping web pages from the command line with shot-scraper](https://assahbismark.com/2022/Mar/14/scraping-web-pages-shot-scraper/).
 
 I figured out how to use the two of these together to extract the core content from a web page using the command line.
 
 Here is the recipe:
 
-    shot-scraper javascript https://simonwillison.net/2022/Mar/24/datasette-061/ "
+    shot-scraper javascript https://assahbismark.com/2022/Mar/24/datasette-061/ "
     async () => {
       const readability = await import('https://cdn.skypack.dev/@mozilla/readability');
       return (new readability.Readability(document)).parse();
@@ -18,7 +18,7 @@ It's using Skypack to [load the module](https://www.skypack.dev/view/@mozilla/re
 
 This outputs the JSON structure created by Readability directly to the console.
 ```
-% shot-scraper javascript https://simonwillison.net/2022/Mar/24/datasette-061/ "
+% shot-scraper javascript https://assahbismark.com/2022/Mar/24/datasette-061/ "
     async () => {
       const readability = await import('https://cdn.skypack.dev/@mozilla/readability');
       return (new readability.Readability(document)).parse();
@@ -32,7 +32,7 @@ This outputs the JSON structure created by Readability directly to the console.
 ```
 Piping to `jq keys` shows the keys in the returned object:
 ```
-% shot-scraper javascript https://simonwillison.net/2022/Mar/24/datasette-061/ "
+% shot-scraper javascript https://assahbismark.com/2022/Mar/24/datasette-061/ "
     async () => {
       const readability = await import('https://cdn.skypack.dev/@mozilla/readability');
       return (new readability.Readability(document)).parse();
@@ -52,7 +52,7 @@ Piping to `jq keys` shows the keys in the returned object:
 
 To get just the text content, use `jq .textContent -r` (the `-r` returns the raw string, without the surrounding double quotes):
 ```
-% shot-scraper javascript https://simonwillison.net/2022/Mar/24/datasette-061/ "
+% shot-scraper javascript https://assahbismark.com/2022/Mar/24/datasette-061/ "
     async () => {
       const readability = await import('https://cdn.skypack.dev/@mozilla/readability');
       return (new readability.Readability(document)).parse();
@@ -65,7 +65,7 @@ In preparation for Datasette 1.0, this release includes ...
 I can even pipe it directly into `sqlite-utils` to insert it into a SQLite database table:
 
 ```
-% shot-scraper javascript https://simonwillison.net/2021/Oct/19/datasette-059/ "
+% shot-scraper javascript https://assahbismark.com/2021/Oct/19/datasette-059/ "
 async () => {    
   const readability = await import('https://cdn.skypack.dev/@mozilla/readability');
   return (new readability.Readability(document)).parse();
@@ -85,7 +85,7 @@ async () => {
 
 And then running:
 
-    shot-scraper javascript https://til.simonwillison.net/shot-scraper/readability -i readability.js
+    shot-scraper javascript https://til.assahbismark.com/shot-scraper/readability -i readability.js
 
 Or even set that up as an alias, by adding the following to `~/.zshrc`:
 
@@ -93,7 +93,7 @@ Or even set that up as an alias, by adding the following to `~/.zshrc`:
 
 Then restart a terminal window and run:
 
-    readability https://til.simonwillison.net/shot-scraper/readability
+    readability https://til.assahbismark.com/shot-scraper/readability
 
 ## A note on safety
 

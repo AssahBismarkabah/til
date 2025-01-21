@@ -4,7 +4,7 @@ A few years ago I decided to learn how to make some classic cocktails. It is a v
 
 Of all of the drinks that I have learned to make, by far the biggest crowd pleaser is the Tommy's margarita. It is surprisingly easy, and is guaranteed to delight guests. It's also a great introduction to cocktail making in general.
 
-![A tasty looking margarita in a moderately fancy cocktail glass](https://static.simonwillison.net/static/2022/tommys-margarita.jpg)
+![A tasty looking margarita in a moderately fancy cocktail glass](https://static.assahbismark.com/static/2022/tommys-margarita.jpg)
 
 The Tommy's margarita is a San Francisco drink. It was created by [Tommy's Mexican Restaurant](https://www.tommystequila.com/), a charming family Mexican restaurant over in the Richmond district which opened in 1965. They have one of the largest tequila collections in the USA, and they will make you a margarita from any of them.
 

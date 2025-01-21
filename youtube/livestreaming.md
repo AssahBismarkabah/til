@@ -31,7 +31,7 @@ Starting a YouTube stream through their web interface on a laptop was pretty str
 
 It took me a little while to figure out how best to control the camera. It turns out you can both zoom in and pan around the image on the iPhone using this interface which shows up in the menu bar:
 
-<img alt="Camera control menu. A video preview shows with a 1.6x zoom option displayed, coming from my iPhone on 65% battery. A bunch of other options such as Center Stage, Portrait, Studio Light, Reactions and Background are shown as well." src="https://static.simonwillison.net/static/2024/camera-controls.jpg" width="400">
+<img alt="Camera control menu. A video preview shows with a 1.6x zoom option displayed, coming from my iPhone on 65% battery. A bunch of other options such as Center Stage, Portrait, Studio Light, Reactions and Background are shown as well." src="https://static.assahbismark.com/static/2024/camera-controls.jpg" width="400">
 
 The video preview starts as just a moving image - you have to click on it to get the controls to show up, and if you zoom in by interacting with the overlay you can then pan around the image by dragging the preview.
 
@@ -51,7 +51,7 @@ I tried embedding the YouTube live video on our [coastsidecivic.com](https://coa
 
 I didn't think I had, but it took me quite a while to track down the default-off option in the livestream settings (confusing beacuse normal videos defaulted to on):
 
-![Edit settings panel - deep in the Details panel at the bottom is an Allow embedding checkbox](https://static.simonwillison.net/static/2024/youtube-embedding.jpg)
+![Edit settings panel - deep in the Details panel at the bottom is an Allow embedding checkbox](https://static.assahbismark.com/static/2024/youtube-embedding.jpg)
 
 Once  I'd checked this option embedding the livestream video worked just fine. I used this HTML:
 

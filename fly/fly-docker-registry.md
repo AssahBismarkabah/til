@@ -20,7 +20,7 @@ You can create an app with a random, freely available name using the `--generate
 
 ```
 ~ % flyctl apps create --generate-name
-? Select Organization: Simon Willison (personal)
+? Select Organization: Assah Bismark (personal)
 New app created: rough-dew-1296
 ```
 

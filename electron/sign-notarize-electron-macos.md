@@ -262,7 +262,7 @@ The `CSC_LINK` variable is the base64-encoded contents of my `Developer-ID-Appli
 
     openssl base64 -in developerID_application.cer
 
-I have [a separate release.yml](https://github.com/simonw/datasette-app/blob/0.1.0/.github/workflows/release.yml) for building tagged releases, described in [this TIL](https://til.simonwillison.net/github-actions/attach-generated-file-to-release).
+I have [a separate release.yml](https://github.com/simonw/datasette-app/blob/0.1.0/.github/workflows/release.yml) for building tagged releases, described in [this TIL](https://til.assahbismark.com/github-actions/attach-generated-file-to-release).
 
 ## The finished configuration
 

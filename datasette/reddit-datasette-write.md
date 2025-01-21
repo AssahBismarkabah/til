@@ -2,11 +2,11 @@
 
 Today I built a system for monitoring Reddit for new posts that link to various domains that I own.
 
-I modelled it on my existing [scrape-hacker-news-by-domain](https://github.com/simonw/scrape-hacker-news-by-domain) project, which I described in some detail in [this blog post](https://simonwillison.net/2022/Dec/2/datasette-write-api/).
+I modelled it on my existing [scrape-hacker-news-by-domain](https://github.com/simonw/scrape-hacker-news-by-domain) project, which I described in some detail in [this blog post](https://assahbismark.com/2022/Dec/2/datasette-write-api/).
 
 The goal of the Reddit scraper was to do the following:
 
-1. Frequently check Reddit for new links to any page on `simonwillison.net` or `datasette.io`, using the unofficial search API - the Reddit search page with `.json` appended to the URL.
+1. Frequently check Reddit for new links to any page on `assahbismark.com` or `datasette.io`, using the unofficial search API - the Reddit search page with `.json` appended to the URL.
 2. Record the results to a GitHub repository
 3. Submit any new results to my personal Datasette Cloud instance via the Write API
 4. Use [datasette-atom](https://datasette.io/plugins/datasette-atom) to provide a feed of new posts I can subscribe to in netNewsWire
@@ -16,14 +16,14 @@ The goal of the Reddit scraper was to do the following:
 Not much to say about the scraper. It looks like this:
 ```bash
 curl -H $USER_AGENT \
-  'https://www.reddit.com/search/.json?q=site%3Asimonwillison.net&sort=new' \
+  'https://www.reddit.com/search/.json?q=site%3Aassahbismark.com&sort=new' \
   | jq > simonwillison-net.json
 ```
 Where `USER_AGENT` is set to this, because Reddit doesn't like `curl` hitting it with the default agent:
 
     User-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
 
-The HTML version of this page is https://www.reddit.com/search/?q=site%3Asimonwillison.net&sort=new
+The HTML version of this page is https://www.reddit.com/search/?q=site%3Aassahbismark.com&sort=new
 
 It then repeats the same thing for `datasette.io` and commits the results. The code lives in this scheduled GitHub Actions file: https://github.com/simonw/scrape-reddit-by-domain/blob/main/.github/workflows/scrape.yml
 

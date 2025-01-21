@@ -2,7 +2,7 @@
 
 I published a package to [PyPI](https://pypi.org) today using their [Trusted Publishers](https://docs.pypi.org/trusted-publishers/) mechanism for the first time.
 
-> **Update 17th January 2024**: My [python-lib](https://github.com/simonw/python-lib) cookiecutter template now implements this pattern, see [Publish Python packages to PyPI with a python-lib cookiecutter template and GitHub Actions](https://simonwillison.net/2024/Jan/16/python-lib-pypi/) for details.
+> **Update 17th January 2024**: My [python-lib](https://github.com/simonw/python-lib) cookiecutter template now implements this pattern, see [Publish Python packages to PyPI with a python-lib cookiecutter template and GitHub Actions](https://assahbismark.com/2024/Jan/16/python-lib-pypi/) for details.
 
 Trusted Publishers provides a mechanism for configuring PyPI to allow a specific GitHub Actions workflow to publish releases to PyPI without needing to use a password or token.
 
@@ -32,7 +32,7 @@ You need to provide the PyPI project name, the GitHub repository owner and name,
 
 Here's how I filled out that form for my new [datasette/datasette-build](https://github.com/datasette/datasette-build) repository:
 
-![GitHub. Read more about GitHub Actions's OpenID Connect support here. PyPI Project Name (required): datasette-build. The project (on PyPI) that will be created when this publisher is used. Owner (required): datasette. The GitHub organization name or GitHub username that owns the repository. Repository name (required): datasette-build. The name of the GitHub repository that contains the publishing workflow. Workflow name (required): publish.ym! The filename of the publishing workflow. This file should exist in the github/workflows/ directory in the repository configured above. Environment name (optional): release. The name of the GitHub Actions environment that the above workflow uses for publishing. This should be configured under the repository's settings. While not required, a dedicated publishing environment is strongly encouraged, especially if your repository has maintainers with commit access who shouldn't have PyPI publishing access.](https://static.simonwillison.net/static/2024/datasette-build-pending.png)
+![GitHub. Read more about GitHub Actions's OpenID Connect support here. PyPI Project Name (required): datasette-build. The project (on PyPI) that will be created when this publisher is used. Owner (required): datasette. The GitHub organization name or GitHub username that owns the repository. Repository name (required): datasette-build. The name of the GitHub repository that contains the publishing workflow. Workflow name (required): publish.ym! The filename of the publishing workflow. This file should exist in the github/workflows/ directory in the repository configured above. Environment name (optional): release. The name of the GitHub Actions environment that the above workflow uses for publishing. This should be configured under the repository's settings. While not required, a dedicated publishing environment is strongly encouraged, especially if your repository has maintainers with commit access who shouldn't have PyPI publishing access.](https://static.assahbismark.com/static/2024/datasette-build-pending.png)
 
 I used `publish.yml` as the name of my workflow file.
 

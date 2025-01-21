@@ -1,6 +1,6 @@
 # Social media cards generated with shot-scraper
 
-My [TIL website](https://til.simonwillison.net/) has social media card images to make links shared from it look slightly more interesting when shared on sites like Mastodon and Twitter.
+My [TIL website](https://til.assahbismark.com/) has social media card images to make links shared from it look slightly more interesting when shared on sites like Mastodon and Twitter.
 
 I upgraded them today to use higher quality retina JPEG images stored in an S3 bucket - they had previously used smaller PNGs stored directly in the database itself.
 
@@ -8,7 +8,7 @@ Here's an annotated copy of the current version of [the script](https://github.c
 
 The images it creates look like this:
 
-![Simon Willison's TILs - Tommy's Margarita - A few years ago I decided to learn how to make some classic cocktails. It is a very rewarding hobby. Of all of the drinks that I have learned to make, by far the biggest crowd pleaser is the Tommy's margarita. It is surprisingly easy, and is guaranteed to delight guests. It's also a great introduction to cocktail making in general.](https://user-images.githubusercontent.com/9599/235336801-57ce5c84-0629-41ac-8589-d26846aaace9.png)
+![Assah Bismark's TILs - Tommy's Margarita - A few years ago I decided to learn how to make some classic cocktails. It is a very rewarding hobby. Of all of the drinks that I have learned to make, by far the biggest crowd pleaser is the Tommy's margarita. It is surprisingly easy, and is guaranteed to delight guests. It's also a great introduction to cocktail making in general.](https://user-images.githubusercontent.com/9599/235336801-57ce5c84-0629-41ac-8589-d26846aaace9.png)
 
 
 ## Initializing the script
@@ -39,13 +39,13 @@ This means a change to the page content or to any of those templates will cause 
 ```python
 def s3_contents():
     proc = subprocess.run(
-        ["s3-credentials", "list-bucket", "til.simonwillison.net"], capture_output=True
+        ["s3-credentials", "list-bucket", "til.assahbismark.com"], capture_output=True
     )
     return [item["Key"] for item in json.loads(proc.stdout)]
 ```
 In order to decide which images are missing from the S3 bucket and need to be generated I shell out to my `s3-credentials`:
 
-    s3-credentials list-bucket til.simonwillison.net
+    s3-credentials list-bucket til.assahbismark.com
 
 This uses environment variables for the AWS credentials, which are made available in the GitHub Actions workflow.
 
@@ -110,7 +110,7 @@ It records this hash to the database, then checks to see if there is a file in t
 If that file doesn't exist, it calls `jpeg_for_path(path)` to generate the JPEG. Then it uploads that JPEG to the S3 bucket by shelling out to `s3-credentials`:
 
 ```bash
-s3-credentials put-object til.simonwillison.net shot-hash.jpg - \
+s3-credentials put-object til.assahbismark.com shot-hash.jpg - \
     --content-type image/jpeg --silent
 ```
 The `-` argument tells `s3-credentials` to read the binary JPEG data from standard input.
@@ -150,7 +150,7 @@ def generate_screenshots(root):
                 [
                     "s3-credentials",
                     "put-object",
-                    "til.simonwillison.net",
+                    "til.assahbismark.com",
                     shot_filename,
                     "-",
                     "--content-type",

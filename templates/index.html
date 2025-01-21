@@ -1,11 +1,11 @@
 {% extends "til_base.html" %}
 
-{% block title %}Simon Willison: TIL{% endblock %}<!DOCTYPE html>
+{% block title %}Assah Bismark: TIL{% endblock %}<!DOCTYPE html>
 
 {% block extra_head %}
-<link href="https://github.com/simonw" rel="me">
-<link href="https://fedi.simonwillison.net/@simon" rel="me">
-<link href="https://simonwillison.net/" rel="me">
+<link href="https://github.com/AssahBismarkabah" rel="me">
+<link href="https://fedi.assahbismark.com/@AssahBismark" rel="me">
+<link href="https://til.assahbismark.com/" rel="me">
 <style>
 input[type=search] {
     padding: .25em;
@@ -48,8 +48,8 @@ h1 {
 
 {% block body %}
 {% set til_count = sql("select count(*) from TIL", database="tils")[0][0] %}
-<h1>Simon Willison: TIL</h1>
-<p>Things I've learned, collected in <a href="https://github.com/simonw/til">simonw/til</a>. You may also enjoy <a href="https://simonwillison.net/">my blog</a>.</p>
+<h1>Assah Bismark: TIL</h1>
+<p>Things I've learned, collected in <a href="https://github.com/simonw/til">simonw/til</a>. You may also enjoy <a href="https://assahbismark.com/">my blog</a>.</p>
 
 <p><a style="text-decoration: none" href="/tils/feed.atom" title="Atom feed"><svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 256 256">
     <defs>

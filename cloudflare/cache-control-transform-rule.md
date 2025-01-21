@@ -1,15 +1,15 @@
 # Setting cache-control: max-age=31536000 with a Cloudflare Transform Rule
 
-I ran https://simonwillison.net/ through [PageSpeed Insights](https://pagespeed.web.dev/) and it warned me that my static assets were not being served with browser caching headers:
+I ran https://assahbismark.com/ through [PageSpeed Insights](https://pagespeed.web.dev/) and it warned me that my static assets were not being served with browser caching headers:
 
-![A screenshot of a web performance report showing static asset cache policies. Header reads "Serve static assets with an efficient cache policy — 20 resources found" followed by a list of URLs from static.simonwillison.net showing file names, cache TTL status (mostly "None"), and transfer sizes ranging from 96 KiB to 8,871 KiB.](https://github.com/user-attachments/assets/115514c7-a51d-410b-a4dd-67c34084420d)
+![A screenshot of a web performance report showing static asset cache policies. Header reads "Serve static assets with an efficient cache policy — 20 resources found" followed by a list of URLs from static.assahbismark.com showing file names, cache TTL status (mostly "None"), and transfer sizes ranging from 96 KiB to 8,871 KiB.](https://github.com/user-attachments/assets/115514c7-a51d-410b-a4dd-67c34084420d)
 
-I serve static assets for my blog (mainly images) from `static.simonwillison.net`, which is an AWS S3 bucket served via Cloudflare.
+I serve static assets for my blog (mainly images) from `static.assahbismark.com`, which is an AWS S3 bucket served via Cloudflare.
 
 I investigated with `curl -i`:
 
 ```bash
-curl -I https://static.simonwillison.net/static/2024/prompt-gemini-extract.gif
+curl -I https://static.assahbismark.com/static/2024/prompt-gemini-extract.gif
 ```
 ```
 HTTP/2 200 
@@ -40,11 +40,11 @@ Cloudflare has a bewildering array of options these days. I asked Claude and it 
 
 Here's the form I found in the Cloudflare dashboard for adding a new rule:
 
-![A screenshot of a Cloudflare Transform Rules configuration page showing the creation of a new HTTP Response Header Modification Rule. The rule is named "Cache-Control: max-age=31536000" and is set to apply to requests where the hostname equals "static.simonwillison.net". The rule adds a cache-control header with max-age=31536000.](https://github.com/user-attachments/assets/42c0ab9f-5b78-4dfa-b684-aae2fe156e5f)
+![A screenshot of a Cloudflare Transform Rules configuration page showing the creation of a new HTTP Response Header Modification Rule. The rule is named "Cache-Control: max-age=31536000" and is set to apply to requests where the hostname equals "static.assahbismark.com". The rule adds a cache-control header with max-age=31536000.](https://github.com/user-attachments/assets/42c0ab9f-5b78-4dfa-b684-aae2fe156e5f)
 
-Cloudflare is configured for my entire `simonwillison.net` domain with the S3 bucket configured as a proxied caching CNAME to S3.
+Cloudflare is configured for my entire `assahbismark.com` domain with the S3 bucket configured as a proxied caching CNAME to S3.
 
-As such, I only wanted my rule to apply to `static.simonwillison.net`. I configured that using a custom filter expression of `Hostname = static.simonwillison.net`.
+As such, I only wanted my rule to apply to `static.assahbismark.com`. I configured that using a custom filter expression of `Hostname = static.assahbismark.com`.
 
 Then I told it to add a header name of `cache-control` and a value of `max-age=31536000` to all matching responses.
 
@@ -52,7 +52,7 @@ Then I told it to add a header name of `cache-control` and a value of `max-age=3
 
 I ran this again:
 ```bash
-curl -I https://static.simonwillison.net/static/2024/prompt-gemini-extract.gif
+curl -I https://static.assahbismark.com/static/2024/prompt-gemini-extract.gif
 ```
 And got back:
 ```
@@ -79,7 +79,7 @@ Note the new `cache-control:` header in there.
 
 I then tested it in Firefox. I loaded the page, opened up the network tab in browser DevTools and hit refresh. I got this:
 
-![A screenshot of a browser network requests panel showing 18 HTTP requests for various resources including images, JavaScript, and icons. The requests are primarily to static.simonwillison.net, with most returning 200 status codes and "cached" transfer status. The page took 786ms to finish loading with DOMContentLoaded at 59ms.](https://github.com/user-attachments/assets/94b4eae4-c530-4379-b655-bea1f3689092)
+![A screenshot of a browser network requests panel showing 18 HTTP requests for various resources including images, JavaScript, and icons. The requests are primarily to static.assahbismark.com, with most returning 200 status codes and "cached" transfer status. The page took 786ms to finish loading with DOMContentLoaded at 59ms.](https://github.com/user-attachments/assets/94b4eae4-c530-4379-b655-bea1f3689092)
 
 Note the summary that says "1.38MB / 1.62 kB transferred" - the caching is working extremely well.
 
@@ -87,4 +87,4 @@ Note the summary that says "1.38MB / 1.62 kB transferred" - the caching is worki
 
 I have an S3 bucket behind Cloudflare and I wanted a quick and easy way to put files online that are served with `access-control-allow-origin: *`, initially so I could experiment with things like [Datasette Lite](https://lite.datasette.io/) and the [DuckDB WASM Shell](https://duckdb.org/docs/api/wasm/overview.html).
 
-![Screenshot of a CORS configuration interface with fields for rule name "static.simonwillis.net/static/cors-allow/*", custom filter expression selected, URI Full field with wildcard operator and value "https://static.simonwillison.net/static/cors-allow/*", and response header configuration for access-control-allow-origin set to "*"](https://github.com/user-attachments/assets/bd476176-a942-47af-9d73-c9cbde476f89)
+![Screenshot of a CORS configuration interface with fields for rule name "static.simonwillis.net/static/cors-allow/*", custom filter expression selected, URI Full field with wildcard operator and value "https://static.assahbismark.com/static/cors-allow/*", and response header configuration for access-control-allow-origin set to "*"](https://github.com/user-attachments/assets/bd476176-a942-47af-9d73-c9cbde476f89)

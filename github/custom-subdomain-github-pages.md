@@ -2,7 +2,7 @@
 
 This is so much easier than I was expecting it to be.
 
-I launched my new [Datasette Lite](https://github.com/simonw/datasette-lite) project ([background](https://simonwillison.net/2022/May/4/datasette-lite/)) using GitHub Pages - originally hosted here:
+I launched my new [Datasette Lite](https://github.com/simonw/datasette-lite) project ([background](https://assahbismark.com/2022/May/4/datasette-lite/)) using GitHub Pages - originally hosted here:
 
 https://simonw.github.io/datasette-lite/
 

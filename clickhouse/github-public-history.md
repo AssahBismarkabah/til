@@ -64,7 +64,7 @@ viewof username = Inputs.text({
   submit: true
 })
 ```
-The second executes the query using the ClickHouse JSON API, [described previously](https://til.simonwillison.net/clickhouse/github-explorer):
+The second executes the query using the ClickHouse JSON API, [described previously](https://til.assahbismark.com/clickhouse/github-explorer):
 
 ```javascript
 results = username.trim() &&

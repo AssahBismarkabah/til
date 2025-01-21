@@ -1,6 +1,6 @@
 # Publishing a simple client-side JavaScript package to npm with GitHub Actions
 
-Here's what I learned about publishing a single file JavaScript package to NPM for my [Prompts.js](https://simonwillison.net/2024/Dec/7/prompts-js/) project.
+Here's what I learned about publishing a single file JavaScript package to NPM for my [Prompts.js](https://assahbismark.com/2024/Dec/7/prompts-js/) project.
 
 The code is in [simonw/prompts-js](https://github.com/simonw/prompts-js) on GitHub. The NPM package is [prompts-js](https://www.npmjs.com/package/prompts-js).
 
@@ -22,7 +22,7 @@ I think I've boiled that down to about as simple as I can get. Here's the `packa
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Simon Willison",
+  "author": "Assah Bismark",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",

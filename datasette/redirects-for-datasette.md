@@ -1,6 +1,6 @@
 # Redirects for Datasette
 
-I made some changes to my https://til.simonwillison.net/ site that resulted in cleaner URL designs, so I needed to setup some redirects. I configured the redirects using a one-off Datasette plugin called `redirects.py` which I dropped into the `plugins/` directory for the Datasette instance:
+I made some changes to my https://til.assahbismark.com/ site that resulted in cleaner URL designs, so I needed to setup some redirects. I configured the redirects using a one-off Datasette plugin called `redirects.py` which I dropped into the `plugins/` directory for the Datasette instance:
 
 ```python
 from datasette import hookimpl

@@ -1,6 +1,6 @@
 # Building an automatically updating live blog in Django
 
-OpenAI's DevDay event yesterday (October 1st 2024) didn’t invite press (as far as I can tell), didn’t livestream the event and didn’t allow audience livestreaming either. I made a last minute decision [to live blog the event](https://simonwillison.net/2024/Oct/1/openai-devday-2024-live-blog/) myself.
+OpenAI's DevDay event yesterday (October 1st 2024) didn’t invite press (as far as I can tell), didn’t livestream the event and didn’t allow audience livestreaming either. I made a last minute decision [to live blog the event](https://assahbismark.com/2024/Oct/1/openai-devday-2024-live-blog/) myself.
 
 I started brainstorming the implementation using Claude on my walk over to the venue. It suggested the same approach I was already considering: a `LiveUpdate` Django model with just content and a timestamp, attached to a specific blog post via a foreign key.
 
@@ -71,7 +71,7 @@ These Django changes gave me three things:
 
 - An admin interface for posting new live updates and having those persisted in my database
 - Initial loads of my entry pages would display all live updates. Even without JavaScript users could refresh that page manually and get my latest updates.
-- A new [/updates/8523/](https://simonwillison.net/updates/8523/) page serving just the live updates HTML block for the specified entry, designed to be polled by JavaScript and with a 10 second cache header aimed at ensuring Cloudflare (which runs in front of my blog) absorbs most of that polling traffic.
+- A new [/updates/8523/](https://assahbismark.com/updates/8523/) page serving just the live updates HTML block for the specified entry, designed to be polled by JavaScript and with a 10 second cache header aimed at ensuring Cloudflare (which runs in front of my blog) absorbs most of that polling traffic.
 
 ## Version 1 JavaScript
 
@@ -114,11 +114,11 @@ The form for updates was very simple: just a content textarea and a field for pi
 
 I bookmarked this page (actually dropped the link in an Apple Notes document so it would be shared between my Mac and iPhone):
 
-`https://simonwillison.net/admin/blog/liveupdate/add/?entry=8523`
+`https://assahbismark.com/admin/blog/liveupdate/add/?entry=8523`
 
 Which gave me this form:
 
-<img src="https://static.simonwillison.net/static/2024/django-admin-live-update.jpg" width="300" alt="Dajngo admin: Add live update. A content textarea and an Entry field filled to 8523 - plus save, save and add another and save and continue editing buttons.">
+<img src="https://static.assahbismark.com/static/2024/django-admin-live-update.jpg" width="300" alt="Dajngo admin: Add live update. A content textarea and an Entry field filled to 8523 - plus save, save and add another and save and continue editing buttons.">
 
 Then, to add an update all I had to do was enter the content and click the “Save and add another” button.
 
@@ -136,7 +136,7 @@ That’s annoying! So I decided to switch up my approach and only fetch and upda
 
 This required some backend changes over [a few more commits](https://github.com/simonw/simonwillisonblog/commits/910d2c3be68de7198c76dd25d75662a81c4d76e2/).
 
-First I added a new endpoint: [/updates/128523.json](https://simonwillison.net/updates/8523.json), implemented like this:
+First I added a new endpoint: [/updates/128523.json](https://assahbismark.com/updates/8523.json), implemented like this:
 ```python
 def entry_updates_json(request, entry_id):
     entry = get_object_or_404(Entry, pk=entry_id)
@@ -168,7 +168,7 @@ def entry_updates_json(request, entry_id):
     response["Cache-Control"] = "s-maxage=10"
     return response
 ```
-Without arguments that returns the full stream of updates for a post. Or you can [add ?since=204](https://simonwillison.net/updates/8523.json?since=204) to get back just updates with an ID higher then the one you pass in.
+Without arguments that returns the full stream of updates for a post. Or you can [add ?since=204](https://assahbismark.com/updates/8523.json?since=204) to get back just updates with an ID higher then the one you pass in.
 
 Again, these return an HTTP header telling Cloudflare to cache them for ten seconds - so even with hundreds of people polling for updates my server will see very little traffic.
 
@@ -410,7 +410,7 @@ Setting a 10 second `s-maxage` header told Cloudflare to do exactly that. I poll
 I tested this using curl:
 
 ```bash
-curl -sI 'https://simonwillison.net/updates/8523.json?since=2001' | grep cf
+curl -sI 'https://assahbismark.com/updates/8523.json?since=2001' | grep cf
 ```
 ```
 cf-cache-status: MISS
@@ -426,4 +426,4 @@ cf-ray: 8cc5a7798a6cf957-SJC
 
 I used the new macOS screen tiling options to position my Django Admin window next to my live blog page so I could check that my hand-edited HTML wasn't breaking anything - my setup ended up looking like this:
 
-<img src="https://static.simonwillison.net/static/2024/liveblog-demo.gif" alt="Two browser windows next to each other, on the left is the Django admin adding a live update item  with a content field and associated with an entry ID, on the right is my blog entry which updates live">
+<img src="https://static.assahbismark.com/static/2024/liveblog-demo.gif" alt="Two browser windows next to each other, on the left is the Django admin adding a live update item  with a content field and associated with an entry ID, on the right is my blog entry which updates live">

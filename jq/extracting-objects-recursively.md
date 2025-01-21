@@ -11,7 +11,7 @@ The Algolia-powered Hacker News API returns nested comment threads that look lik
     "type": "story",
     "author": "edward",
     "title": "Fun with Unix domain sockets",
-    "url": "https://simonwillison.net/2021/Jul/13/unix-domain-sockets/",
+    "url": "https://assahbismark.com/2021/Jul/13/unix-domain-sockets/",
     "children": [
         {
             "id": 27942287,
@@ -70,7 +70,7 @@ Applied against the above example, this returns:
         "type": "story",
         "author": "edward",
         "title": "Fun with Unix domain sockets",
-        "url": "https://simonwillison.net/2021/Jul/13/unix-domain-sockets/"
+        "url": "https://assahbismark.com/2021/Jul/13/unix-domain-sockets/"
     },
     {
         "id": 27942287,

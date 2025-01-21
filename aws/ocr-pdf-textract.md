@@ -4,7 +4,7 @@
 
 It can be run directly against JPEG or PNG images up to 5MB, but if you want to run OCR against a PDF file you have to first upload it to an S3 bucket.
 
-**Update 30th June 2022**: I used what I learned in this TIL [to build s3-ocr](https://simonwillison.net/2022/Jun/30/s3-ocr/), a command line utility for running OCR against PDFs in an S3 bucket.
+**Update 30th June 2022**: I used what I learned in this TIL [to build s3-ocr](https://assahbismark.com/2022/Jun/30/s3-ocr/), a command line utility for running OCR against PDFs in an S3 bucket.
 
 ## Try it out first
 
@@ -110,7 +110,7 @@ def get_all_blocks(job_id):
         next_token = response.get("NextToken")
     return blocks
 ```
-(I could have used [this boto3 pagination trick](https://til.simonwillison.net/aws/helper-for-boto-aws-pagination) instead.)
+(I could have used [this boto3 pagination trick](https://til.assahbismark.com/aws/helper-for-boto-aws-pagination) instead.)
 
 Blocks come in three types: `LINE`, `WORD`, and `PAGE`. The `PAGE` blocks do not contain any text, just indications of which lines and words were on the page. The `LINE` and `WORD` blocks duplicate each other - you probably just want the `LINE` blocks.
 

@@ -28,4 +28,4 @@ After "forget network" and then reconnecting (to try and trick my device into co
 
 Here's everything that came in the MoCA box. I'm pretty happy about this - I may even buy another one to further extend the network to another room.
 
-![2 ECB6250 Adapters, 2 Coax Cables, 2 Power Adapters, 2 Ethernet Cables, 2 Coax Splitters, 1 Quick Start Guide](https://static.simonwillison.net/static/2024/moca-startup.jpg)
+![2 ECB6250 Adapters, 2 Coax Cables, 2 Power Adapters, 2 Ethernet Cables, 2 Coax Splitters, 1 Quick Start Guide](https://static.assahbismark.com/static/2024/moca-startup.jpg)

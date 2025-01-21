@@ -62,7 +62,7 @@ from
 order by distance limit 10
 ```
 This accepts the `id` of a TIL and returns the 10 most similar TILs based on their embeddings. [Try it out here](
-https://til.simonwillison.net/tils?sql=with+document_embedding+as+%28%0D%0A++select+embedding+as+first_embedding+from+embeddings+where+id+%3D+%3Aid%0D%0A%29%0D%0Aselect%0D%0A++id%2C%0D%0A++vec_distance_cosine%28embedding%2C+first_embedding%29+as+distance%0D%0Afrom%0D%0A++embeddings%2C+document_embedding%0D%0Aorder+by+distance+limit+10&id=observable-plot_histogram-with-tooltips.md).
+https://til.assahbismark.com/tils?sql=with+document_embedding+as+%28%0D%0A++select+embedding+as+first_embedding+from+embeddings+where+id+%3D+%3Aid%0D%0A%29%0D%0Aselect%0D%0A++id%2C%0D%0A++vec_distance_cosine%28embedding%2C+first_embedding%29+as+distance%0D%0Afrom%0D%0A++embeddings%2C+document_embedding%0D%0Aorder+by+distance+limit+10&id=observable-plot_histogram-with-tooltips.md).
 
 Here's a more fun query that also explores the `vec_to_json()` function - which turns that binary format into a readable JSON array of floats - the `vec_slice()` function for returning a shorter slice of that array and the `vec_quantize_binary()` function for quantizing a vector to binary - returning a 1 for values >0 and a -1 for <0.
 
@@ -79,7 +79,7 @@ from
   embeddings, document_embedding
 order by distance limit 5
 ```
-[Run that here](https://til.simonwillison.net/tils?sql=with+document_embedding+as+%28%0D%0A++select+embedding+as+first_embedding+from+embeddings+where+id+%3D+%3Aid%0D%0A%29%0D%0Aselect%0D%0A++id%2C%0D%0A++vec_distance_cosine%28embedding%2C+first_embedding%29+as+distance%2C%0D%0A++vec_to_json%28vec_slice%28embedding%2C+0%2C+3%29%29+as+first_3%2C%0D%0A++vec_to_json%28vec_quantize_binary%28vec_slice%28embedding%2C+0%2C+8%29%29%29+as+binary_8%0D%0Afrom%0D%0A++embeddings%2C+document_embedding%0D%0Aorder+by+distance+limit+5&id=observable-plot_histogram-with-tooltips.md). I get back these results:
+[Run that here](https://til.assahbismark.com/tils?sql=with+document_embedding+as+%28%0D%0A++select+embedding+as+first_embedding+from+embeddings+where+id+%3D+%3Aid%0D%0A%29%0D%0Aselect%0D%0A++id%2C%0D%0A++vec_distance_cosine%28embedding%2C+first_embedding%29+as+distance%2C%0D%0A++vec_to_json%28vec_slice%28embedding%2C+0%2C+3%29%29+as+first_3%2C%0D%0A++vec_to_json%28vec_quantize_binary%28vec_slice%28embedding%2C+0%2C+8%29%29%29+as+binary_8%0D%0Afrom%0D%0A++embeddings%2C+document_embedding%0D%0Aorder+by+distance+limit+5&id=observable-plot_histogram-with-tooltips.md). I get back these results:
 
 id | distance | first_3 | binary_8
 -- | -- | -- | --
@@ -122,7 +122,7 @@ where embedding match first_embedding
 and k = 5
 order by distance;
 ```
-[Try it here](https://til.simonwillison.net/tils?sql=with+document_embedding+as+%28%0D%0A++select+embedding+as+first_embedding+from+embeddings+where+id+%3D+%3Aid%0D%0A%29%0D%0Aselect%0D%0A++%28select+id+from+embeddings+where+embeddings.rowid+%3D+vec_tils.rowid%29+as+id%2C%0D%0A++distance%0D%0Afrom+vec_tils%2C+document_embedding%0D%0Awhere+embedding+match+first_embedding%0D%0Aand+k+%3D+5%0D%0Aorder+by+distance%3B&id=observable-plot_histogram-with-tooltips.md). I get back:
+[Try it here](https://til.assahbismark.com/tils?sql=with+document_embedding+as+%28%0D%0A++select+embedding+as+first_embedding+from+embeddings+where+id+%3D+%3Aid%0D%0A%29%0D%0Aselect%0D%0A++%28select+id+from+embeddings+where+embeddings.rowid+%3D+vec_tils.rowid%29+as+id%2C%0D%0A++distance%0D%0Afrom+vec_tils%2C+document_embedding%0D%0Awhere+embedding+match+first_embedding%0D%0Aand+k+%3D+5%0D%0Aorder+by+distance%3B&id=observable-plot_histogram-with-tooltips.md). I get back:
 
 
 id | distance

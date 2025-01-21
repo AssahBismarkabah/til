@@ -1,6 +1,6 @@
 # Storing and serving related documents with openai-to-sqlite and embeddings
 
-I decide to upgrade the related articles feature on my TILs site. Previously I calculated these [using full-text search](https://til.simonwillison.net/sqlite/related-content), but I wanted to try out a new trick using OpenAI embeddings for document similarity instead.
+I decide to upgrade the related articles feature on my TILs site. Previously I calculated these [using full-text search](https://til.assahbismark.com/sqlite/related-content), but I wanted to try out a new trick using OpenAI embeddings for document similarity instead.
 
 My [openai-to-sqlite](https://github.com/simonw/openai-to-sqlite) CLI tool already provides a mechanism for calculating embeddings against text and storing them in a SQLite database.
 
@@ -10,14 +10,14 @@ I took Benoit's work and [expanded it](https://github.com/simonw/openai-to-sqlit
 
 This meant I could find and then save related articles for my TILs by running the following:
 ```bash
-wget https://s3.amazonaws.com/til.simonwillison.net/tils.db                                              
+wget https://s3.amazonaws.com/til.assahbismark.com/tils.db                                              
 ```
 This grabs the latest `tils.db` used to serve my TIL website.
 ```bash
 openai-to-sqlite embeddings tils.db \
   --sql 'select path, title, topic, body from til'
 ```
-This retrieves and stores embeddings from the OpenAI API for every row in [my til table](https://til.simonwillison.net/tils/til) - embedding the `title`, `topic` and `body` columns concatenated together, then keying them against the `path` column (the primary key for that table).
+This retrieves and stores embeddings from the OpenAI API for every row in [my til table](https://til.assahbismark.com/tils/til) - embedding the `title`, `topic` and `body` columns concatenated together, then keying them against the `path` column (the primary key for that table).
 
 The command output this:
 ```
@@ -30,7 +30,7 @@ Now that I've embedded everything, I can search for the most similar articles to
 ```bash
 openai-to-sqlite similar tils.db observable-plot_wider-tooltip-areas.md
 ```
-Here are the results for that search for articles similar to <https://til.simonwillison.net/observable-plot/wider-tooltip-areas>:
+Here are the results for that search for articles similar to <https://til.assahbismark.com/observable-plot/wider-tooltip-areas>:
 
 ```
 observable-plot_wider-tooltip-areas.md
@@ -47,11 +47,11 @@ observable-plot_wider-tooltip-areas.md
 ```
 Or the top five as links:
 
-- https://til.simonwillison.net/observable-plot/histogram-with-tooltips
-- https://til.simonwillison.net/svg/dynamic-line-chart
-- https://til.simonwillison.net/javascript/copy-rich-text-to-clipboard
-- https://til.simonwillison.net/javascript/dropdown-menu-with-details-summary
-- https://til.simonwillison.net/vega/bar-chart-ordering
+- https://til.assahbismark.com/observable-plot/histogram-with-tooltips
+- https://til.assahbismark.com/svg/dynamic-line-chart
+- https://til.assahbismark.com/javascript/copy-rich-text-to-clipboard
+- https://til.assahbismark.com/javascript/dropdown-menu-with-details-summary
+- https://til.assahbismark.com/vega/bar-chart-ordering
 
 These are pretty good matches!
 
@@ -187,12 +187,12 @@ A neat trick here is that it checks to see if the `similarities` table exists ye
 
 This workflow ran... and created the new tables in my database:
 
-- <https://til.simonwillison.net/tils/similarities>
-- <https://til.simonwillison.net/tils/embeddings>
+- <https://til.assahbismark.com/tils/similarities>
+- <https://til.assahbismark.com/tils/embeddings>
 
 ## Hooking those into the templates
 
-I figured out [the SQL query](https://til.simonwillison.net/tils?sql=select%0D%0A++til.topic%2C+til.slug%2C+til.title%2C+til.created%0D%0Afrom+til%0D%0Ajoin+similarities+on+til.path+%3D+similarities.other_id%0D%0Awhere+similarities.id+%3D+%27python_pyproject.md%27%0D%0Aorder+by+similarities.score+desc+limit+10) for returning the top related items for a story:
+I figured out [the SQL query](https://til.assahbismark.com/tils?sql=select%0D%0A++til.topic%2C+til.slug%2C+til.title%2C+til.created%0D%0Afrom+til%0D%0Ajoin+similarities+on+til.path+%3D+similarities.other_id%0D%0Awhere+similarities.id+%3D+%27python_pyproject.md%27%0D%0Aorder+by+similarities.score+desc+limit+10) for returning the top related items for a story:
 ```sql
 select
   til.topic, til.slug, til.title, til.created
@@ -233,7 +233,7 @@ with top_similarities as (
   where id < other_id
 ),
 til_details as (
-  select path, title, 'https://til.simonwillison.net/' || topic || '/' || slug as url
+  select path, title, 'https://til.assahbismark.com/' || topic || '/' || slug as url
   from til
 )
 select
@@ -247,17 +247,17 @@ The neatest trick here is the `where id < other_id` - I added that because witho
 
 (ChatGPT/GPT-4 [suggested that fix](https://chat.openai.com/share/2af7029e-20e1-46e2-9d98-f9072ede7c63) to me.)
 
-[Run that query here](https://til.simonwillison.net/tils?sql=with+top_similarities+as+%28%0D%0A++select+id%2C+other_id%2C+score%0D%0A++from+similarities%0D%0A++where+id+%3C+other_id%0D%0A%29%2C%0D%0Atil_details+as+%28%0D%0A++select+path%2C+title%2C+%27https%3A%2F%2Ftil.simonwillison.net%2F%27+%7C%7C+topic+%7C%7C+%27%2F%27+%7C%7C+slug+as+url%0D%0A++from+til%0D%0A%29%0D%0Aselect%0D%0A++t1.title%2C+t1.url%2C+t2.title%2C+t2.url%2C+score%0D%0Afrom%0D%0A++til_details+t1+join+top_similarities+on+id+%3D+t1.path%0D%0A++join+til_details+t2+on+other_id+%3D+t2.path%0D%0Aorder+by+score+desc+limit+100).
+[Run that query here](https://til.assahbismark.com/tils?sql=with+top_similarities+as+%28%0D%0A++select+id%2C+other_id%2C+score%0D%0A++from+similarities%0D%0A++where+id+%3C+other_id%0D%0A%29%2C%0D%0Atil_details+as+%28%0D%0A++select+path%2C+title%2C+%27https%3A%2F%2Ftil.assahbismark.com%2F%27+%7C%7C+topic+%7C%7C+%27%2F%27+%7C%7C+slug+as+url%0D%0A++from+til%0D%0A%29%0D%0Aselect%0D%0A++t1.title%2C+t1.url%2C+t2.title%2C+t2.url%2C+score%0D%0Afrom%0D%0A++til_details+t1+join+top_similarities+on+id+%3D+t1.path%0D%0A++join+til_details+t2+on+other_id+%3D+t2.path%0D%0Aorder+by+score+desc+limit+100).
 
-Here are the top results, produced by [this variant of the query](https://til.simonwillison.net/tils?sql=with+top_similarities+as+%28%0D%0A++select+id%2C+other_id%2C+score%0D%0A++from+similarities%0D%0A++where+id+%3C+other_id%0D%0A%29%2C%0D%0Atil_details+as+%28%0D%0A++select+path%2C+title%2C+%27https%3A%2F%2Ftil.simonwillison.net%2F%27+%7C%7C+topic+%7C%7C+%27%2F%27+%7C%7C+slug+as+url%0D%0A++from+til%0D%0A%29%0D%0Aselect%0D%0A%27-+%5B%27+%7C%7C+%0D%0A++t1.title%0D%0A++%7C%7C+%27%5D%28%27+%7C%7C+t1.url+%7C%7C+%27%29+and+%5B%27+%7C%7C+t2.title+%7C%7C+%27%5D%28%27+%7C%7C+t2.url+%7C%7C+%27%29+-+%27+%7C%7C+score+as+md%0D%0Afrom%0D%0A++til_details+t1+join+top_similarities+on+id+%3D+t1.path%0D%0A++join+til_details+t2+on+other_id+%3D+t2.path%0D%0Aorder+by+score+desc+limit+100) that concatenates together Markdown:
+Here are the top results, produced by [this variant of the query](https://til.assahbismark.com/tils?sql=with+top_similarities+as+%28%0D%0A++select+id%2C+other_id%2C+score%0D%0A++from+similarities%0D%0A++where+id+%3C+other_id%0D%0A%29%2C%0D%0Atil_details+as+%28%0D%0A++select+path%2C+title%2C+%27https%3A%2F%2Ftil.assahbismark.com%2F%27+%7C%7C+topic+%7C%7C+%27%2F%27+%7C%7C+slug+as+url%0D%0A++from+til%0D%0A%29%0D%0Aselect%0D%0A%27-+%5B%27+%7C%7C+%0D%0A++t1.title%0D%0A++%7C%7C+%27%5D%28%27+%7C%7C+t1.url+%7C%7C+%27%29+and+%5B%27+%7C%7C+t2.title+%7C%7C+%27%5D%28%27+%7C%7C+t2.url+%7C%7C+%27%29+-+%27+%7C%7C+score+as+md%0D%0Afrom%0D%0A++til_details+t1+join+top_similarities+on+id+%3D+t1.path%0D%0A++join+til_details+t2+on+other_id+%3D+t2.path%0D%0Aorder+by+score+desc+limit+100) that concatenates together Markdown:
 
-- [Running tests against PostgreSQL in a service container](https://til.simonwillison.net/github-actions/postgresq-service-container) and [Talking to a PostgreSQL service container from inside a Docker container](https://til.simonwillison.net/github-actions/service-containers-docker) - 0.92065323107421
-- [Running nanoGPT on a MacBook M2 to generate terrible Shakespeare](https://til.simonwillison.net/llms/nanogpt-shakespeare-m2) and [Training nanoGPT entirely on content from my blog](https://til.simonwillison.net/llms/training-nanogpt-on-my-blog) - 0.920579340333838
-- [Docker Compose for Django development](https://til.simonwillison.net/docker/docker-compose-for-django-development) and [Running a Django and PostgreSQL development environment in GitHub Codespaces](https://til.simonwillison.net/github/django-postgresql-codespaces) - 0.896930635052645
-- [Installing Python on macOS with the official Python installer](https://til.simonwillison.net/macos/python-installer-macos) and [macOS Catalina sort-of includes Python 3](https://til.simonwillison.net/python/macos-catalina-sort-of-ships-with-python3) - 0.892173321940446
-- [Testing Electron apps with Playwright and GitHub Actions](https://til.simonwillison.net/electron/testing-electron-playwright) and [Using pytest and Playwright to test a JavaScript web application](https://til.simonwillison.net/pytest/playwright-pytest) - 0.892025528713046
-- [Pisco sour](https://til.simonwillison.net/cocktails/pisco-sour) and [Whisky sour](https://til.simonwillison.net/cocktails/whisky-sour) - 0.891786930904611
-- [Using pysqlite3 on macOS](https://til.simonwillison.net/sqlite/pysqlite3-on-macos) and [Loading SQLite extensions in Python on macOS](https://til.simonwillison.net/sqlite/sqlite-extensions-python-macos) - 0.890980471839453
-- [Natural Earth in SpatiaLite and Datasette](https://til.simonwillison.net/gis/natural-earth-in-spatialite-and-datasette) and [Viewing GeoPackage data with SpatiaLite and Datasette](https://til.simonwillison.net/spatialite/viewing-geopackage-data-with-spatialite-and-datasette) - 0.890347975677207
-- [Storing and serving related documents with openai-to-sqlite and embeddings](https://til.simonwillison.net/llms/openai-embeddings-related-content) and [Related content with SQLite FTS and a Datasette template function](https://til.simonwillison.net/sqlite/related-content) - 0.890192078305175
-- [Bulk fetching repository details with the GitHub GraphQL API](https://til.simonwillison.net/github/bulk-repo-github-graphql) and [Searching for repositories by topic using the GitHub GraphQL API](https://til.simonwillison.net/github/graphql-search-topics) - 0.88994714155856
+- [Running tests against PostgreSQL in a service container](https://til.assahbismark.com/github-actions/postgresq-service-container) and [Talking to a PostgreSQL service container from inside a Docker container](https://til.assahbismark.com/github-actions/service-containers-docker) - 0.92065323107421
+- [Running nanoGPT on a MacBook M2 to generate terrible Shakespeare](https://til.assahbismark.com/llms/nanogpt-shakespeare-m2) and [Training nanoGPT entirely on content from my blog](https://til.assahbismark.com/llms/training-nanogpt-on-my-blog) - 0.920579340333838
+- [Docker Compose for Django development](https://til.assahbismark.com/docker/docker-compose-for-django-development) and [Running a Django and PostgreSQL development environment in GitHub Codespaces](https://til.assahbismark.com/github/django-postgresql-codespaces) - 0.896930635052645
+- [Installing Python on macOS with the official Python installer](https://til.assahbismark.com/macos/python-installer-macos) and [macOS Catalina sort-of includes Python 3](https://til.assahbismark.com/python/macos-catalina-sort-of-ships-with-python3) - 0.892173321940446
+- [Testing Electron apps with Playwright and GitHub Actions](https://til.assahbismark.com/electron/testing-electron-playwright) and [Using pytest and Playwright to test a JavaScript web application](https://til.assahbismark.com/pytest/playwright-pytest) - 0.892025528713046
+- [Pisco sour](https://til.assahbismark.com/cocktails/pisco-sour) and [Whisky sour](https://til.assahbismark.com/cocktails/whisky-sour) - 0.891786930904611
+- [Using pysqlite3 on macOS](https://til.assahbismark.com/sqlite/pysqlite3-on-macos) and [Loading SQLite extensions in Python on macOS](https://til.assahbismark.com/sqlite/sqlite-extensions-python-macos) - 0.890980471839453
+- [Natural Earth in SpatiaLite and Datasette](https://til.assahbismark.com/gis/natural-earth-in-spatialite-and-datasette) and [Viewing GeoPackage data with SpatiaLite and Datasette](https://til.assahbismark.com/spatialite/viewing-geopackage-data-with-spatialite-and-datasette) - 0.890347975677207
+- [Storing and serving related documents with openai-to-sqlite and embeddings](https://til.assahbismark.com/llms/openai-embeddings-related-content) and [Related content with SQLite FTS and a Datasette template function](https://til.assahbismark.com/sqlite/related-content) - 0.890192078305175
+- [Bulk fetching repository details with the GitHub GraphQL API](https://til.assahbismark.com/github/bulk-repo-github-graphql) and [Searching for repositories by topic using the GitHub GraphQL API](https://til.assahbismark.com/github/graphql-search-topics) - 0.88994714155856

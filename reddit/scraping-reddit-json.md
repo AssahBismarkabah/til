@@ -2,11 +2,11 @@
 
 Reddit have long had an unofficial (I think) API where you can add `.json` to the end of any URL to get back the data for that page as JSON.
 
-I wanted to track new posts on Reddit that mention my domain `simonwillison.net`.
+I wanted to track new posts on Reddit that mention my domain `assahbismark.com`.
 
-https://www.reddit.com/domain/simonwillison.net/new/ shows recent posts from a specific domain.
+https://www.reddit.com/domain/assahbismark.com/new/ shows recent posts from a specific domain.
 
-https://www.reddit.com/domain/simonwillison.net/new.json is that data as JSON, which looks like this:
+https://www.reddit.com/domain/assahbismark.com/new.json is that data as JSON, which looks like this:
 
 ```json
 {
@@ -32,13 +32,13 @@ https://www.reddit.com/domain/simonwillison.net/new.json is that data as JSON, w
 ```
 Attempting to fetch this data with `curl` shows an error:
 ```
-$ curl 'https://www.reddit.com/domain/simonwillison.net/new.json'
+$ curl 'https://www.reddit.com/domain/assahbismark.com/new.json'
 {"message": "Too Many Requests", "error": 429}
 ```
 Turns out this rate limiting is [based on user-agent](https://www.reddit.com/r/redditdev/comments/3qbll8/429_too_many_requests/) - so to avoid it, set a custom user-agent:
 
 ```
-$ curl --user-agent 'simonw/fetch-reddit' 'https://www.reddit.com/domain/simonwillison.net/new.json'
+$ curl --user-agent 'simonw/fetch-reddit' 'https://www.reddit.com/domain/assahbismark.com/new.json'
 {"kind": "Listing", "data": ...
 ```
 I used `jq` to tidy this up like so:
@@ -57,7 +57,7 @@ Combined:
 ```
 $ curl \
   --user-agent 'simonw/fetch-reddit' \
-  'https://www.reddit.com/domain/simonwillison.net/new.json' \
+  'https://www.reddit.com/domain/assahbismark.com/new.json' \
   | jq '[.data.children[] | .data |  {
     id: .id,
     subreddit: .subreddit,
@@ -73,7 +73,7 @@ Output looks like this:
   {
     "id": "o3tjsx",
     "subreddit": "programming",
-    "url": "https://simonwillison.net/2021/Jun/19/sqlite-utils-memory/",
+    "url": "https://assahbismark.com/2021/Jun/19/sqlite-utils-memory/",
     "created_utc": "2021-06-20T00:25:51Z",
     "permalink": "/r/programming/comments/o3tjsx/joining_csv_and_json_data_with_an_inmemory_sqlite/",
     "num_comments": 10
@@ -81,7 +81,7 @@ Output looks like this:
   {
     "id": "nnsww6",
     "subreddit": "patient_hackernews",
-    "url": "https://til.simonwillison.net/bash/finding-bom-csv-files-with-ripgrep",
+    "url": "https://til.assahbismark.com/bash/finding-bom-csv-files-with-ripgrep",
     "created_utc": "2021-05-29T18:04:38Z",
     "permalink": "/r/patient_hackernews/comments/nnsww6/finding_csv_files_that_start_with_a_bom_using/",
     "num_comments": 1

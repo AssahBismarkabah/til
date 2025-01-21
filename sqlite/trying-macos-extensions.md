@@ -139,18 +139,18 @@ Error: dlopen(/Users/simon/Downloads/lines0.dylib.dylib, 0x000A): tried: '/Users
 ```
 macOS popped up up a helpful dialog box saing what went wrong:
 
-<img src="https://static.simonwillison.net/static/2022/sqlite-lines-computer-says-no.png" width="300" alt="lines0.dylib cannot be opened because the developer cannot be verified. macOS cannot verify that this app is free from malware. Buttons: Move to Trash or Cancel">
+<img src="https://static.assahbismark.com/static/2022/sqlite-lines-computer-says-no.png" width="300" alt="lines0.dylib cannot be opened because the developer cannot be verified. macOS cannot verify that this app is free from malware. Buttons: Move to Trash or Cancel">
 
 This is because the code hasn't been signed. You can still open it though - the trick is to head over to the macOS Security tab in System Preferences:
 
-![The security panel now has an extra line saying "lines0.dylib was blocked from use because it is not from an identified developer" - with a Allow Anyway button.](https://static.simonwillison.net/static/2022/security-lines0.png)
+![The security panel now has an extra line saying "lines0.dylib was blocked from use because it is not from an identified developer" - with a Allow Anyway button.](https://static.assahbismark.com/static/2022/security-lines0.png)
 
 Click "Allow Anyway", then try running the `.load` command again. Click "Open" one more time in this dialog:
 
-<img src="https://static.simonwillison.net/static/2022/lines0-allow.png" width="300" alt="Same dialog a before but now there is an Open button">
+<img src="https://static.assahbismark.com/static/2022/lines0-allow.png" width="300" alt="Same dialog a before but now there is an Open button">
 
 And the extension will load from now on!
 
 ## And for Python
 
-See [Loading SQLite extensions in Python on macOS](https://til.simonwillison.net/sqlite/sqlite-extensions-python-macos).
+See [Loading SQLite extensions in Python on macOS](https://til.assahbismark.com/sqlite/sqlite-extensions-python-macos).

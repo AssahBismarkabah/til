@@ -1,6 +1,6 @@
 # Grabbing a transcript of a short snippet of a YouTube video with MacWhisper
 
-I grabbed [a quote](https://simonwillison.net/2023/Dec/1/jeremy-howard/) from a transcript of a snippet of a YouTube video today for my blog.
+I grabbed [a quote](https://assahbismark.com/2023/Dec/1/jeremy-howard/) from a transcript of a snippet of a YouTube video today for my blog.
 
 I use the [MacWhisper](https://goodsnooze.gumroad.com/l/macwhisper) macOS desktop app to run Whisper. It's a very pleasant GUI wrapper around the Whisper transcription model.
 
@@ -18,4 +18,4 @@ Once the transcription is done you can hit the "Copy" button to copy out the tex
 
 Here's a GIF of the whole process:
 
-![Animated GIF illustrating each of the above steps](https://static.simonwillison.net/static/2023/macwhisper.gif)
+![Animated GIF illustrating each of the above steps](https://static.assahbismark.com/static/2023/macwhisper.gif)

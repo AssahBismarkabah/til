@@ -4,7 +4,7 @@ Today I added "related TILs" to this TIL website - so each TIL now shows five re
 
 I'm generating the related content using a SQLite full-text search query.
 
-UPDATE: I switched this out for a different implementation, described in [Storing and serving related documents with openai-to-sqlite and embeddings](https://til.simonwillison.net/llms/openai-embeddings-related-content).
+UPDATE: I switched this out for a different implementation, described in [Storing and serving related documents with openai-to-sqlite and embeddings](https://til.assahbismark.com/llms/openai-embeddings-related-content).
 
 ## The related content query
 
@@ -12,7 +12,7 @@ I take the title and body text of an entry, strip out any non-alphanumeric chara
 
 I built an initial prototype of this using [an Observable notebook](https://observablehq.com/@simonw/turn-pasted-text-into-a-big-sqlite-fts-or-query) that generated these queries from pasted text. See also [my research issue](https://github.com/simonw/til/issues/50).
 
-Here's a simple version of that query, using some example words pulled from [this entry](https://til.simonwillison.net/github-actions/postgresq-service-container). It executes against `til_fts` which is a SQLite FTS table [created](https://github.com/simonw/til/blob/cb62b8ab4c7b26ec7a895adea7f2d405b48686ba/build_database.py#L98-L100) using the `.enable_fts()` method of the [sqlite-utils Python library](https://sqlite-utils.datasette.io/en/stable/python-api.html#python-api-fts).
+Here's a simple version of that query, using some example words pulled from [this entry](https://til.assahbismark.com/github-actions/postgresq-service-container). It executes against `til_fts` which is a SQLite FTS table [created](https://github.com/simonw/til/blob/cb62b8ab4c7b26ec7a895adea7f2d405b48686ba/build_database.py#L98-L100) using the `.enable_fts()` method of the [sqlite-utils Python library](https://sqlite-utils.datasette.io/en/stable/python-api.html#python-api-fts).
 ```sql
 select title, rank from til_fts where til_fts match '
   i OR wanted OR to OR run OR some OR django OR tests OR using OR
@@ -24,7 +24,7 @@ select title, rank from til_fts where til_fts match '
 order by rank limit 5
 ```
 
-Here are the results from [that query](https://til.simonwillison.net/tils?sql=select+title%2C+rank+from+til_fts+where+til_fts+match+%27%0D%0A++i+OR+wanted+OR+to+OR+run+OR+some+OR+django+OR+tests+OR+using+OR%0D%0A++pytestdjango+OR+and+OR+with+OR+configured+OR+pick+OR+up+OR+the%0D%0A++OR+databaseurl+OR+environment+OR+variable+OR+via+OR+djdatabaseurl%0D%0A++OR+against+OR+a+OR+postgresql+OR+server+OR+running+OR+in+OR%0D%0A++github+OR+actions+OR+it+OR+took+OR+while+OR+figure+OR+out+OR%0D%0A++right+OR+pattern+OR+trick+OR+was+OR+define+OR+postgres+OR+service%27%0D%0Aorder+by+rank+limit+5). Unsurprisingly the entry itself shows up first, but the other items look relevant enough to me:
+Here are the results from [that query](https://til.assahbismark.com/tils?sql=select+title%2C+rank+from+til_fts+where+til_fts+match+%27%0D%0A++i+OR+wanted+OR+to+OR+run+OR+some+OR+django+OR+tests+OR+using+OR%0D%0A++pytestdjango+OR+and+OR+with+OR+configured+OR+pick+OR+up+OR+the%0D%0A++OR+databaseurl+OR+environment+OR+variable+OR+via+OR+djdatabaseurl%0D%0A++OR+against+OR+a+OR+postgresql+OR+server+OR+running+OR+in+OR%0D%0A++github+OR+actions+OR+it+OR+took+OR+while+OR+figure+OR+out+OR%0D%0A++right+OR+pattern+OR+trick+OR+was+OR+define+OR+postgres+OR+service%27%0D%0Aorder+by+rank+limit+5). Unsurprisingly the entry itself shows up first, but the other items look relevant enough to me:
 
 title | rank
 -- | --
@@ -59,7 +59,7 @@ order by
 limit
   5
 ```
-And [an example of it running](https://til.simonwillison.net/tils?sql=select%0D%0A++til.topic%2C+til.slug%2C+til.title%2C+til.created%0D%0Afrom%0D%0A++til%0D%0A++join+til_fts+on+til.rowid+%3D+til_fts.rowid%0D%0Awhere%0D%0A++til_fts+match+%3Awords%0D%0A++and+not+(%0D%0A++++til.slug+%3D+%3Aslug%0D%0A++++and+til.topic+%3D+%3Atopic%0D%0A++)%0D%0Aorder+by%0D%0A++til_fts.rank%0D%0Alimit%0D%0A++5&words=i+OR+wanted+OR+to+OR+run+OR+some+OR+django+OR+tests+OR+using+OR+++pytestdjango+OR+and+OR+with+OR+configured+OR+pick+OR+up+OR+the+++OR+databaseurl+OR+environment+OR+variable+OR+via+OR+djdatabaseurl+++OR+against+OR+a+OR+postgresql+OR+server+OR+running+OR+in+OR+++github+OR+actions+OR+it+OR+took+OR+while+OR+figure+OR+out+OR+++right+OR+pattern+OR+trick+OR+was+OR+define+OR+postgres+OR+service&slug=postgresq-service-container&topic=github-actions), which returns the following:
+And [an example of it running](https://til.assahbismark.com/tils?sql=select%0D%0A++til.topic%2C+til.slug%2C+til.title%2C+til.created%0D%0Afrom%0D%0A++til%0D%0A++join+til_fts+on+til.rowid+%3D+til_fts.rowid%0D%0Awhere%0D%0A++til_fts+match+%3Awords%0D%0A++and+not+(%0D%0A++++til.slug+%3D+%3Aslug%0D%0A++++and+til.topic+%3D+%3Atopic%0D%0A++)%0D%0Aorder+by%0D%0A++til_fts.rank%0D%0Alimit%0D%0A++5&words=i+OR+wanted+OR+to+OR+run+OR+some+OR+django+OR+tests+OR+using+OR+++pytestdjango+OR+and+OR+with+OR+configured+OR+pick+OR+up+OR+the+++OR+databaseurl+OR+environment+OR+variable+OR+via+OR+djdatabaseurl+++OR+against+OR+a+OR+postgresql+OR+server+OR+running+OR+in+OR+++github+OR+actions+OR+it+OR+took+OR+while+OR+figure+OR+out+OR+++right+OR+pattern+OR+trick+OR+was+OR+define+OR+postgres+OR+service&slug=postgresq-service-container&topic=github-actions), which returns the following:
 
 topic | slug | title | created
 -- | -- | -- | --

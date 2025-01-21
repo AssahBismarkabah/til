@@ -38,7 +38,7 @@ Column 2: 1
 Column 1: second
 Column 2: 2
 ```
-Here's a script I wrote using this technique for the TIL [Use labels on Cloud Run services for a billing breakdown](https://til.simonwillison.net/til/til/cloudrun_use-labels-for-billing-breakdown.md):
+Here's a script I wrote using this technique for the TIL [Use labels on Cloud Run services for a billing breakdown](https://til.assahbismark.com/til/til/cloudrun_use-labels-for-billing-breakdown.md):
 ```bash
 #!/bin/bash
 for line in $(

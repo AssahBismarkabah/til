@@ -2,7 +2,7 @@
 
 I'm a big fan of snapshot testing - writing tests where you compare the output of some function to a previously saved version, and can re-generate that version from scratch any time something changes.
 
-I usually do this by hand - I run `pytest -x --pdb` to stop at the first failing test and drop into a debugger, then copy out the representation of the generated value and copy it into the test. I wrote about how I use this pattern a few years ago in [How to cheat at unit tests with pytest and Black](https://simonwillison.net/2020/Feb/11/cheating-at-unit-tests-pytest-black/).
+I usually do this by hand - I run `pytest -x --pdb` to stop at the first failing test and drop into a debugger, then copy out the representation of the generated value and copy it into the test. I wrote about how I use this pattern a few years ago in [How to cheat at unit tests with pytest and Black](https://assahbismark.com/2020/Feb/11/cheating-at-unit-tests-pytest-black/).
 
 Today I learned how to do the same thing with the [Syrupy](https://github.com/tophat/syrupy) plugin for [pytest](https://docs.pytest.org/). I think I'll be using this for many of my future projects.
 

@@ -1,6 +1,6 @@
 # A simple two column CSS grid
 
-For my blog entry today [Now add a walrus: Prompt engineering in DALL-E 3](https://simonwillison.net/2023/Oct/26/add-a-walrus/) I wanted to display little grids of 2x2 images along with their captions.
+For my blog entry today [Now add a walrus: Prompt engineering in DALL-E 3](https://assahbismark.com/2023/Oct/26/add-a-walrus/) I wanted to display little grids of 2x2 images along with their captions.
 
 I decided to use CSS grids for this.
 
@@ -93,19 +93,19 @@ Here's that HTML again, this time with some real images and captions:
 ```html
 <div class="grid-container">
     <figure>
-        <img loading="lazy" style="width: 100%" src="https://static.simonwillison.net/static/2023/dalle-3/pelican-1-1.png" alt="Pelican 1">
+        <img loading="lazy" style="width: 100%" src="https://static.assahbismark.com/static/2023/dalle-3/pelican-1-1.png" alt="Pelican 1">
         <figcaption>Photo of a refined pelican wearing a shiny gold monocle, perched on a railing with the Monaco Grand Prix F1 race in the background. The race cars blur past on the circuit, while yachts are anchored in the nearby harbor.</figcaption>
     </figure>
     <figure>
-        <img loading="lazy" style="width: 100%" src="https://static.simonwillison.net/static/2023/dalle-3/pelican-1-2.png" alt="Pelican 2">
+        <img loading="lazy" style="width: 100%" src="https://static.assahbismark.com/static/2023/dalle-3/pelican-1-2.png" alt="Pelican 2">
         <figcaption>Illustration of a sophisticated pelican donning a crystal clear monocle, observing the Monaco F1 race with keen interest. The race track is filled with speeding F1 cars, and the Mediterranean Sea sparkles in the distance with luxurious yachts.</figcaption>
     </figure>
     <figure>
-        <img loading="lazy" style="width: 100%" src="https://static.simonwillison.net/static/2023/dalle-3/pelican-1-3.png" alt="Pelican 3">
+        <img loading="lazy" style="width: 100%" src="https://static.assahbismark.com/static/2023/dalle-3/pelican-1-3.png" alt="Pelican 3">
         <figcaption>Watercolor painting of a posh pelican, its feathers groomed to perfection, equipped with a delicate monocle. It stands tall with the iconic Monaco F1 race happening behind it, cars racing at breakneck speeds and the shimmering sea beyond.</figcaption>
     </figure>
     <figure>
-        <img loading="lazy" style="width: 100%" src="https://static.simonwillison.net/static/2023/dalle-3/pelican-1-4.png" alt="Pelican 4">
+        <img loading="lazy" style="width: 100%" src="https://static.assahbismark.com/static/2023/dalle-3/pelican-1-4.png" alt="Pelican 4">
         <figcaption>Vector image of an elegant pelican with a classy monocle, standing gracefully against the backdrop of the Monaco Grand Prix. The F1 cars create a colorful streak as they race, and lavish yachts float in the nearby waters.</figcaption>
     </figure>
 </div>

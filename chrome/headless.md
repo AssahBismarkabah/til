@@ -26,10 +26,10 @@ Here's how to take a screenshot:
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \
   --headless \
   --screenshot=/tmp/shot1.png \
-  https://simonwillison.net
+  https://assahbismark.com
 ```
 
-![Screenshot of the frontpage of simonwillison.net](https://github.com/simonw/til/assets/9599/d60f7fc8-f610-4731-b71a-3010863c4e50)
+![Screenshot of the frontpage of assahbismark.com](https://github.com/simonw/til/assets/9599/d60f7fc8-f610-4731-b71a-3010863c4e50)
 
 And here's a screenshot with a custom width and height:
 
@@ -38,19 +38,19 @@ And here's a screenshot with a custom width and height:
   --headless \
   --window-size=375,667 \
   --screenshot=/tmp/shot2.png \
-  https://simonwillison.net
+  https://assahbismark.com
 ```
 
-<img src="https://github.com/simonw/til/assets/9599/3da856c8-4b22-4f5a-8b7f-3fe7c75392a4" alt="Screenshot of the frontpage of simonwillison.net at a mobile width" width="400">
+<img src="https://github.com/simonw/til/assets/9599/3da856c8-4b22-4f5a-8b7f-3fe7c75392a4" alt="Screenshot of the frontpage of assahbismark.com at a mobile width" width="400">
 
 For a multi-page PDF of the full length page:
 ```bash
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \
   --headless \
   --print-to-pdf=/tmp/page.pdf \
-  https://simonwillison.net
+  https://assahbismark.com
 ```
-Here's [the output PDF for that](https://static.simonwillison.net/static/2024/chrome-headless-page.pdf).
+Here's [the output PDF for that](https://static.assahbismark.com/static/2024/chrome-headless-page.pdf).
 
 ## --repl doesn't work for me
 
@@ -60,7 +60,7 @@ The documentation mentioned this option as something that would start a REPL pro
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \
   --headless \
   --repl \
-  https://simonwillison.net
+  https://assahbismark.com
 ```
 This didn't work for me. Maybe they removed that feature?
 
@@ -84,16 +84,16 @@ The `shot-scraper` equivalent of the above commands would be:
 
 ```bash
 # Full-page screenshot
-shot-scraper 'https://simonwillison.net' -o /tmp/shot3.png
+shot-scraper 'https://assahbismark.com' -o /tmp/shot3.png
 
 # Custom size screenshot
-shot-scraper 'https://simonwillison.net' -o /tmp/shot4.png --width 375 --height 667
+shot-scraper 'https://assahbismark.com' -o /tmp/shot4.png --width 375 --height 667
 
 # HTML snapshot
-shot-scraper html 'https://simonwillison.net'
+shot-scraper html 'https://assahbismark.com'
 
 # PDF
-shot-scraper pdf 'https://simonwillison.net' -o /tmp/page2.pdf
+shot-scraper pdf 'https://assahbismark.com' -o /tmp/page2.pdf
 ```
 The more exciting features of `shot-scraper` are its ability to [take multiple screenshots defined in a YAML file](https://shot-scraper.datasette.io/en/stable/multi.html):
 
@@ -107,7 +107,7 @@ echo '- output: example.com.png
 And its ability to [scrape data from a page](https://shot-scraper.datasette.io/en/stable/javascript.html) by executing JavaScript and returning the result as JSON:
 
 ```bash
-shot-scraper javascript https://til.simonwillison.net/chrome/headless "
+shot-scraper javascript https://til.assahbismark.com/chrome/headless "
 async () => {
   const readability = await import('https://cdn.skypack.dev/@mozilla/readability');
   return (new readability.Readability(document)).parse();

@@ -12,7 +12,7 @@ FROM python:3.6-slim-stretch
 RUN apt update
 RUN apt install -y python3-dev gcc wget
 ADD metadata.json metadata.json
-RUN wget -q "https://static.simonwillison.net/static/2018/MetObjects.db"
+RUN wget -q "https://static.assahbismark.com/static/2018/MetObjects.db"
 RUN pip install datasette
 RUN datasette inspect MetObjects.db --inspect-file inspect-data.json
 

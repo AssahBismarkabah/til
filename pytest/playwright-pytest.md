@@ -1,6 +1,6 @@
 # Using pytest and Playwright to test a JavaScript web application
 
-I [decided to add](https://github.com/simonw/datasette-lite/issues/35) automated tests to my [Datasette Lite](https://simonwillison.net/2022/May/4/datasette-lite/) project. Datasette Lite bundles my Datasette Python web application as a client-side application running inside WebAssembly using Pyodide.
+I [decided to add](https://github.com/simonw/datasette-lite/issues/35) automated tests to my [Datasette Lite](https://assahbismark.com/2022/May/4/datasette-lite/) project. Datasette Lite bundles my Datasette Python web application as a client-side application running inside WebAssembly using Pyodide.
 
 I wrote the tests using [playwright-pytest](https://github.com/microsoft/playwright-pytest), which lets you write tests in Python using Microsoft's [Playwright](https://playwright.dev/) browser automation library.
 
@@ -86,7 +86,7 @@ Here's [documentation on all of the options](https://playwright.dev/python/docs/
 
 I wanted to run the tests against the most recent version of my code, which consists of an `index.html` file and a `webworker.js` file. Because these use web workers they need to be run from an actual localhost web server, so I needed to start one at the beginning of the tests and shut it down at the end.
 
-I wrote about my solution for this in another TIL: [Start a server in a subprocess during a pytest session](https://til.simonwillison.net/pytest/subprocess-server).
+I wrote about my solution for this in another TIL: [Start a server in a subprocess during a pytest session](https://til.assahbismark.com/pytest/subprocess-server).
 
 ## My test suite so far
 

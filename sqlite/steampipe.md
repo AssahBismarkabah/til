@@ -34,19 +34,19 @@ sqlite-utils memory --load-extension steampipe_sqlite_hackernews.so \
 ```
 On my computer this produces a warning box like this:
 
-!["steampipe_sqlite_hackernews.- so" can't be opened because Apple cannot check it for malicious software. This software needs to be updated. Contact the developer for more information. Firefox downloaded this file today at 12:40 PM. Button: OK](https://static.simonwillison.net/static/2023/steampipe-warning.png)
+!["steampipe_sqlite_hackernews.- so" can't be opened because Apple cannot check it for malicious software. This software needs to be updated. Contact the developer for more information. Firefox downloaded this file today at 12:40 PM. Button: OK](https://static.assahbismark.com/static/2023/steampipe-warning.png)
 
 This is because the binary has not been signed by the developer.
 
 We can work around this error by opening up the system Security preferences pane and finding this option:
 
-![Security Allow applications downloaded from App Store • App Store and identified developers "steampipe_sqlite_hackernews.so" was blocked from use because it is not from an identified developer. Button: Allow Anyway](https://static.simonwillison.net/static/2023/steampipe-allow-anyway.png)
+![Security Allow applications downloaded from App Store • App Store and identified developers "steampipe_sqlite_hackernews.so" was blocked from use because it is not from an identified developer. Button: Allow Anyway](https://static.assahbismark.com/static/2023/steampipe-allow-anyway.png)
 
 Click "Allow Anyway" then try running the command again.
 
 One more dialog:
 
-![Same as the first, but now the buttons are Open, Show in Finder and Cancel.](https://static.simonwillison.net/static/2023/steampipe-last.png)
+![Same as the first, but now the buttons are Open, Show in Finder and Cancel.](https://static.assahbismark.com/static/2023/steampipe-last.png)
 
 Click "Open" and the script should run correctly.
 
@@ -74,7 +74,7 @@ sqlite-utils>  select id, about from hackernews_user where id in ('simonw', 'pat
 id       about
 -------  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 patio11  Howdy. I&#x27;m Patrick. I work for the Internet, at Stripe, on helping startups. Previously: Starfighter, Appointment Reminder, Bingo Card Creator.<p>blog: https:&#x2F;&#x2F;www.kalzumeus.com<p>My best email is patrick@ the blog domain. Open invitation: if you&#x27;re reading this, I&#x27;m happy to receive email about any software&#x2F;startup&#x2F;etc topic from you at any time. I generally reply to about 60% of unsolicited email from HNers, and if I don&#x27;t reply to you, it is only because I got busy, not because of anything you said.<p>I write a lot.  Most of what I write here is unless otherwise stated in my personal capacity, and opinions expressed may not be shared by employers, clients, friends, etc.
-simonw   JSK Fellow 2020. Creator of Datasette, co-creator of Django. Co-founder of Lanyrd, YC Winter 2011.<p>https:&#x2F;&#x2F;simonwillison.net&#x2F; and https:&#x2F;&#x2F;til.simonwillison.net&#x2F;
+simonw   JSK Fellow 2020. Creator of Datasette, co-creator of Django. Co-founder of Lanyrd, YC Winter 2011.<p>https:&#x2F;&#x2F;assahbismark.com&#x2F; and https:&#x2F;&#x2F;til.assahbismark.com&#x2F;
 sqlite-utils> 
 ```
 ## Running extensions in Datasette
@@ -108,7 +108,7 @@ where
   query = 'datasette.io'
 order by not_after desc;
 ```
-![Screenshot of Datasette running that SQL query. The top results are lambda-demo.datasette.io 	2024-10-01 sqlite-utils.datasette.io 	2024-09-27 sqlite-utils.datasette.io 	2024-09-27 docs.datasette.io 	2024-05-13 docs.datasette.io 	2024-05-13 shot-scraper.datasette.io 	2024-04-17 shot-scraper.datasette.io 	2024-04-17](https://static.simonwillison.net/static/2023/steampipe-crt-datasette.jpg)
+![Screenshot of Datasette running that SQL query. The top results are lambda-demo.datasette.io 	2024-10-01 sqlite-utils.datasette.io 	2024-09-27 sqlite-utils.datasette.io 	2024-09-27 docs.datasette.io 	2024-05-13 docs.datasette.io 	2024-05-13 shot-scraper.datasette.io 	2024-04-17 shot-scraper.datasette.io 	2024-04-17](https://static.assahbismark.com/static/2023/steampipe-crt-datasette.jpg)
 
 Here's a more interesting query, returning my most recent Hacker News comments demonstrating a CTE, JSON processing and a join across two virtual tables:
 

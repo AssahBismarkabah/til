@@ -75,7 +75,7 @@ I skipped a step here: how did I load the data into that `raw_photos` table in t
 
 First I wrote [a Python script](https://github.com/simonw/museums/blob/6577b0c4b25e025de1176d2017d61742616ddf8e/fetch_photo_metadata.py) to retrieve the JSON metadata for every photo. This dumped them into [a photos-metadata/ directory](https://github.com/simonw/museums/tree/main/photos-metadata), each one with a name like `IMG_0859.jpeg.json`.
 
-That script now [runs in GitHub Actions](https://github.com/simonw/museums/blob/6577b0c4b25e025de1176d2017d61742616ddf8e/.github/workflows/push.yml#L35-L46) to catch metadata for newly added photos - a form of [Git scraping](https://simonwillison.net/2020/Oct/9/git-scraping/).
+That script now [runs in GitHub Actions](https://github.com/simonw/museums/blob/6577b0c4b25e025de1176d2017d61742616ddf8e/.github/workflows/push.yml#L35-L46) to catch metadata for newly added photos - a form of [Git scraping](https://assahbismark.com/2020/Oct/9/git-scraping/).
 
 Next, I wrote [a sqlite-utils Python script](https://github.com/simonw/museums/blob/6577b0c4b25e025de1176d2017d61742616ddf8e/load_photo_metadata.py) to load all of those JSON files into my SQLite database. That script also creates a `photos` view that implements the above `case` SQL logic.
 

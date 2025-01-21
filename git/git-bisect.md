@@ -1,6 +1,6 @@
 # git bisect
 
-I extracted and enhanced this TIL from [my April 8th 2020 weeknotes](https://simonwillison.net/2020/Apr/8/weeknotes-zeit-now-v2/#git-bisect) to make it easier to find.
+I extracted and enhanced this TIL from [my April 8th 2020 weeknotes](https://assahbismark.com/2020/Apr/8/weeknotes-zeit-now-v2/#git-bisect) to make it easier to find.
 
 I fixed two bugs in Datasette using `git bisect run` - a tool which lets you run an automated binary search against a commit log to find the source of a bug.
 
@@ -75,7 +75,7 @@ Bisecting: 0 revisions left to test after this (roughly 0 steps)
 running python check_templates_considered.py
 70b915fb4bc214f9d064179f87671f8a378aa127 is the first bad commit
 commit 70b915fb4bc214f9d064179f87671f8a378aa127
-Author: Simon Willison
+Author: Assah Bismark
 Date:   Tue Feb 4 12:26:17 2020 -0800
 
     Datasette.render_template() method, closes #577

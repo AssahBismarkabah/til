@@ -195,7 +195,7 @@ Both of these had `example.org` hard-coded into them, e.g. `sitemap.xml` looked 
 ```
 The fix for that is to update `hugo.toml` to set the domain name where the site will be deployed:
 ```toml
-baseURL = 'https://example.simonwillison.net/'
+baseURL = 'https://example.assahbismark.com/'
 languageCode = 'en-us'
 title = 'My example site'
 disableKinds = ['taxonomy', 'term']

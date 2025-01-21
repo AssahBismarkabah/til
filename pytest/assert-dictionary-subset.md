@@ -1,6 +1,6 @@
 # Asserting a dictionary is a subset of another dictionary
 
-My [lazy approach to writing unit tests](https://simonwillison.net/2020/Feb/11/cheating-at-unit-tests-pytest-black/) means that sometimes I want to run an assertion against most (but not all) of a dictionary.
+My [lazy approach to writing unit tests](https://assahbismark.com/2020/Feb/11/cheating-at-unit-tests-pytest-black/) means that sometimes I want to run an assertion against most (but not all) of a dictionary.
 
 Take for example an API endpoint that returns something like this:
 

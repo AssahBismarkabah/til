@@ -1,6 +1,6 @@
 # Training nanoGPT entirely on content from my blog
 
-This is a follow-up to [Running nanoGPT on a MacBook M2 to generate terrible Shakespeare](https://til.simonwillison.net/llms/nanogpt-shakespeare-m2).
+This is a follow-up to [Running nanoGPT on a MacBook M2 to generate terrible Shakespeare](https://til.assahbismark.com/llms/nanogpt-shakespeare-m2).
 
 I used [nanoGPT](https://github.com/karpathy/nanoGPT) by Andrej Karpathy to train a GPT model entirely against content from my blog!
 
@@ -16,7 +16,7 @@ And here's what I get if I start it with the prompt "Datasette is":
 >
 > I don't want to see your own Datasette instance to be able to run Datasette and then wrote more about this script - which means that you can try that out if your issue their email or with a password.
 
-I mainly used the same technique [described in my previous article](https://til.simonwillison.net/llms/nanogpt-shakespeare-m2) - but I started by creating my own training set, rather than using the Shakespeare example.
+I mainly used the same technique [described in my previous article](https://til.assahbismark.com/llms/nanogpt-shakespeare-m2) - but I started by creating my own training set, rather than using the Shakespeare example.
 
 ## Initial setup
 
@@ -46,7 +46,7 @@ fp = open("input.nl-json", "w")
 
 tag_re = re.compile('<.*?>')
 
-url = "https://datasette.simonwillison.net/simonwillisonblog/blog_entry.json?_col=title&_col=body&_shape=objects&_size=max"
+url = "https://datasette.assahbismark.com/simonwillisonblog/blog_entry.json?_col=title&_col=body&_shape=objects&_size=max"
 
 while url:
     data = httpx.get(url).json()
@@ -58,7 +58,7 @@ while url:
 ```
 This uses [HTTPX](https://www.python-httpx.org/) (similar to `requests`) to download the "title" and "body" columns from all 2,953 of my blog entries, dating back to 2002.
 
-It uses [this Datasette table](https://datasette.simonwillison.net/simonwillisonblog/blog_entry), which is a mirror of my blog's Django PostgreSQL database.
+It uses [this Datasette table](https://datasette.assahbismark.com/simonwillisonblog/blog_entry), which is a mirror of my blog's Django PostgreSQL database.
 
 It saves them as newline-delimited JSON.
 
@@ -158,7 +158,7 @@ Here's a plot of the loss rate over time using my [@simonw/plot-loss-from-nanogp
 
 The checkpointed model file is 39MB and lives in `out/ckpt.pt`. I uploaded a copy of my 20,000 iteration model here:
 
-https://static.simonwillison.net/static/2023/nanogpt-simonwillisonblog-20000-iterations/ckpt.pt
+https://static.assahbismark.com/static/2023/nanogpt-simonwillisonblog-20000-iterations/ckpt.pt
 
 ## Sampling the model
 

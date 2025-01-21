@@ -60,7 +60,7 @@ It took multiple rounds of prompting to figure this out - the most relevant tran
 
 The frames it produced are a good combination of quality and filesize. Here's one, which is an 80KB JPEG:
 
-![Frame from a video, showing a slide image displayed in a Firefox window](https://static.simonwillison.net/static/2024/frame_000023.jpg)
+![Frame from a video, showing a slide image displayed in a Firefox window](https://static.assahbismark.com/static/2024/frame_000023.jpg)
 
 ## A version that captures bounding box regions too
 
@@ -191,7 +191,7 @@ That's the original frame and an image for each of the specified bounding box re
 
 The `--bbox` format uses percentages along the width and height of the image.
 
-I also [got Claude to build](https://gist.github.com/simonw/799babf92e1eaf36a5336b4889f72492#create-bounding-box-drawing-tool) a visual tool for selecting these. Drop a full screen frame from an image into this [Bounding Box Drawing Tool](https://tools.simonwillison.net/bbox-cropper) and drag the box to find out the correct `--box` setting:
+I also [got Claude to build](https://gist.github.com/simonw/799babf92e1eaf36a5336b4889f72492#create-bounding-box-drawing-tool) a visual tool for selecting these. Drop a full screen frame from an image into this [Bounding Box Drawing Tool](https://tools.assahbismark.com/bbox-cropper) and drag the box to find out the correct `--box` setting:
 
 ![Screenshot showing a box dragged around a section of an image with a --box output below it](https://github.com/user-attachments/assets/71064215-d3b1-4b5a-b45e-2358f96a9459)
 

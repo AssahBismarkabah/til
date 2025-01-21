@@ -15,7 +15,7 @@ The tests are all in the `test/` folder, so I used my [files-to-prompt](https://
 ```bash
 files-to-prompt wasmtime-py/tests -e py -c
 ```
-Piping that through [ttok](https://github.com/simonw/ttok) shows that it's about 34,780 OpenAI tokens. I pasted the whole thing (` | pbcopy` to copy to my clipboard) into my [Claude token counter](https://tools.simonwillison.net/claude-token-counter) tool and got 43,490 - easily enough to fit Claude 3.5 Sonnet's 200,000 limit.
+Piping that through [ttok](https://github.com/simonw/ttok) shows that it's about 34,780 OpenAI tokens. I pasted the whole thing (` | pbcopy` to copy to my clipboard) into my [Claude token counter](https://tools.assahbismark.com/claude-token-counter) tool and got 43,490 - easily enough to fit Claude 3.5 Sonnet's 200,000 limit.
 
 So I ran this:
 

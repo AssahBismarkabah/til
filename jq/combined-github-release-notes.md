@@ -25,7 +25,7 @@ The output from that command (run against my [simonw/llm](https://github.com/sim
 
 *2023-07-18T21:36:37Z*
 
-- Models hosted on [Replicate](https://replicate.com/) can now be accessed using the [llm-replicate](https://github.com/simonw/llm-replicate) plugin, including the new Llama 2 model from Meta AI. More details here: [Accessing Llama 2 from the command-line with the llm-replicate plugin](https://simonwillison.net/2023/Jul/18/accessing-llama-2/).
+- Models hosted on [Replicate](https://replicate.com/) can now be accessed using the [llm-replicate](https://github.com/simonw/llm-replicate) plugin, including the new Llama 2 model from Meta AI. More details here: [Accessing Llama 2 from the command-line with the llm-replicate plugin](https://assahbismark.com/2023/Jul/18/accessing-llama-2/).
 ...
 ```
 ## Handling paginated responses

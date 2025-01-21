@@ -19,4 +19,4 @@ I originally tried using `--v 5` to get Midjourney v5, before I found out that i
 
 I saved the resulting image from Discord as a 866KB `.webp` file. When I converted it to a PNG using Preview I got this:
 
-![vector dark background, paper art, encouraging, technical, complex fractal patterns. abstract, small achievable goals](https://static.simonwillison.net/static/2023/small-achievable-goals-background.png)
+![vector dark background, paper art, encouraging, technical, complex fractal patterns. abstract, small achievable goals](https://static.assahbismark.com/static/2023/small-achievable-goals-background.png)

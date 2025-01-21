@@ -1,6 +1,6 @@
 # Testing against Python 3.11 preview using GitHub Actions
 
-I decided to run my CI tests against the Python 3.11 preview, to avoid the problem I had when Python 3.10 came out with [a bug that affected Datasette](https://simonwillison.net/2021/Oct/9/finding-and-reporting-a-bug/).
+I decided to run my CI tests against the Python 3.11 preview, to avoid the problem I had when Python 3.10 came out with [a bug that affected Datasette](https://assahbismark.com/2021/Oct/9/finding-and-reporting-a-bug/).
 
 I used the new [GitHub Code Search](https://cs.github.com/) to figure out how to do this. I searched for:
 

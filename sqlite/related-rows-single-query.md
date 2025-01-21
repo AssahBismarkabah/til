@@ -92,7 +92,7 @@ group by
 order by
   blog_entry.id desc
 ```
-[Result](https://datasette.simonwillison.net/simonwillisonblog?sql=select+blog_entry.id%2C+blog_entry.title%2C+json_group_array(json_object(%27tag%27%2C+blog_tag.tag))+as+tags%0D%0Afrom+blog_entry+join+blog_entry_tags+on+blog_entry.id+%3D+blog_entry_tags.entry_id%0D%0Ajoin+blog_tag+on+blog_tag.id+%3D+blog_entry_tags.tag_id%0D%0Agroup+by+blog_entry.id%0D%0Aorder+by+blog_entry.id+desc):
+[Result](https://datasette.assahbismark.com/simonwillisonblog?sql=select+blog_entry.id%2C+blog_entry.title%2C+json_group_array(json_object(%27tag%27%2C+blog_tag.tag))+as+tags%0D%0Afrom+blog_entry+join+blog_entry_tags+on+blog_entry.id+%3D+blog_entry_tags.entry_id%0D%0Ajoin+blog_tag+on+blog_tag.id+%3D+blog_entry_tags.tag_id%0D%0Agroup+by+blog_entry.id%0D%0Aorder+by+blog_entry.id+desc):
 
 | id | title | tags |
 | --- | --- | --- |
@@ -119,7 +119,7 @@ group by
 order by
   blog_entry.id desc
 ```
-This almost works, but [it outputs the following](https://datasette.simonwillison.net/simonwillisonblog?sql=select%0D%0A++blog_entry.id%2C%0D%0A++blog_entry.title%2C%0D%0A++json_group_array(json_object(%27tag%27%2C+blog_tag.tag))+as+tags%0D%0Afrom%0D%0A++blog_entry%0D%0A++left+join+blog_entry_tags+on+blog_entry.id+%3D+blog_entry_tags.entry_id%0D%0A++left+join+blog_tag+on+blog_tag.id+%3D+blog_entry_tags.tag_id%0D%0Awhere+blog_entry.id+%3C+4%0D%0Agroup+by%0D%0A++blog_entry.id%0D%0Aorder+by%0D%0A++blog_entry.id+desc) returning `{"tag": null}` for entries with no tags:
+This almost works, but [it outputs the following](https://datasette.assahbismark.com/simonwillisonblog?sql=select%0D%0A++blog_entry.id%2C%0D%0A++blog_entry.title%2C%0D%0A++json_group_array(json_object(%27tag%27%2C+blog_tag.tag))+as+tags%0D%0Afrom%0D%0A++blog_entry%0D%0A++left+join+blog_entry_tags+on+blog_entry.id+%3D+blog_entry_tags.entry_id%0D%0A++left+join+blog_tag+on+blog_tag.id+%3D+blog_entry_tags.tag_id%0D%0Awhere+blog_entry.id+%3C+4%0D%0Agroup+by%0D%0A++blog_entry.id%0D%0Aorder+by%0D%0A++blog_entry.id+desc) returning `{"tag": null}` for entries with no tags:
 
 | id | title | tags |
 | --- | --- | --- |
@@ -149,7 +149,7 @@ order by
   blog_entry.id
 ```
 
-That extra filter on the aggregation [does the trick](https://datasette.simonwillison.net/simonwillisonblog?sql=select%0D%0A++blog_entry.id%2C%0D%0A++blog_entry.title%2C%0D%0A++json_group_array%28%0D%0A++++json_object%28%27tag%27%2C+blog_tag.tag%29+%0D%0A++%29+filter+%28%0D%0A++++where%0D%0A++++++blog_tag.tag+is+not+null%0D%0A++%29+as+tags%0D%0Afrom%0D%0A++blog_entry%0D%0A++left+join+blog_entry_tags+on+blog_entry.id+%3D+blog_entry_tags.entry_id%0D%0A++left+join+blog_tag+on+blog_tag.id+%3D+blog_entry_tags.tag_id%0D%0Agroup+by%0D%0A++blog_entry.id%0D%0Aorder+by%0D%0A++blog_entry.id)!
+That extra filter on the aggregation [does the trick](https://datasette.assahbismark.com/simonwillisonblog?sql=select%0D%0A++blog_entry.id%2C%0D%0A++blog_entry.title%2C%0D%0A++json_group_array%28%0D%0A++++json_object%28%27tag%27%2C+blog_tag.tag%29+%0D%0A++%29+filter+%28%0D%0A++++where%0D%0A++++++blog_tag.tag+is+not+null%0D%0A++%29+as+tags%0D%0Afrom%0D%0A++blog_entry%0D%0A++left+join+blog_entry_tags+on+blog_entry.id+%3D+blog_entry_tags.entry_id%0D%0A++left+join+blog_tag+on+blog_tag.id+%3D+blog_entry_tags.tag_id%0D%0Agroup+by%0D%0A++blog_entry.id%0D%0Aorder+by%0D%0A++blog_entry.id)!
 
 ## Other databases
 
@@ -176,4 +176,4 @@ group by
 order by
   blog_entry.id
 ```
-[See that running here](https://simonwillison.net/dashboard/json-agg-example/) in `django-sql-dashboard`.
+[See that running here](https://assahbismark.com/dashboard/json-agg-example/) in `django-sql-dashboard`.

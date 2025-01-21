@@ -32,7 +32,7 @@ After some experimentation I landed on this as the content of my Val:
 export default async function(interval: Interval) {
   const { default: Parser } = await import("npm:rss-parser");
   let parser = new Parser();
-  let feed = await parser.parseURL("https://simonwillison.net/atom/everything/");
+  let feed = await parser.parseURL("https://assahbismark.com/atom/everything/");
   const token = Deno.env.get("DATASETTE_CLOUD_SIMON_FEED_WRITE");
   const url = "https://simon.datasette.cloud/data/feed/-/insert";
   const body = {

@@ -123,7 +123,7 @@ I ended up using two new `jq` recipes:
 
 This turns an `[{"array": "of objects"}, {"like": "this one"}]` into a stream of newline-delimited objects. I [found the recipe here](https://github.com/stedolan/jq/issues/1984#issuecomment-568918146) - I don't understand it.
 
-As you can see above, the objects are nested. I want them as flat objects so that `sqlite-utils insert` will create a separate column for each nested value. I used [this recipe](https://til.simonwillison.net/jq/flatten-nested-json-objects-jq) for that.
+As you can see above, the objects are nested. I want them as flat objects so that `sqlite-utils insert` will create a separate column for each nested value. I used [this recipe](https://til.assahbismark.com/jq/flatten-nested-json-objects-jq) for that.
 
 The end result was this:
 

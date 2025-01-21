@@ -13,7 +13,7 @@ My [s3-credentials tool](https://s3-credentials.readthedocs.io/) now has a comma
 ```
 s3-credentials set-cors-policy my-cors-bucket \
   --allowed-method GET \
-  --allowed-origin https://simonwillison.net/
+  --allowed-origin https://assahbismark.com/
 ```
 Here's the [full documentation for that command](https://s3-credentials.readthedocs.io/en/stable/other-commands.html#set-cors-policy-and-get-cors-policy).
 
@@ -33,21 +33,21 @@ The configuration I tried first was this one:
             "GET"
         ],
         "AllowedOrigins": [
-            "https://simonwillison.net/"
+            "https://assahbismark.com/"
         ],
         "ExposeHeaders": []
     }
 ]
 ```
-This should enable CORS access for GET requests from code running on my https://simonwillison.net/ site.
+This should enable CORS access for GET requests from code running on my https://assahbismark.com/ site.
 
 The `AllowedOrigins` key is interesting: it works by inspecting the `Origin` header on the incoming request, and returning CORS headers based on if that origin matches one of the values in the list.
 
 I used `curl -i ... -H "Origin: value"` to confirm that this worked:
 
 ```
-~ % curl -i 'http://static.simonwillison.net.s3-website-us-west-1.amazonaws.com/static/2022/photoswipe/photoswipe-lightbox.esm.js' \
-  -H "Origin: https://simonwillison.net" | head -n 20
+~ % curl -i 'http://static.assahbismark.com.s3-website-us-west-1.amazonaws.com/static/2022/photoswipe/photoswipe-lightbox.esm.js' \
+  -H "Origin: https://assahbismark.com" | head -n 20
 -x-amz-request-id: 4YY7ZBCVJ167XCR9
  Date: Tue, 04 Jan 2022 21:02:44 GMT
 -Access-Control-Allow-Origin: *
@@ -58,7 +58,7 @@ I used `curl -i ... -H "Origin: value"` to confirm that this worked:
 :Content-Type: text/javascript
 -Server: AmazonS3
 
-~ % curl -i 'http://static.simonwillison.net.s3-website-us-west-1.amazonaws.com/static/2022/photoswipe/photoswipe-lightbox.esm.js' | head -n 20
+~ % curl -i 'http://static.assahbismark.com.s3-website-us-west-1.amazonaws.com/static/2022/photoswipe/photoswipe-lightbox.esm.js' | head -n 20
 x-amz-request-id: MPD20P9P3X45BR1Q
 Date: Tue, 04 Jan 2022 21:02:48 GMT
 Last-Modified: Tue, 04 Jan 2022 20:10:26 GMT

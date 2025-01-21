@@ -15,7 +15,7 @@ select distinct unnest(
   regexp_split_to_array(my_column, ',\s*')
 ) from my_table
 ```
-This uses `unnest()`, see [this TIL](https://til.simonwillison.net/postgresql/unnest-csv).
+This uses `unnest()`, see [this TIL](https://til.assahbismark.com/postgresql/unnest-csv).
 
 For filtering down to rows that contain a specific value in their comma-separated list, I figured out this:
 

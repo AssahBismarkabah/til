@@ -4,7 +4,7 @@
 
 ![Animated screenshot showing the network panel in the Firefox DevTools - as I scroll down a page more images load on demand just before they scroll into view.](https://user-images.githubusercontent.com/9599/204108097-6f385377-5daf-4895-9216-4ea0916a296a.gif)
 
-I used it for the slides on my annotated version of this presentation: [Massively increase your productivity on personal projects with comprehensive documentation and automated tests](https://simonwillison.net/2022/Nov/26/productivity/).
+I used it for the slides on my annotated version of this presentation: [Massively increase your productivity on personal projects with comprehensive documentation and automated tests](https://assahbismark.com/2022/Nov/26/productivity/).
 
 There's one catch though: you need to provide the size of the image (I used `width=` and `height=` attributes) in order for it to work! Without those your browser still needs to fetch the images in order to calculate their dimensions to calculate page layout.
 
@@ -16,6 +16,6 @@ Here's the HTML I used for each slide image:
   width="450"
   height="253"
   loading="lazy"
-  src="https://static.simonwillison.net/static/2022/djangocon-productivity/productivity.022.jpeg"
+  src="https://static.assahbismark.com/static/2022/djangocon-productivity/productivity.022.jpeg"
 >
 ```

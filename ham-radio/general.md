@@ -26,7 +26,7 @@ I mainly used [the iPhone app](https://apps.apple.com/us/app/hamstudy-org/id1371
 
 This app is really good, once you figure out how to use it. The three modes I found most useful were cram mode, quiz mode and the practice exam.
 
-![Screenshot showing the Study / Quiz mode / Cram mode / Practical exam menu, an example question with the answer highlighted an the right hand panel with the chart showing how much of the material you have studied and the interface for filtering the questions.](https://static.simonwillison.net/static/2024/ham-iphone-app-1.png)
+![Screenshot showing the Study / Quiz mode / Cram mode / Practical exam menu, an example question with the answer highlighted an the right hand panel with the chart showing how much of the material you have studied and the interface for filtering the questions.](https://static.assahbismark.com/static/2024/ham-iphone-app-1.png)
 
 ### Cram mode
 
@@ -46,7 +46,7 @@ Your activity in quiz mode adds up to your "aptitude" score - my goal was to get
 
 The practice exam puts you through a full simulated 35 question exam. It tracks your score over time, so you can see a chart showing if you are getting better.
 
-![Screenshot of the General Exam Portal page. A chart at the top shows my score over time, with an orange line showing the passing grade. Below is an exam history section showing my score and weakest areas for different attempts.](https://static.simonwillison.net/static/2024/general-exam-portal.jpg)
+![Screenshot of the General Exam Portal page. A chart at the top shows my score over time, with an orange line showing the passing grade. Below is an exam history section showing my score and weakest areas for different attempts.](https://static.assahbismark.com/static/2024/general-exam-portal.jpg)
 
 At the end of each exam you get the option to review the questions. After each attempt I reviewed the questions I got wrong, tried to commit the correct answers to memory and then retook the exam (hence the pattern on my chart where failures were often followed by higher scores) to reinforce my learning.
 

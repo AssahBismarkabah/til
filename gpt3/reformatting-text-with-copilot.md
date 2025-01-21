@@ -1,6 +1,6 @@
 # Reformatting text with Copilot
 
-I wanted to write alt text for the following screenshot ([of this page]()), so I could include it in [this post on Mastodon](https://fedi.simonwillison.net/@simon/109484810256112309).
+I wanted to write alt text for the following screenshot ([of this page]()), so I could include it in [this post on Mastodon](https://fedi.assahbismark.com/@simon/109484810256112309).
 
 ![A screenshot of a list of issues in GitHub - they are in the incorrect order and have a bunch of metadata associated with each one](https://user-images.githubusercontent.com/9599/206784590-fa7b7741-ff60-44fe-a43e-ce4f132b8942.png)
 

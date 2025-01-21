@@ -8,9 +8,9 @@ This is [documented here](https://developers.cloudflare.com/cache/troubleshootin
 
 I figured out how to get caching to work using a "Cache Rule". Here's the rule I added:
 
-![Cloudflare Cache Rule interface. Rule name: Cache everything including HTML. When incoming requests match… hostname contains .datasette.site. Expression preview: (http.host contains ".datasette.site"). Then... Cache Elegibility is set to Eligible for cache. Edge TTL is set to Use cache-control header if present, bypass cache if not.](https://static.simonwillison.net/static/2024/cloudflare-cache-rule.jpg)
+![Cloudflare Cache Rule interface. Rule name: Cache everything including HTML. When incoming requests match… hostname contains .datasette.site. Expression preview: (http.host contains ".datasette.site"). Then... Cache Elegibility is set to Eligible for cache. Edge TTL is set to Use cache-control header if present, bypass cache if not.](https://static.assahbismark.com/static/2024/cloudflare-cache-rule.jpg)
 
-I've told it that for any incoming request with a hostname containing `.datasette.site` (see [background in my weeknotes](https://simonwillison.net/2024/Jan/7/page-caching-and-custom-templates-for-datasette-cloud/)) it should consider that page eligible for caching, and it should respect the `cache-control` header.
+I've told it that for any incoming request with a hostname containing `.datasette.site` (see [background in my weeknotes](https://assahbismark.com/2024/Jan/7/page-caching-and-custom-templates-for-datasette-cloud/)) it should consider that page eligible for caching, and it should respect the `cache-control` header.
 
 With this configuration in place, my backend can now serve headers that look like this:
 

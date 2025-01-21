@@ -14,9 +14,9 @@ I had an extra goal: I wanted it to start out as a single line of text, then exp
 
 I should mention that the jury is out on whether or not this is a good idea: users may expect that if they hit enter in a single-line input, they will submit the form. But I want to try it out anyway!
 
-You can [try the final effect here](https://til.simonwillison.net/tools/resizing-textarea). Here's an animated GIF demo:
+You can [try the final effect here](https://til.assahbismark.com/tools/resizing-textarea). Here's an animated GIF demo:
 
-![As text is typed into the textarea the textarea expands in height to fit](https://static.simonwillison.net/static/2023/resizing-textarea.gif)
+![As text is typed into the textarea the textarea expands in height to fit](https://static.assahbismark.com/static/2023/resizing-textarea.gif)
 
 (It intermittently fails in Mobile Safari, see note at the bottom of this post.)
 
@@ -77,7 +77,7 @@ This means that any time the `<textarea>` content changes, the JavaScript will u
 
 Chris has a comment about that weird space. I tried removing it and here's the jumpiness that results:
 
-![As text is typed into the textarea the textarea jumps up and down in size](https://static.simonwillison.net/static/2023/auto-resize-jumpy-2.gif)
+![As text is typed into the textarea the textarea jumps up and down in size](https://static.assahbismark.com/static/2023/auto-resize-jumpy-2.gif)
 
 The textarea doesn't extend in height when you hit newline and are focused on a blank row - you have to type at least one character for it to adjust its size.
 
@@ -98,7 +98,7 @@ Next, some extra styles for the `<textarea>`:
 ```
 The comments here explain what's going on. I tried removing `overflow: hidden` to see what would happen in Firefox - this is what that looked like:
 
-![As text is typed into the textarea each time a newline is added a vertical scrollbar appears for a moment and then vanishes again](https://static.simonwillison.net/static/2023/auto-resize-firefox.gif)
+![As text is typed into the textarea each time a newline is added a vertical scrollbar appears for a moment and then vanishes again](https://static.assahbismark.com/static/2023/auto-resize-firefox.gif)
 
 Finally, the styles that apply to both the `<textarea>` and the `::after` pseudo-element:
 
@@ -185,11 +185,11 @@ textarea:focus {
 ```
 Here's what it looks like without that:
 
-![The textarea has a bold blue outline surrounding it](https://static.simonwillison.net/static/2023/more-outline.png)
+![The textarea has a bold blue outline surrounding it](https://static.assahbismark.com/static/2023/more-outline.png)
 
 And with it:
 
-![The textarea has a more subtle blue inset shadow](https://static.simonwillison.net/static/2023/less-outline.png)
+![The textarea has a more subtle blue inset shadow](https://static.assahbismark.com/static/2023/less-outline.png)
 
 ## The Mobile Safari bug
 

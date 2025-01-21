@@ -21,7 +21,7 @@ def test_create(mocker):
             "call().create_access_key().__getitem__().__str__()",
         ]
 ```
-I used the trick I describe in [How to cheat at unit tests with pytest and Black](https://simonwillison.net/2020/Feb/11/cheating-at-unit-tests-pytest-black/) where I run that comparison against an empty `[]` list, then use `pytest --pdb` to drop into a debugger and copy and paste the output of `[str(c) for c in boto3.mock_calls]` into my test code.
+I used the trick I describe in [How to cheat at unit tests with pytest and Black](https://assahbismark.com/2020/Feb/11/cheating-at-unit-tests-pytest-black/) where I run that comparison against an empty `[]` list, then use `pytest --pdb` to drop into a debugger and copy and paste the output of `[str(c) for c in boto3.mock_calls]` into my test code.
 
 Initially I used a comparison directly against `boto3.mock_calls` - but this threw a surprising error. The calls sequence I baked into my tests looked like this:
 

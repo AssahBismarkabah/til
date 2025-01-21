@@ -6,7 +6,7 @@ I've been trying to get my head around [ColBERT](https://github.com/stanford-fut
 
 But what does that mean?
 
-I understand [embedding models](https://simonwillison.net/2023/Oct/23/embeddings/) pretty well now. They let you take some text and turn that into a fixed length array of floating point numbers, which can then be checked for cosine similarity against other such arrays to find content that is semantically similar.
+I understand [embedding models](https://assahbismark.com/2023/Oct/23/embeddings/) pretty well now. They let you take some text and turn that into a fixed length array of floating point numbers, which can then be checked for cosine similarity against other such arrays to find content that is semantically similar.
 
 ColBERT doesn't exactly fit my mental model here. After some [back and forth on Twitter](https://twitter.com/simonw/status/1751411977279390141) with Mark Tenenholtz I think I understand how it differs now.
 
@@ -16,7 +16,7 @@ ColBERT is slightly different: it provides a list of vectors showing how each to
 
 This image [by Jo Kristian Bergum](https://twitter.com/jobergum/status/1751640310642360694) really helped me understand why this is useful:
 
-![ColBERT query-passage scoring interpretability.  Query: Effects of climate change on marine ecosystems. Passage: The changing climate has profound impacts on marine ecosystems. Rising temperatures, ocean acidification, and altered precipitation patterns all contribute to shifts in the distribution and behavior of marine species, influencing the delicate balance of underwater ecosystems. MaxSim Score: 27.71. Estimated Relevance: 86.60%. Contextualised Highlights: The changing climate (those two words in bold) has profound impacts (bold) on marine ecosystems (two bold words). Rising temperatures, ocean acidification, and altered (slight bold) precipitation patterns all contribute to shifts in the distribution and behavior of marine (big bold) species (bold), influencing the delicate balance of under water ecosystems (3 words in bold).](https://static.simonwillison.net/static/2024/colbert-vis-2.jpg)
+![ColBERT query-passage scoring interpretability.  Query: Effects of climate change on marine ecosystems. Passage: The changing climate has profound impacts on marine ecosystems. Rising temperatures, ocean acidification, and altered precipitation patterns all contribute to shifts in the distribution and behavior of marine species, influencing the delicate balance of underwater ecosystems. MaxSim Score: 27.71. Estimated Relevance: 86.60%. Contextualised Highlights: The changing climate (those two words in bold) has profound impacts (bold) on marine ecosystems (two bold words). Rising temperatures, ocean acidification, and altered (slight bold) precipitation patterns all contribute to shifts in the distribution and behavior of marine (big bold) species (bold), influencing the delicate balance of under water ecosystems (3 words in bold).](https://static.assahbismark.com/static/2024/colbert-vis-2.jpg)
 
 That's from [colbert.aiserv.cloud](https://colbert.aiserv.cloud/), a really neat visualization tool which loads a ColBERT model directly in the browser and uses it to show highlighted text matches.
 
@@ -78,7 +78,7 @@ def go():
 if __name__ == "__main__":
     go()
 ```
-I downloaded the 81.7MB `simonwillisonblog.db` file [from the bottom of this page](https://datasette.simonwillison.net/simonwillisonblog).
+I downloaded the 81.7MB `simonwillisonblog.db` file [from the bottom of this page](https://datasette.assahbismark.com/simonwillisonblog).
 
 The above code is lightly adapted from an example in the README. A few important details:
 

@@ -19,7 +19,7 @@ The `if(condition, if-true, if-false)` function is used to return an empty strin
 I decided to try generating this output instead:
 
 ```yaml
-- url: https://simonwillison.net/
+- url: https://assahbismark.com/
   width: 800
 - url: https://datasette.io/
   width: 800
@@ -40,7 +40,7 @@ This looks like it does the right thing:
 But... when you copy and paste out the result, you get additional unwanted double quotes!
 
 ```
-"- url: https://simonwillison.net/
+"- url: https://assahbismark.com/
   width: 800"
 "- url: https://datasette.io/
   width: 800"
@@ -55,7 +55,7 @@ Use `char(13)` where you want a newline. This is actually the character code for
 
 But... when you copy and paste out the column into a VS Code file you get this:
 ```
-- url: https://simonwillison.net/
+- url: https://assahbismark.com/
   width: 800
 - url: https://datasette.io/
   width: 800
@@ -65,11 +65,11 @@ But... when you copy and paste out the column into a VS Code file you get this:
 Hitting save in VS Code (for me on my Mac) resulted in a file with `\n` lines in it.
 ```
 % python -c "print(repr(open('/tmp/saved.txt', 'rb').read()))"
-b'- url: https://simonwillison.net/\n  width: 800\n- url: https://datasette.io/\n  width: 800\n- url: https://www.example.com/\n  width: 800'
+b'- url: https://assahbismark.com/\n  width: 800\n- url: https://datasette.io/\n  width: 800\n- url: https://www.example.com/\n  width: 800'
 ```
 You can confirm that the original clipboard text contained `\r` and not `\n` by doing this:
 
 ```
 % pbpaste | python -c 'print(repr(__import__("sys").stdin.buffer.read()))'
-b'- url: https://simonwillison.net/\r  width: 800\n- url: https://datasette.io/\r  width: 800\n- url: https://www.example.com/\r  width: 800'
+b'- url: https://assahbismark.com/\r  width: 800\n- url: https://datasette.io/\r  width: 800\n- url: https://www.example.com/\r  width: 800'
 ```

@@ -13,7 +13,7 @@ Behaves differently on big-endian v.s. little-endian systems.
 
 I found this out thanks to [this bug report](https://github.com/simonw/sqlite-fts4/issues/6) against my sqlite-fts4 library.
 
-My `decode_matchinfo()` function runs against a binary data structure returned by SQLite - more details on that in [Exploring search relevance algorithms with SQLite](https://simonwillison.net/2019/Jan/7/exploring-search-relevance-algorithms-sqlite/).
+My `decode_matchinfo()` function runs against a binary data structure returned by SQLite - more details on that in [Exploring search relevance algorithms with SQLite](https://assahbismark.com/2019/Jan/7/exploring-search-relevance-algorithms-sqlite/).
 
 SQLite doesn't change the binary format depending on the endianness of the system, which means that my function here works correctly on little-endian but does the wrong thing on big-endian systems:
 

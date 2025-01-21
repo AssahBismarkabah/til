@@ -16,7 +16,7 @@ So the URL for a folder with ID `1E6Zg2X2bjjtPzVfX8YqdXZDCoB3AVA7i` ends up look
 
     https://www.googleapis.com/drive/v3/files?q=%221E6Zg2X2bjjtPzVfX8YqdXZDCoB3AVA7i%22%20in%20parents
 
-You need to accompany that with a `Authorization: Bearer YOUR_ACCESS_TOKEN` header - see [Google OAuth for CLI applications](https://til.simonwillison.net/googlecloud/google-oauth-cli-application) for more on that.
+You need to accompany that with a `Authorization: Bearer YOUR_ACCESS_TOKEN` header - see [Google OAuth for CLI applications](https://til.assahbismark.com/googlecloud/google-oauth-cli-application) for more on that.
 
 ## Fetching specific fields
 

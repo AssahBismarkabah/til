@@ -14,7 +14,7 @@ def test_markers_are_displayed(ds_server, page):
     # There should be two leaflet-marker-icons
     expect(page.locator(".leaflet-marker-icon")).to_have_count(2)
 ```
-The `page` and `ds_server` fixtures are explained [in this TIL](https://til.simonwillison.net/datasette/playwright-tests-datasette-plugin).
+The `page` and `ds_server` fixtures are explained [in this TIL](https://til.assahbismark.com/datasette/playwright-tests-datasette-plugin).
 
 `page.locator()` returns a [Locator](https://playwright.dev/python/docs/api/class-locator), described by Playwright's documentation as "the central piece of Playwright's auto-waiting and retry-ability".
 

@@ -159,4 +159,4 @@ I guess you could feed the results into [ijson](https://pypi.org/project/ijson/)
 
 **Update:** I figured out why it's worthwhile: without streaming, the API can take a LONG time to return, without giving you any visible feedback that it's working correctly.
 
-So I figured out [a recipe for parsing the stream using ijson](https://til.simonwillison.net/json/ijson-stream) after all.
+So I figured out [a recipe for parsing the stream using ijson](https://til.assahbismark.com/json/ijson-stream) after all.

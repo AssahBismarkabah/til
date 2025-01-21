@@ -36,5 +36,5 @@ Here's [the Vercel builder code](https://github.com/vercel/vercel/blob/c9437e714
 
 See also:
 
-* [Hello, Zeit Now v2](https://simonwillison.net/2020/Apr/8/weeknotes-zeit-now-v2/#hello-zeit-now-v2) where I started exploring it more
-* [Better Datasette on Now v2](https://simonwillison.net/2020/Apr/16/weeknotes-hacking-23-different-projects/) documenting further improvement tricks I uncovered
+* [Hello, Zeit Now v2](https://assahbismark.com/2020/Apr/8/weeknotes-zeit-now-v2/#hello-zeit-now-v2) where I started exploring it more
+* [Better Datasette on Now v2](https://assahbismark.com/2020/Apr/16/weeknotes-hacking-23-different-projects/) documenting further improvement tricks I uncovered

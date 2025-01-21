@@ -47,7 +47,7 @@ ID:          uv4maokwxaaymkmoxawwcyfeve
 Title:       Datasette Cloud Dev Simon
 Vault:       Personal (db6xmelzrupwlyrfbiy5ltrnfy)
 Created:     27 minutes ago
-Updated:     5 minutes ago by Simon Willison
+Updated:     5 minutes ago by Assah Bismark
 Favorite:    false
 Version:     2
 Category:    LOGIN

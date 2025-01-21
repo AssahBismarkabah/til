@@ -33,4 +33,4 @@ save("trumpet mariachi frenetic excitement", "trumpet_mariachi.wav")
 ```
 Here's the audio that generated:
 
-https://static.simonwillison.net/static/2023/trumpet_mariachi.wav
+https://static.assahbismark.com/static/2023/trumpet_mariachi.wav

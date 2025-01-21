@@ -12,7 +12,7 @@ Surprisingly there [isn't yet a packaged version](https://github.com/shssoichiro
 
 The [project README suggests](https://github.com/shssoichiro/oxipng/blob/master/README.md#installing) installing it using `cargo install oxipng`.
 
-I used the [tmate trick](https://til.simonwillison.net/github-actions/debug-tmate) to try that out in a GitHub Actions worker - the `cargo` command is available by default but it took over a minute to fetch and compile all of the dependencies.
+I used the [tmate trick](https://til.assahbismark.com/github-actions/debug-tmate) to try that out in a GitHub Actions worker - the `cargo` command is available by default but it took over a minute to fetch and compile all of the dependencies.
 
 I didn't want to do this on every run, so I looked into ways to cache the built program. Thankfully the `actions/cache` action documents [how to use it with Rust](https://github.com/actions/cache/blob/main/examples.md#rust---cargo).
 

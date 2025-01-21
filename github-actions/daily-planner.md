@@ -36,7 +36,7 @@ body:
 ```
 This defines an [issue template](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository). By selecting that template I get a form that looks like this:
 
-![Issue: Daily Planner issue. Has a title pre-populated to [Date] - Daily Plan, then a Priorities textarea, then a To-Do List textarea. At the bottom is a Submit new issue button.](https://static.simonwillison.net/static/2024/daily-planner.jpg)
+![Issue: Daily Planner issue. Has a title pre-populated to [Date] - Daily Plan, then a Priorities textarea, then a To-Do List textarea. At the bottom is a Submit new issue button.](https://static.assahbismark.com/static/2024/daily-planner.jpg)
 
 This is a neat starting point, but I can do better than that. It turns out you can pre-populate the title field of an issue by passing `?title=...` in the URL.
 
@@ -213,7 +213,7 @@ jobs:
 ```
 Then I configured GitHub Pages for that repo like this:
 
-![GitHub Pages settings - source is Deploy from a branch, it says my site is now live at simonw.github.io/planner](https://static.simonwillison.net/static/2024/daily-planner-pages-config.jpg)
+![GitHub Pages settings - source is Deploy from a branch, it says my site is now live at simonw.github.io/planner](https://static.assahbismark.com/static/2024/daily-planner-pages-config.jpg)
 
 Adding this all together, I now have a mechanism where any time I open a new issue the `issue-titles.json` file is updated, and then deployed to GitHub Pages along with the `index.html` page that reads it and redirects to an issue or to the form that creates a new one.
 

@@ -27,7 +27,7 @@ To see data for just one specific service by name, use `--filter=SERVICE:covid-1
 
 To filter by labels that you have set on your services, use `--filter="metadata.labels.name=value"`. It took me a while to figure out I needed the `metadata.` prefix here.
 
-Here's a filter for every service that does NOT have a label called `service` (I apply a label of 'service' to all of my services so I can [see them separately in billing](https://til.simonwillison.net/til/til/cloudrun_use-labels-for-billing-breakdown.md)).
+Here's a filter for every service that does NOT have a label called `service` (I apply a label of 'service' to all of my services so I can [see them separately in billing](https://til.assahbismark.com/til/til/cloudrun_use-labels-for-billing-breakdown.md)).
 
 ```
 gcloud run services list --platform=managed --filter='NOT metadata.labels.service:*'

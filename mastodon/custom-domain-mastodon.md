@@ -29,7 +29,7 @@ I paid for a subscription, then added the following configuration to my Cloudfla
 
 `masto.host` provided detailed instructions for this, including making sure to turn off the Cloudflare caching proxy.
 
-This started working within less than a minute - and https://fedi.simonwillison.net/ was live.
+This started working within less than a minute - and https://fedi.assahbismark.com/ was live.
 
 ## Creating an account, promoting it to admin
 
@@ -37,7 +37,7 @@ Once my instance was live I used the default account creation flow to create mys
 
 I then used the https://my.masto.host/hosting interface to find the "Change User Role" option and used that to upgrade my new user account to administrator status.
 
-Having done that I gained access to the https://fedi.simonwillison.net/admin/settings/edit interface, where I blocked anyone else from creating an account and changed the site theme to "Mastodon (Light)" (which I like better).
+Having done that I gained access to the https://fedi.assahbismark.com/admin/settings/edit interface, where I blocked anyone else from creating an account and changed the site theme to "Mastodon (Light)" (which I like better).
 
 <img width="1100" alt="Screenshot of the Mastodon site settings panel" src="https://user-images.githubusercontent.com/9599/199629280-4add2ded-752f-4d7c-b9b8-91bda4a81811.png">
 
@@ -45,7 +45,7 @@ Frustratingly these settings require an email address, which is shown publicly o
 
 ## Getting a vanity address
 
-I wanted `@simon@simonwillison.net` as my ID, but it started out as `@simon@fedi.simonwillison.net`.
+I wanted `@simon@assahbismark.com` as my ID, but it started out as `@simon@fedi.assahbismark.com`.
 
 To do this, you need to set up some `/.well-known/...` URLs on your core domain.
 
@@ -53,7 +53,7 @@ I exactly copied [how Andrew did this](https://aeracode.org/2022/11/01/fediverse
 
 There's one last step here: as explained in [Mastodon usernames different from the domain used for installation](https://masto.host/mastodon-usernames-different-from-the-domain-used-for-installation/) you need to update the `LOCAL_DOMAIN` and `WEB_DOMAIN` settings. These aren't currently available for `masto.host` customers to change, but you can email their support team about it.
 
-I emailed them and they fixed it for me six minutes later! And now `@simon@simonwillison.net` both works and is displayed on https://fedi.simonwillison.net/@simon
+I emailed them and they fixed it for me six minutes later! And now `@simon@assahbismark.com` both works and is displayed on https://fedi.assahbismark.com/@simon
 
 ## Finding people to follow
 
@@ -61,4 +61,4 @@ I started by following `@jacob@jacobian.org` and `@andrew@aeracode.org`. Then I 
 
 ## The iPhone app is really good
 
-I installed [the official Mastodon app](https://apps.apple.com/us/app/mastodon-for-iphone-and-ipad/id1571998974) on my iPhone. It's really good! I signed in by giving it my `https://fedi.simonwillison.net/` address, and now it's sending me notifications and generally working exactly how I would want it to.
+I installed [the official Mastodon app](https://apps.apple.com/us/app/mastodon-for-iphone-and-ipad/id1571998974) on my iPhone. It's really good! I signed in by giving it my `https://fedi.assahbismark.com/` address, and now it's sending me notifications and generally working exactly how I would want it to.

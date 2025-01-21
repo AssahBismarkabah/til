@@ -255,7 +255,7 @@ Here's the sequence of steps.
 
 Here's a GIF illustrating those steps:
 
-![Animated GIF illustrating the sequence of steps](https://static.simonwillison.net/static/2023/readthedocs-config.gif)
+![Animated GIF illustrating the sequence of steps](https://static.assahbismark.com/static/2023/readthedocs-config.gif)
 
 ### What this gives you
 

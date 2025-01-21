@@ -2,7 +2,7 @@
 
 I like [jq](https://stedolan.github.io/jq/), but I always have to think pretty hard about how to construct the right syntax for it.
 
-Here's how I used the [GPT-3 playground](https://simonwillison.net/2022/Jun/5/play-with-gpt3/) to solve a simple `jq` problem.
+Here's how I used the [GPT-3 playground](https://assahbismark.com/2022/Jun/5/play-with-gpt3/) to solve a simple `jq` problem.
 
 I wanted to sum up the total number of comments in JSON that looks like this (truncated example):
 
@@ -11,7 +11,7 @@ I wanted to sum up the total number of comments in JSON that looks like this (tr
     {
         "id": "31195431",
         "title": "Automatically filing issues when tracked file content changes",
-        "url": "https://simonwillison.net/2022/Apr/28/issue-on-changes/",
+        "url": "https://assahbismark.com/2022/Apr/28/issue-on-changes/",
         "dt": "2022-04-28T17:29:37",
         "points": 14,
         "submitter": "simonw",
@@ -21,7 +21,7 @@ I wanted to sum up the total number of comments in JSON that looks like this (tr
     {
         "id": "31185496",
         "title": "Parallel SQL Queries in Datasette",
-        "url": "https://simonwillison.net/2022/Apr/27/parallel-queries/",
+        "url": "https://assahbismark.com/2022/Apr/27/parallel-queries/",
         "dt": "2022-04-27T20:39:50",
         "points": 1,
         "submitter": "frogger8",

@@ -5,7 +5,7 @@
 """, {"topic": topic}, database="tils")
 %}
 
-{% block title %}Simon Willison: TILs on {{ topic }}{% endblock %}<!DOCTYPE html>
+{% block title %}Assah Bismark: TILs on {{ topic }}{% endblock %}<!DOCTYPE html>
 
 {% block body %}
 
@@ -13,7 +13,7 @@
     {{ raise_404("No TILs found") }}
 {% endif %}
 
-<h1>Simon Willison: TILs on {{ topic }}</h1>
+<h1>Assah Bismark: TILs on {{ topic }}</h1>
 
 <p><a style="text-decoration: none" href="/tils/feed_by_topic.atom?topic={{ topic }}" title="Atom feed"><svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 256 256">
     <defs>

@@ -1,6 +1,6 @@
 # Expanding ChatGPT Code Interpreter with Python packages, Deno and Lua
 
-The ChatGPT Code Interpreter alpha remains incredibly interesting. I wrote about how I was using it [for Python and SQLite benchmarking](https://simonwillison.net/2023/Apr/12/code-interpreter/) a few weeks ago. Today I found a neat pattern for expanding its capabilities with custom binaries.
+The ChatGPT Code Interpreter alpha remains incredibly interesting. I wrote about how I was using it [for Python and SQLite benchmarking](https://assahbismark.com/2023/Apr/12/code-interpreter/) a few weeks ago. Today I found a neat pattern for expanding its capabilities with custom binaries.
 
 > **Update:** Code Interpreter often claims that it can't run binaries uploaded like this, but it looks like it [still works if you are are persistent enough with it](https://twitter.com/sujantkumarkv/status/1679506468691902464).
 
@@ -202,7 +202,7 @@ make
 ./sapi/cli/php -v
 cp ./sapi/cli/php /mnt/
 ```
-You can download [that 38.9MB php binary here](https://static.simonwillison.net/static/2023/php).
+You can download [that 38.9MB php binary here](https://static.assahbismark.com/static/2023/php).
 
 Then upload it to Code Interpreter and try this:
 

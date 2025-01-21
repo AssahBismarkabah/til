@@ -12,8 +12,8 @@ I installed ImageMagick on macOS using `brew install imagemagick`
 
 Here's the before GIF:
 
-![This loops once](https://static.simonwillison.net/static/2021/chrome-samesite-missing.gif)
+![This loops once](https://static.assahbismark.com/static/2021/chrome-samesite-missing.gif)
 
 And the after GIF:
 
-![This loops forever](https://static.simonwillison.net/static/2021/chrome-samesite-missing-loop.gif)
+![This loops forever](https://static.assahbismark.com/static/2021/chrome-samesite-missing-loop.gif)

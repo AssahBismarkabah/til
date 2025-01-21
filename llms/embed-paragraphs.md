@@ -14,7 +14,7 @@ query: how much protein should a female eat
 ```
 And get back vectors from the `passage` embeddings that should help answer that query.
 
-It's available in [sentence-transformers](https://www.sbert.net/) which means it should be easy to try out using my [llm-sentence-transformers](https://github.com/simonw/llm-sentence-transformers) plugin, described in [LLM now provides tools for working with embeddings](https://simonwillison.net/2023/Sep/4/llm-embeddings/).
+It's available in [sentence-transformers](https://www.sbert.net/) which means it should be easy to try out using my [llm-sentence-transformers](https://github.com/simonw/llm-sentence-transformers) plugin, described in [LLM now provides tools for working with embeddings](https://assahbismark.com/2023/Sep/4/llm-embeddings/).
 
 ## Setting up LLM
 
@@ -46,7 +46,7 @@ llm embed -m lv2 -c 'passage: hello world' | jq length
 
 ## Embedding every paragraph on my blog
 
-I decided to jump straight to something ambitious: generating `passage` embeddings for every paragraph on [my blog](https://simonwillison.net/).
+I decided to jump straight to something ambitious: generating `passage` embeddings for every paragraph on [my blog](https://assahbismark.com/).
 
 The model truncates text at 512 tokens, so paragraphs sounded like they would be about the right length.
 

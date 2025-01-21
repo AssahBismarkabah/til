@@ -110,7 +110,7 @@ SHOT_HASH_ELEMENTS = (
 
 def s3_contents():
     proc = subprocess.run(
-        ["s3-credentials", "list-bucket", "til.simonwillison.net"], capture_output=True
+        ["s3-credentials", "list-bucket", "til-prod"], capture_output=True
     )
     return [item["Key"] for item in json.loads(proc.stdout)]
 
@@ -169,7 +169,7 @@ def generate_screenshots(root):
                 [
                     "s3-credentials",
                     "put-object",
-                    "til.simonwillison.net",
+                    "til-prod",
                     shot_filename,
                     "-",
                     "--content-type",

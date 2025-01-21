@@ -1,6 +1,6 @@
 # Querying newline-delimited JSON logs using AWS Athena
 
-I've been writing my Fly logs to S3 in newline-delimited JSON format using the recipe described in [Writing Fly logs to S3](https://til.simonwillison.net/fly/fly-logs-to-s3).
+I've been writing my Fly logs to S3 in newline-delimited JSON format using the recipe described in [Writing Fly logs to S3](https://til.assahbismark.com/fly/fly-logs-to-s3).
 
 I recently needed to run a search against those logs. I decided to use [AWS Athena](https://aws.amazon.com/athena/).
 
@@ -94,7 +94,7 @@ Once the table is defined, running queries is pretty easy. I started with this o
 select * from fly_logs limit 10;
 ```
 
-![Screenshot showing the results of that query in the Athena console](https://static.simonwillison.net/static/2022/fly-logs.jpg)
+![Screenshot showing the results of that query in the Athena console](https://static.assahbismark.com/static/2022/fly-logs.jpg)
 
 A count worked too:
 
@@ -127,7 +127,7 @@ Manually converting that JSON into a `CREATE EXTERNAL TABLE` definition is tedio
 
 It turns out you can instead use the OpenAI GPT-3 language model to do that work for you!
 
-Using [the playground](https://simonwillison.net/2022/Jun/5/play-with-gpt3/) I tried the following prompt:
+Using [the playground](https://assahbismark.com/2022/Jun/5/play-with-gpt3/) I tried the following prompt:
 
 ```
 write an AWS Athena create table statement for querying this JSON data:

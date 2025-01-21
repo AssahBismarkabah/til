@@ -2,7 +2,7 @@
 
 I picked up the recipe for this one from [this video](https://www.tiktok.com/t/ZTRaxyxQP/) by [@notjustabartender](https://www.tiktok.com/@notjustabartender) on TikTok.
 
-![A tasty looking whisky sour](https://static.simonwillison.net/static/2022/whisky-sour.jpg)
+![A tasty looking whisky sour](https://static.assahbismark.com/static/2022/whisky-sour.jpg)
 
 ## Ingredients per drink
 

@@ -13,7 +13,7 @@ My [simonwillisonblog-backup workflow](https://github.com/simonw/simonwillisonbl
         git push
 ```
 
-I decided to upgrade it to also build and deploy a SQLite database of the content to [datasette.simonwillison.net](https://datasette.simonwillison.net/) - but only if a change had been detected.
+I decided to upgrade it to also build and deploy a SQLite database of the content to [datasette.assahbismark.com](https://datasette.assahbismark.com/) - but only if a change had been detected.
 
 I figured out the following pattern for doing that.
 

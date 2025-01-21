@@ -83,4 +83,4 @@ content.db:
             <h3>Tutorial: <a href="{{ key }}">{{ title }}</a></h3>
             <p>{{ display.snippet|safe }}</p>
 ```
-See [Building a search engine for datasette.io](https://simonwillison.net/2020/Dec/19/dogsheep-beta/) for more details on exactly how this works.
+See [Building a search engine for datasette.io](https://assahbismark.com/2020/Dec/19/dogsheep-beta/) for more details on exactly how this works.

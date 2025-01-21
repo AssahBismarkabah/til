@@ -61,7 +61,7 @@ This ran perfectly, without any modifications. It generated a folder full of JPG
 
 Each image looked like this:
 
-![A close up of the screen of a digital thermometer. The model name is DM6801A+, then a large LCD shows 316, then a small C below it.](https://static.simonwillison.net/static/2023/ocr-frame.jpg)
+![A close up of the screen of a digital thermometer. The model name is DM6801A+, then a large LCD shows 316, then a small C below it.](https://static.assahbismark.com/static/2023/ocr-frame.jpg)
 
 
 ## Running OCR
@@ -75,11 +75,11 @@ My first attempt used [textra](https://github.com/freedmand/textra) by Dylan Fre
 
 Just one problem: it picked up the text at the top of the image, but it didn't get the output of the LCD display itself with the temperature.
 
-Next I tried my own [s3-ocr](https://datasette.io/tools/s3-ocr) tool, which uses AWS Textract. I've had [amazing results with this](https://simonwillison.net/2022/Jun/30/s3-ocr/) in the past, but while it did better it still wasn't nearly reliable enough at extracting the numeric readouts from this particular series of images.
+Next I tried my own [s3-ocr](https://datasette.io/tools/s3-ocr) tool, which uses AWS Textract. I've had [amazing results with this](https://assahbismark.com/2022/Jun/30/s3-ocr/) in the past, but while it did better it still wasn't nearly reliable enough at extracting the numeric readouts from this particular series of images.
 
 I hadn't tried it myself, but I'd heard good things about Google Cloud Vision - so I gave that a go using [their online demo](https://cloud.google.com/vision/docs/drag-and-drop):
 
-![The Cloud Vision Try the API tool. My photo is on the left with boxes drawn on it around the model number of the thermometer, the LCD temperature display and the little C shown below it. On the right is a Block 1 box with the model number and Block 2 showing 834, the current temperature.](https://static.simonwillison.net/static/2023/cloud-vision-ocr.jpg)
+![The Cloud Vision Try the API tool. My photo is on the left with boxes drawn on it around the model number of the thermometer, the LCD temperature display and the little C shown below it. On the right is a Block 1 box with the model number and Block 2 showing 834, the current temperature.](https://static.assahbismark.com/static/2023/cloud-vision-ocr.jpg)
 
 That's exactly what I need!
 
@@ -190,5 +190,5 @@ The resulting table looked like this:
 
 I used [datasette-copyable](https://datasette.io/plugins/datasette-copyable) to copy the data out to a Google Sheet. Here's my first attempt at charting the data, which makes it easy to spot places where the OCR got the wrong results:
 
-![Google Sheets table and chart representing the data. Starts at 830C and drops down over 1hr 40 minutes. The line chart has some very obvious spikes and troughs from outliers but is mostly smooth.](https://static.simonwillison.net/static/2023/google-sheets-temperature-over-time.jpg)
+![Google Sheets table and chart representing the data. Starts at 830C and drops down over 1hr 40 minutes. The line chart has some very obvious spikes and troughs from outliers but is mostly smooth.](https://static.assahbismark.com/static/2023/google-sheets-temperature-over-time.jpg)
 

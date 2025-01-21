@@ -89,7 +89,7 @@ sqlite-utils add-foreign-key sky-westminster-files.db \
   payments member_id members id
 ```
 
-The result was a 5.6MB SQLite database. I uploaded a copy of that here: https://static.simonwillison.net/static/2023/sky-westminster-files.db
+The result was a 5.6MB SQLite database. I uploaded a copy of that here: https://static.assahbismark.com/static/2023/sky-westminster-files.db
 
 I wanted to open it in [Datasette Lite](https://github.com/simonw/datasette-lite) - so I dumped out the raw SQL using this command:
 
@@ -106,7 +106,7 @@ https://lite.datasette.io/?sql=https://gist.github.com/simonw/ee4d5938016b10c490
 
 ## Automating the data extraction
 
-One last step: I decided to script the data extraction itself, using [shot-scraper javascript](https://simonwillison.net/2022/Mar/14/scraping-web-pages-shot-scraper/).
+One last step: I decided to script the data extraction itself, using [shot-scraper javascript](https://assahbismark.com/2022/Mar/14/scraping-web-pages-shot-scraper/).
 
 I built a new tool to help with that - [json-to-files](https://pypi.org/project/json-to-files) - which accepts a JSON object mapping filenames to content and writes those files to disk.
 

@@ -6,7 +6,7 @@ I got a tip from [this Twitter thread](https://twitter.com/john_lam/status/16202
 
 > This is a sentence-transformers model: It maps sentences & paragraphs to a 768 dimensional dense vector space. The model was specifically trained for the task of sematic search.
 
-I wrote about embeddings models like this in detail in [How to implement Q&A against your documentation with GPT3, embeddings and Datasette](https://simonwillison.net/2023/Jan/13/semantic-search-answers/).
+I wrote about embeddings models like this in detail in [How to implement Q&A against your documentation with GPT3, embeddings and Datasette](https://assahbismark.com/2023/Jan/13/semantic-search-answers/).
 
 My previous explorations of embeddings have used the [OpenAI embeddings API](https://platform.openai.com/docs/guides/embeddings). I'm pleased to report that the `gt5-t5-large` model runs on my laptop, and seems to provide solid usable results, at least for the task of finding similar content!
 
@@ -24,7 +24,7 @@ I used [HTTPX](https://www.python-httpx.org/) and [FAISS](https://github.com/fac
 
 ## Download some data to embed
 
-I decided to calculate embeddings against all of my blogmarks - short form bookmark entries I've posted to my blog. I've posted [6,465 of those](https://datasette.simonwillison.net/simonwillisonblog/blog_blogmark) dating back to November 2003.
+I decided to calculate embeddings against all of my blogmarks - short form bookmark entries I've posted to my blog. I've posted [6,465 of those](https://datasette.assahbismark.com/simonwillisonblog/blog_blogmark) dating back to November 2003.
 
 I used the following script to fetch them as JSON from Datasette:
 
@@ -32,7 +32,7 @@ I used the following script to fetch them as JSON from Datasette:
 import httpx
 
 def get_blogmarks():
-    url = "https://datasette.simonwillison.net/simonwillisonblog/blog_blogmark.json?_size=max&_shape=objects"
+    url = "https://datasette.assahbismark.com/simonwillisonblog/blog_blogmark.json?_size=max&_shape=objects"
     while url:
         data = httpx.get(url, timeout=10).json()
         yield from data["rows"]
@@ -179,7 +179,7 @@ And now:
         results
     join blog_blogmark on results.id = blog_blogmark.id
 ```
-Here's [the result of running that SQL query](https://datasette.simonwillison.net/simonwillisonblog?sql=with+results%28sort%2C+id%29+as+%28%0D%0A++++values%0D%0A++++++++%280%2C+6832%29%2C+%281%2C+5545%29%2C+%282%2C+6843%29%2C+%283%2C+6838%29%2C+%284%2C+5573%29%2C+%285%2C+6510%29%2C+%286%2C+6985%29%2C+%287%2C+6957%29%2C+%288%2C+5714%29%2C+%289%2C+6840%29%0D%0A++++%29%0D%0A++++select%0D%0A++++++++results.sort%2C%0D%0A++++++++blog_blogmark.link_title%2C%0D%0A++++++++blog_blogmark.commentary%0D%0A++++from%0D%0A++++++++results%0D%0A++++join+blog_blogmark+on+results.id+%3D+blog_blogmark.id):
+Here's [the result of running that SQL query](https://datasette.assahbismark.com/simonwillisonblog?sql=with+results%28sort%2C+id%29+as+%28%0D%0A++++values%0D%0A++++++++%280%2C+6832%29%2C+%281%2C+5545%29%2C+%282%2C+6843%29%2C+%283%2C+6838%29%2C+%284%2C+5573%29%2C+%285%2C+6510%29%2C+%286%2C+6985%29%2C+%287%2C+6957%29%2C+%288%2C+5714%29%2C+%289%2C+6840%29%0D%0A++++%29%0D%0A++++select%0D%0A++++++++results.sort%2C%0D%0A++++++++blog_blogmark.link_title%2C%0D%0A++++++++blog_blogmark.commentary%0D%0A++++from%0D%0A++++++++results%0D%0A++++join+blog_blogmark+on+results.id+%3D+blog_blogmark.id):
 
 | sort | link_title | commentary |
 | --- | --- | --- |

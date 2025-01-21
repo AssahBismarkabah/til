@@ -94,4 +94,4 @@ function aqiFromPm(pm) {
   return values ? computeAqi(pm, values) : 500;
 }
 ```
-I used this to build a simple demo at https://til.simonwillison.net/tools/aqi
+I used this to build a simple demo at https://til.assahbismark.com/tools/aqi

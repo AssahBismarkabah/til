@@ -1,6 +1,6 @@
 # Writing JavaScript that responds to media queries
 
-I wanted to change the layout of [my blog](https://simonwillison.net/) on mobile screens such that the content from the "Elsewhere" right hand column combined with the main column in the correct order (issue [#165](https://github.com/simonw/simonwillisonblog/issues/165)). I couldn't find a way to do this in pure CSS without duplicating a bunch of content, so I decided to do it with JavaScript.
+I wanted to change the layout of [my blog](https://assahbismark.com/) on mobile screens such that the content from the "Elsewhere" right hand column combined with the main column in the correct order (issue [#165](https://github.com/simonw/simonwillisonblog/issues/165)). I couldn't find a way to do this in pure CSS without duplicating a bunch of content, so I decided to do it with JavaScript.
 
 I needed to apply some changes to the DOM if the users window was smaller than 800px - or if the user resized their window to less than 800px after they had first loaded the page.
 

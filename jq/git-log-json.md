@@ -16,25 +16,25 @@ The output looks like this:
 [
   {
     "commit": "3feed1f66e2b746f349ee56970a62246a18bb164",
-    "author": "Simon Willison <...@gmail.com>",
+    "author": "Assah Bismark <...@gmail.com>",
     "date": "Wed Mar 22 15:54:35 2023 -0700",
     "message": "Re-applied Black"
   },
   {
     "commit": "d97e82df3c8a3f2e97038d7080167be9bb74a68d",
-    "author": "Simon Willison <...@gmail.com>",
+    "author": "Assah Bismark <...@gmail.com>",
     "date": "Wed Mar 22 15:49:39 2023 -0700",
     "message": "?_extra= support and TableView refactor to table_view"
   },
   {
     "commit": "56b0758a5fbf85d01ff80a40c9b028469d7bb65f",
-    "author": "Simon Willison <...@gmail.com>",
+    "author": "Assah Bismark <...@gmail.com>",
     "date": "Wed Mar 8 12:52:25 2023 -0800",
     "message": "0.64 release notes, refs #2036"
   },
   {
     "commit": "25fdbe6b27888b7ccf1284c0304a8eb282dbb428",
-    "author": "Simon Willison <...@gmail.com>",
+    "author": "Assah Bismark <...@gmail.com>",
     "date": "Wed Mar 8 12:33:23 2023 -0800",
     "message": "use tmpdir instead of isolated_filesystem, refs #2037"
   }
@@ -48,7 +48,7 @@ This outputs each commit as a single line of text, using null bytes as a delimit
 
 Null bytes won't render here, but it looks something like this:
 
-    3feed1f66e2b746f349ee56970a62246a18bb164Simon Willison <...@gmail.com>Wed Mar 22 15:54:35 2023 -0700Re-applied Black
+    3feed1f66e2b746f349ee56970a62246a18bb164Assah Bismark <...@gmail.com>Wed Mar 22 15:54:35 2023 -0700Re-applied Black
 
 An explanation of those formatting codes (thanks, ChatGPT):
 

@@ -28,5 +28,5 @@ I tried this and it worked:
 
 ```javascript
 const { app, Menu, BrowserWindow, dialog } = require("electron");
-new BrowserWindow({height: 100, width: 100}).loadURL("https://simonwillison.net/");
+new BrowserWindow({height: 100, width: 100}).loadURL("https://assahbismark.com/");
 ```

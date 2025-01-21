@@ -103,7 +103,7 @@ Example output from this query:
 ```
 ## Using ST_AsGeoJSON
 
-After writing this TIL I found a much quicker option: the `ST_AsGeoJSON()` function. This works if your table has a geometry column on it - in my case I [enhanced my location table](https://simonwillison.net/2021/May/3/adding-geodjango-to-an-existing-django-project/) to include a point column.
+After writing this TIL I found a much quicker option: the `ST_AsGeoJSON()` function. This works if your table has a geometry column on it - in my case I [enhanced my location table](https://assahbismark.com/2021/May/3/adding-geodjango-to-an-existing-django-project/) to include a point column.
 
 The following SQL generates a full GeoJSON feature row for each location in the database:
 

@@ -27,7 +27,7 @@ Then run it like this:
 
 And visit `http://localhost:5000/-/versions` to see the version number to confirm it worked.
 
-I wanted to deploy this to Cloud Run, using [this recipe](https://til.simonwillison.net/cloudrun/ship-dockerfile-to-cloud-run).
+I wanted to deploy this to Cloud Run, using [this recipe](https://til.assahbismark.com/cloudrun/ship-dockerfile-to-cloud-run).
 
 Unfortunately, the `gcloud builds submit` command doesn't have a mechanism for specifying `--build-arg`.
 
@@ -45,7 +45,7 @@ Since I want to dynamically populate my YAML file, I ended up using the followin
 
 ```bash
 #!/bin/bash
-# https://til.simonwillison.net/cloudrun/using-build-args-with-cloud-run
+# https://til.assahbismark.com/cloudrun/using-build-args-with-cloud-run
 
 if [[ -z "$DATASETTE_REF" ]]; then
     echo "Must provide DATASETTE_REF environment variable" 1>&2

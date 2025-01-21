@@ -2,7 +2,7 @@
 
 A pattern I really like for zero-downtime deploys is the ability to "pause" HTTP traffic at the load balancer, such that incoming requests from browsers appear to take a few extra seconds to return, but under the hood they've actually been held in a queue while a backend server is swapped out or upgraded in some way.
 
-I first heard about this pattern [from Braintree](https://simonwillison.net/2011/Jun/30/braintree/), and a [conversation on Twitter](https://twitter.com/simonw/status/1463652411365494791) today brought up a few more examples, including [this NGINX Lua config](https://github.com/basecamp/intermission) from Basecamp.
+I first heard about this pattern [from Braintree](https://assahbismark.com/2011/Jun/30/braintree/), and a [conversation on Twitter](https://twitter.com/simonw/status/1463652411365494791) today brought up a few more examples, including [this NGINX Lua config](https://github.com/basecamp/intermission) from Basecamp.
 
 [Caddy](https://caddyserver.com/) creator Matt Holt [pointed me](https://twitter.com/mholt6/status/1463656086360051714) to [lb_try_duration and lb_try_interval](https://caddyserver.com/docs/caddyfile/directives/reverse_proxy#lb_try_duration) in Caddy, which can hold requests for up to a specific number of seconds, retrying the backend to see if it has become available again.
 

@@ -12,7 +12,7 @@ The rest of this TIL describes a more complex method.
 
 ## Scrape the list of video URLs 
 
-I used a variant of my [Twitter scraping trick](https://til.simonwillison.net/twitter/collecting-replies). Start by loading up a profile page - like [https://www.tiktok.com/@ilgallinaio_special](www.tiktok.com/@ilgallinaio_special) - in Firefox or Chrome or Safari.
+I used a variant of my [Twitter scraping trick](https://til.assahbismark.com/twitter/collecting-replies). Start by loading up a profile page - like [https://www.tiktok.com/@ilgallinaio_special](www.tiktok.com/@ilgallinaio_special) - in Firefox or Chrome or Safari.
 
 Open up the DevTools and paste in the following JavaScript:
 

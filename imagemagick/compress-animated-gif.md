@@ -44,11 +44,11 @@ This saves over the original, so make a copy of it first.
 
 I ran this against this 1.3MB animated GIF:
 
-![A demo of my sqlite-utils convert command](https://static.simonwillison.net/static/2021/sqlite-convert-demo-raw.gif)
+![A demo of my sqlite-utils convert command](https://static.assahbismark.com/static/2021/sqlite-convert-demo-raw.gif)
 
 The result was this 401KB GIF:
 
-![Same demo of my sqlite-utils convert command, but a smaller file](https://static.simonwillison.net/static/2021/sqlite-convert-demo.gif)
+![Same demo of my sqlite-utils convert command, but a smaller file](https://static.assahbismark.com/static/2021/sqlite-convert-demo.gif)
 
 The `-fuzz 7%` option is [documented here](https://imagemagick.org/script/command-line-options.php#fuzz) - it treats similar colours as the same colour:
 

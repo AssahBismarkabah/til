@@ -1,6 +1,6 @@
 # Automatically maintaining Homebrew formulas using GitHub Actions
 
-I previously wrote about [Packaging a Python CLI tool for Homebrew](https://til.simonwillison.net/homebrew/packaging-python-cli-for-homebrew). I've now figured out a pattern for automatically updating those formulas over time, using GitHub Actions.
+I previously wrote about [Packaging a Python CLI tool for Homebrew](https://til.assahbismark.com/homebrew/packaging-python-cli-for-homebrew). I've now figured out a pattern for automatically updating those formulas over time, using GitHub Actions.
 
 ## Background on Homebrew formulas and taps
 
@@ -63,7 +63,7 @@ Importantly, dependencies need to be installed from `.tar.gz` source archives. H
 
 ## Generating the formula
 
-I wrote about this in [Packaging a Python CLI tool for Homebrew](https://til.simonwillison.net/homebrew/packaging-python-cli-for-homebrew): there's a tool which can do almost all of the work of generating one of these formulas, including figuring out the URLs and SHA hashes for all of the dependencies.
+I wrote about this in [Packaging a Python CLI tool for Homebrew](https://til.assahbismark.com/homebrew/packaging-python-cli-for-homebrew): there's a tool which can do almost all of the work of generating one of these formulas, including figuring out the URLs and SHA hashes for all of the dependencies.
 
 You can run that tool in a fresh virtual environment like so:
 ```bash
@@ -103,7 +103,7 @@ As you can see, it's almost exactly what you need - the only thing missing is th
 
 I wanted a button I could click that would regenerate the formula for me.
 
-I love using GitHub Actions for this kind of thing - see [Git scraping](https://simonwillison.net/2020/Oct/9/git-scraping/).
+I love using GitHub Actions for this kind of thing - see [Git scraping](https://assahbismark.com/2020/Oct/9/git-scraping/).
 
 After some iteration, I came up with this workflow definition - saved in [.github/workflows/symbex.yaml](https://github.com/simonw/homebrew-llm/blob/main/.github/workflows/symbex.yaml):
 

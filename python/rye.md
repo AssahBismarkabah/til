@@ -58,7 +58,7 @@ name = "my-project"
 version = "0.1.0"
 description = "Add a short description here"
 authors = [
-    { name = "Simon Willison", email = "...@gmail.com" }
+    { name = "Assah Bismark", email = "...@gmail.com" }
 ]
 dependencies = []
 readme = "README.md"

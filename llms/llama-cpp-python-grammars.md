@@ -123,4 +123,4 @@ I don't see any way to resolve this, unfortunately: the grammar is considered en
 
 There are tricks for dealing with incomplete JSON though, especially if it's producing an array of objects where you could discard the incomplete object at the end.
 
-Next time I dig into this I plan to experiment with [using ijson](https://til.simonwillison.net/json/ijson-stream), a streaming JSON parser, to try and account for this.
+Next time I dig into this I plan to experiment with [using ijson](https://til.assahbismark.com/json/ijson-stream), a streaming JSON parser, to try and account for this.

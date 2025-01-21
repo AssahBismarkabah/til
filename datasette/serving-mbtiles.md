@@ -2,7 +2,7 @@
 
 The [MBTiles](https://github.com/mapbox/mbtiles-spec) format uses SQLite to bundle map tiles for use with libraries such as Leaflet.
 
-I figured out how to use the [datasette-media](https://datasette.io/plugins/datasette-media) to serve tiles from this MBTiles file containing two zoom levels of tiles for San Francisco: https://static.simonwillison.net/static/2021/San_Francisco.mbtiles
+I figured out how to use the [datasette-media](https://datasette.io/plugins/datasette-media) to serve tiles from this MBTiles file containing two zoom levels of tiles for San Francisco: https://static.assahbismark.com/static/2021/San_Francisco.mbtiles
 
 This TIL is now entirely obsolete: I used this prototype to build the new [datasette-tiles](https://datasette.io/plugins/datasette-tiles) plugin.
 

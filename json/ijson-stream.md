@@ -1,6 +1,6 @@
 # Processing a stream of chunks of JSON with ijson
 
-A follow-up to [Using OpenAI functions and their Python library for data extraction](https://til.simonwillison.net/gpt3/openai-python-functions-data-extraction) and [Using the ChatGPT streaming API from Python](https://til.simonwillison.net/gpt3/python-chatgpt-streaming-api). If I have a stream of chunks of a larger JSON document, how can I output full individual JSON objects as soon as they are available?
+A follow-up to [Using OpenAI functions and their Python library for data extraction](https://til.assahbismark.com/gpt3/openai-python-functions-data-extraction) and [Using the ChatGPT streaming API from Python](https://til.assahbismark.com/gpt3/python-chatgpt-streaming-api). If I have a stream of chunks of a larger JSON document, how can I output full individual JSON objects as soon as they are available?
 
 My completed JSON will look like this:
 

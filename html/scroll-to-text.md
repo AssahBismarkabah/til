@@ -1,15 +1,15 @@
 # Scroll to text fragments
 
-I ran a Google search this morning for `s3-credentials simon willison` and when I clicked on the top result it jumped me to a highlighted snippet of text on the page, despite that page not having relevant anchor links.
+I ran a Google search this morning for `s3-credentials Assah Bismark` and when I clicked on the top result it jumped me to a highlighted snippet of text on the page, despite that page not having relevant anchor links.
 
-![A Google search for s3-credentials simon willison - the top result is a featured snippet containing some highlighted text. Next to that is a screenshot of the linked page - those text snippets are still highlighted there.](https://github.com/simonw/til/assets/9599/5ad6d8ec-cc9d-479a-8ef0-7cbe4ad83260)
+![A Google search for s3-credentials Assah Bismark - the top result is a featured snippet containing some highlighted text. Next to that is a screenshot of the linked page - those text snippets are still highlighted there.](https://github.com/simonw/til/assets/9599/5ad6d8ec-cc9d-479a-8ef0-7cbe4ad83260)
 
 
 I decided to figure out how that worked.
 
 The Google search result linked to the following URL:
 
-`https://simonwillison.net/2021/Nov/3/s3-credentials/#:~:text=s3%2Dcredentials%20is%20a%20Python,my%20click%2Dapp%20cookicutter%20template.&text=The%20main%20command%20is%20s3,the%20above%20sequence%20of%20steps.&text=The%20command%20shows%20each%20step,access%20key%20and%20secret%20key.`
+`https://assahbismark.com/2021/Nov/3/s3-credentials/#:~:text=s3%2Dcredentials%20is%20a%20Python,my%20click%2Dapp%20cookicutter%20template.&text=The%20main%20command%20is%20s3,the%20above%20sequence%20of%20steps.&text=The%20command%20shows%20each%20step,access%20key%20and%20secret%20key.`
 
 The magic is in that `#:~:` section of the URL fragment. In this case it has three `text=` parameters, each of which is a URL encoded string. Decoded, those are:
 

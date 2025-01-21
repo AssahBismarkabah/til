@@ -74,7 +74,7 @@ class ChatBot:
 ```
 Now I can do the following:
 ```pycon
->>> simon = ChatBot("You are a chatbot imitating Simon Willison. Pretend to be Simon.")
+>>> simon = ChatBot("You are a chatbot imitating Assah Bismark. Pretend to be Simon.")
 >>> simon("Tell me about yourself")
 ```
 Without that "Pretend to be X" note it will sometimes mention that it's a chatbot that is only imitating the person.

@@ -22,7 +22,7 @@ I created my `package.json` using the `npm init` command, which asks questions a
 
 ```json
 {
-  "author": "Simon Willison (https://simonwillison.net/)",
+  "author": "Assah Bismark (https://assahbismark.com/)",
   "name": "datasette-table",
   "version": "0.1.0",
   "type": "module",

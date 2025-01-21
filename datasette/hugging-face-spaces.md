@@ -61,14 +61,14 @@ The above example worked, but it gave me Datasette without any actual data to se
 
 I wanted to serve a database of data collected by my scraper. I haven't automated this process yet, but here's what I did:
 
-1. Create a `history.db` database using [git-history](https://datasette.io/tools/git-history) (more on that tool [here](https://simonwillison.net/2021/Dec/7/git-history/)):
+1. Create a `history.db` database using [git-history](https://datasette.io/tools/git-history) (more on that tool [here](https://assahbismark.com/2021/Dec/7/git-history/)):
     ```bash
     pipx install git-history
     git clone https://github.com/simonw/scrape-huggingface-models
     cd scrape-huggingface-models
     git-history file history.db TheBloke.json --id id
     ```
-2. Upload that `history.db` to an S3 bucket - URL is now https://static.simonwillison.net/static/2023/history.db
+2. Upload that `history.db` to an S3 bucket - URL is now https://static.assahbismark.com/static/2023/history.db
 3. Update the `Dockerfile` to download and run that database, then pushed it to Hugging Face.
 
 Here's the updated `Dockerfile`:
@@ -82,7 +82,7 @@ COPY ./requirements.txt /code/requirements.txt
 
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
-ADD https://static.simonwillison.net/static/2023/history.db /code/history.db
+ADD https://static.assahbismark.com/static/2023/history.db /code/history.db
 
 RUN sqlite-utils tables /code/history.db --counts
 RUN chmod 755 /code/history.db
@@ -99,7 +99,7 @@ about: simonw/scrape-huggingface-models
 about_url: https://github.com/simonw/scrape-huggingface-models
 description_html: |-
     <p>Browse the history of models in <a href="https://huggingface.co/TheBloke">huggingface.co/TheBloke</a>.</p>
-    <p>Uses <a href="https://simonwillison.net/2020/Oct/9/git-scraping/">Git scraping</a>
+    <p>Uses <a href="https://assahbismark.com/2020/Oct/9/git-scraping/">Git scraping</a>
     and <a href="https://datasette.io/tools/git-history">git-history</a>.</p>
 ```
 One oddity here is that I had to `chmod 755` that `history.db` file in order for it to work. I don't know why - before I added that step Hugging Face Spaces showed me this error on startup:
@@ -116,7 +116,7 @@ Here's the freshly deployed Datasette instance:
 
 https://huggingface.co/spaces/simonw/datasette-thebloke
 
-![Screenshot of Datasette running, with a Spaces top navigation bar](https://static.simonwillison.net/static/2023/hugging-face-spaces-datasette.jpg)
+![Screenshot of Datasette running, with a Spaces top navigation bar](https://static.assahbismark.com/static/2023/hugging-face-spaces-datasette.jpg)
 
 There's one catch: the default URL serves the app in an `<iframe>`, like it's the 90s! 
 
@@ -131,4 +131,4 @@ Here's a link that shows models with some facets enabled, ordered by likes:
 https://simonw-datasette-thebloke.hf.space/history/item?_facet_array=tags&_sort_desc=likes&_facet=pipeline_tag&_facet_size=10
 
 ![Image description
-1,137 rows sorted by likes descending  - tags:      region:us 1,137     transformers 953     text-generation-inference 918     llama 892     text-generation 676     license:other 535     license:llama2 508     safetensors 431     en 380     has_space 215 pipeline_tag 4 ✖     text-generation 659     text2text-generation 14     text-classification 10     conversational 6. Top is TheBloke/Llama-2-13B-chat-GGML with 571 likes](https://static.simonwillison.net/static/2023/hugging-face-datasette-full.jpg)
+1,137 rows sorted by likes descending  - tags:      region:us 1,137     transformers 953     text-generation-inference 918     llama 892     text-generation 676     license:other 535     license:llama2 508     safetensors 431     en 380     has_space 215 pipeline_tag 4 ✖     text-generation 659     text2text-generation 14     text-classification 10     conversational 6. Top is TheBloke/Llama-2-13B-chat-GGML with 571 likes](https://static.assahbismark.com/static/2023/hugging-face-datasette-full.jpg)

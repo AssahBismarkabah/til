@@ -78,7 +78,7 @@ Mo McRoberts on Twitter [pointed out that](https://twitter.com/nevali/status/139
 
 So I dug in a bit.... and it turns out you can tell Docker for Mac to build and run containers using the `linux/amd64` architecture and everything... just works!
 
-I'm using Docker Compose (see [Docker Compose for Django development](https://til.simonwillison.net/docker/docker-compose-for-django-development) so I added the `platform: linux/amd64` YAML key for my container:
+I'm using Docker Compose (see [Docker Compose for Django development](https://til.assahbismark.com/docker/docker-compose-for-django-development) so I added the `platform: linux/amd64` YAML key for my container:
 
 ```yaml
   web:

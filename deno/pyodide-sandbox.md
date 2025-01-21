@@ -2,7 +2,7 @@
 
 I continue to seek a solution to the Python sandbox problem. I want to run an untrusted piece of Python code in a sandbox, with limits on memory and time.
 
-Previous attempt: [Run Python code in a WebAssembly sandbox](https://til.simonwillison.net/webassembly/python-in-a-wasm-sandbox)
+Previous attempt: [Run Python code in a WebAssembly sandbox](https://til.assahbismark.com/webassembly/python-in-a-wasm-sandbox)
 
 Today I came across [this comment](https://github.com/pyodide/pyodide/issues/3420#issuecomment-1542742906) on the Pyodide issue thread about Deno support, which showed how Pyodide can now be loaded in a Deno script using `import pyodideModule from "npm:pyodide/pyodide.js"`.
 

@@ -69,7 +69,7 @@ I built this with a bit of help from Claude - [transcript here](https://gist.git
 
 ## Feeding those to an LLM
 
-I fed the collected tweets to an LLM (Google's [gemini-exp-1206](https://simonwillison.net/2024/Dec/6/gemini-exp-1206/)) and asked it this question:
+I fed the collected tweets to an LLM (Google's [gemini-exp-1206](https://assahbismark.com/2024/Dec/6/gemini-exp-1206/)) and asked it this question:
 
 > `Group these into a set of definitions that illustrate the various different shapes of definition. For each of your definitions include quotes of the tweets that support that definition. Answer in markdown`
 

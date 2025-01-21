@@ -1,6 +1,6 @@
 # Running LLaMA 7B and 13B on a 64GB M2 MacBook Pro with llama.cpp
 
-See also: **[Large language models are having their Stable Diffusion moment right now](https://simonwillison.net/2023/Mar/11/llama/)**.
+See also: **[Large language models are having their Stable Diffusion moment right now](https://assahbismark.com/2023/Mar/11/llama/)**.
 
 Facebook's [LLaMA](https://research.facebook.com/publications/llama-open-and-efficient-foundation-language-models/) is a "collection of foundation language models ranging from 7B to 65B parameters", released on February 24th 2023.
 

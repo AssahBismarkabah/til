@@ -4,7 +4,7 @@ Twitter [announced today](https://twitter.com/TwitterDev/status/1621026986784337
 
 My [@covidsewage](https://twitter.com/covidsewage) Twitter bot posts a screenshot of the latest Covid sewage data for parts of the San Francisco Bay Area every morning. I decided to port it to Mastodon.
 
-It's now up and running in its new home at https://fedi.simonwillison.net/@covidsewage - here's how the new bot works.
+It's now up and running in its new home at https://fedi.assahbismark.com/@covidsewage - here's how the new bot works.
 
 ## toot - a Mastodon command line client
 
@@ -29,7 +29,7 @@ Toot authentication is _really nice_. All you have to do is run:
 ```
 toot login
 ```
-It will ask for your Mastodon instance (my private one is `fedi.simonwillison.net`) and spit out a link to click on.
+It will ask for your Mastodon instance (my private one is `fedi.assahbismark.com`) and spit out a link to click on.
 
 Click that link and your Mastodon server will ask you if you want to authorize the tool.
 
@@ -39,19 +39,19 @@ Toot then creates a file in `~/.config/toot/config.json`. My file (redacted) loo
 
 ```json
 {
- "active_user": "covidsewage@fedi.simonwillison.net",
+ "active_user": "covidsewage@fedi.assahbismark.com",
  "apps": {
-  "fedi.simonwillison.net": {
-   "base_url": "https://fedi.simonwillison.net",
+  "fedi.assahbismark.com": {
+   "base_url": "https://fedi.assahbismark.com",
    "client_id": "cTQfcJy9EhlIUSGPRx90PRnMx_RroBuLUw8WcMvguD0",
    "client_secret": "... redacted ...",
-   "instance": "fedi.simonwillison.net"
+   "instance": "fedi.assahbismark.com"
   }
  },
  "users": {
-  "covidsewage@fedi.simonwillison.net": {
+  "covidsewage@fedi.assahbismark.com": {
    "access_token": "... redacted ...",
-   "instance": "fedi.simonwillison.net",
+   "instance": "fedi.assahbismark.com",
    "username": "covidsewage"
   }
  }
@@ -75,7 +75,7 @@ This loads the https://covid19.sccgov.org/dashboard-wastewater page in a headles
 
 The screenshot is taken in retina mode (2x the pixel density) and saved to a file called `/tmp/covid.png`.
 
-Read more about `shot-scraper` in [shot-scraper: automated screenshots for documentation, built on Playwright](https://simonwillison.net/2022/Mar/10/shot-scraper/).
+Read more about `shot-scraper` in [shot-scraper: automated screenshots for documentation, built on Playwright](https://assahbismark.com/2022/Mar/10/shot-scraper/).
 
 ## Running this in GitHub Actions
 

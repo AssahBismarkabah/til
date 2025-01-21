@@ -29,11 +29,11 @@ When I ran that against my repo, each commit looked something like this:
 ```python
 {'author_date': b'1689003276 -0700',
  'author_email': b'...@gmail.com',
- 'author_name': b'Simon Willison',
+ 'author_name': b'Assah Bismark',
  'branch': b'refs/heads/backup',
  'committer_date': b'1689003276 -0700',
  'committer_email': b'...@gmail.com',
- 'committer_name': b'Simon Willison',
+ 'committer_name': b'Assah Bismark',
  'dumped': 0,
  'encoding': None,
  'file_changes': [<__main__.FileChange object at 0x1037d6b00>],
@@ -63,8 +63,8 @@ Having run this, the following command confirmed that the commit dates had now b
 git log --pretty=format:"%h - %an, %ad : Committer Date: %cd"
 ```
 ```
-6cdbc7a - Simon Willison, Mon Jul 10 08:34:36 2023 -0700 : Committer Date: Mon Jul 10 08:34:36 2023 -0700
-02a930d - Simon Willison, Mon Jul 10 08:31:50 2023 -0700 : Committer Date: Mon Jul 10 08:31:50 2023 -0700
-a421aab - Simon Willison, Mon Jul 10 08:27:28 2023 -0700 : Committer Date: Mon Jul 10 08:27:28 2023 -0700
+6cdbc7a - Assah Bismark, Mon Jul 10 08:34:36 2023 -0700 : Committer Date: Mon Jul 10 08:34:36 2023 -0700
+02a930d - Assah Bismark, Mon Jul 10 08:31:50 2023 -0700 : Committer Date: Mon Jul 10 08:31:50 2023 -0700
+a421aab - Assah Bismark, Mon Jul 10 08:27:28 2023 -0700 : Committer Date: Mon Jul 10 08:27:28 2023 -0700
 ...
 ```

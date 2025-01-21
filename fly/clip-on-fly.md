@@ -1,6 +1,6 @@
 # Deploying the CLIP embedding model on Fly
 
-Inspired by [Drew Breunig's Faucet Finder](https://www.dbreunig.com/2023/09/26/faucet-finder.html) I decided I wanted to deploy an API somewhere that could calculate [CLIP embeddings](https://simonwillison.net/2023/Sep/12/llm-clip-and-chat/) for me.
+Inspired by [Drew Breunig's Faucet Finder](https://www.dbreunig.com/2023/09/26/faucet-finder.html) I decided I wanted to deploy an API somewhere that could calculate [CLIP embeddings](https://assahbismark.com/2023/Sep/12/llm-clip-and-chat/) for me.
 
 I ended up deploying a Datasette instance to [Fly.io](https://fly.io/) using my [llm-clip](https://github.com/simonw/llm-clip) and [datasette-llm-embed](https://github.com/simonw/datasette-llm-embed) plugins.
 

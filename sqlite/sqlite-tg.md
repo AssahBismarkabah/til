@@ -7,7 +7,7 @@
 - Shape intersection checks
 - Geospatial indexing to speed up the above
 
-TG was released on Friday. I posted [a note](https://simonwillison.net/2023/Sep/23/tg-polygon-indexing/) that "I think this could make the basis of a really useful SQLite extension—a lighter-weight alternative to SpatiaLite" in a couple of places...
+TG was released on Friday. I posted [a note](https://assahbismark.com/2023/Sep/23/tg-polygon-indexing/) that "I think this could make the basis of a really useful SQLite extension—a lighter-weight alternative to SpatiaLite" in a couple of places...
 
 ... and Alex Garcia clearly agreed, because he built [sqlite-tg](https://github.com/asg017/sqlite-tg) over the weekend, and then packaged it up as a [Python package](https://pypi.org/project/sqlite-tg/), `sqlite-utils` and Datasette plugins, a [Ruby gem](https://rubygems.org/gems/sqlite-tg), a [Deno package](https://deno.land/x/sqlite_tg) and [an npm package](https://www.npmjs.com/package/sqlite-tg) too!
 
@@ -151,7 +151,7 @@ I grabbed the latest release of `timezones.geojson.zip` from [evansiroky/timezon
               4.912035
             ],
 ```
-Then I loaded that into a SQLite database table using this `sqlite-utils` mechanism (explained in [What’s new in sqlite-utils 3.20 and 3.21: --lines, --text, --convert](https://simonwillison.net/2022/Jan/11/sqlite-utils/)).
+Then I loaded that into a SQLite database table using this `sqlite-utils` mechanism (explained in [What’s new in sqlite-utils 3.20 and 3.21: --lines, --text, --convert](https://assahbismark.com/2022/Jan/11/sqlite-utils/)).
 
 ```bash
 sqlite-utils insert timezones.db timezones combined.json \
@@ -175,7 +175,7 @@ CREATE TABLE [timezones] (
    [geometry] TEXT
 );
 ```
-The resulting database file is 160MB. You can [download a copy from here](https://static.simonwillison.net/static/2023/timezones.db).
+The resulting database file is 160MB. You can [download a copy from here](https://static.assahbismark.com/static/2023/timezones.db).
 
 Here's a query that can be used to find the timezone for a latitude/longitude pair:
 
@@ -205,5 +205,5 @@ The query takes around 700ms on my M2 MacBook Pro. That's not a great number - u
 
 And for added fun... I installed the [datasette-geojson-map](https://datasette.io/plugins/datasette-geojson-map) plugin and added `select *` to the query and I got this!
 
-![Screenshot of the timezone for New York rendered on a map below the SQL query](https://static.simonwillison.net/static/2023/timezone-new-york.jpg)
+![Screenshot of the timezone for New York rendered on a map below the SQL query](https://static.assahbismark.com/static/2023/timezone-new-york.jpg)
 
