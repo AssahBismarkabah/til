@@ -108,7 +108,7 @@ jobs:
       run: |-
         cd main
         datasette publish heroku tils.db \
-          --app assah-tils \
+          --name assah-tils \
           --metadata metadata.yaml \
           --static static:static \
           --install datasette-template-sql \
