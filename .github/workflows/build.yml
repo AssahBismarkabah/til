@@ -79,6 +79,13 @@ jobs:
           # Table does not exist, calculate for everything
           openai-to-sqlite similar tils.db --all --save
         fi
+
+    - name: Verify database structure
+      run: |
+        cd main
+        sqlite3 tils.db ".schema"
+        sqlite3 tils.db "SELECT COUNT(*) FROM similarities"
+
     - name: Update README
       run: |-
         cd main
