@@ -101,13 +101,12 @@ jobs:
     - name: Install Heroku 
       run: |
         curl https://cli-assets.heroku.com/install.sh | sh
-        
+
     - name: Deploy Datasette using Heroku
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: |-
         cd main
-        heroku login -i
         datasette publish heroku tils.db \
           --app assah-tils \
           --metadata metadata.yaml \
